@@ -66,3 +66,19 @@ test('placeholders stay plain text and special characters are escaped once', () 
 test('duplicate fullNames are refused', () => {
     assert.throws(() => buildXliff([labels[0], labels[0]], { original: 'x', targetLang: 'de' }), /Duplicate label fullName: Apply_Button/);
 });
+
+test('parseXliff reads notes with their from attribute', async () => {
+    const { parseXliff } = await import('../../src/xliff/parse.js');
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="x" source-language="en-US" target-language="zh-CN" datatype="xml"><body>
+    <trans-unit id="A"><source>Save</source><target state="needs-review-translation">保存</target>
+      <note from="developer">Button</note><note from="qa">Length over budget</note></trans-unit>
+  </body></file>
+</xliff>`;
+    const [u] = parseXliff(xml).units;
+    assert.deepEqual(u.notes, [
+        { from: 'developer', text: 'Button' },
+        { from: 'qa', text: 'Length over budget' }
+    ]);
+});

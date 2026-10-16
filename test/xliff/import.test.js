@@ -188,3 +188,10 @@ test('cli: unmapped target language and usage errors', () => {
     assert.equal(cli('xliff-import', file, '--out', out).status, 2, 'missing --labels');
     assert.equal(cli('xliff-import', file, '--labels', FIXTURE, '--out', out, '--bogus').status, 2);
 });
+
+test('not-final carries the translator QA note, as project A writes it', () => {
+    const flagged = unit({ state: 'needs-review-translation', notes: [{ from: 'qa', text: 'Term "Record" not in glossary' }] });
+    const [warning] = checkUnit(flagged, label);
+    assert.equal(warning.check, 'not-final');
+    assert.match(warning.message, /needs-review-translation: Term "Record" not in glossary/);
+});

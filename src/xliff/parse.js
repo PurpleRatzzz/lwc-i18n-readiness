@@ -13,13 +13,14 @@ const parser = new XMLParser({
     // Keep the inside of <source> and <target> as raw XML. If a tool put inline elements such as
     // <g id="1"> in a target, we want to see them (the tag check rejects them), not lose them.
     stopNodes: ['*.source', '*.target'],
-    isArray: (name) => name === 'file' || name === 'trans-unit'
+    isArray: (name) => name === 'file' || name === 'trans-unit' || name === 'note'
 });
 
 /**
  * Returns { original, sourceLanguage, targetLanguage, units }, where each unit is
- * { id, maxwidth, sizeUnit, source, target, state }. `target` is null when there is no
- * <target> element; `state` is null when the target has no state attribute.
+ * { id, maxwidth, sizeUnit, source, target, state, notes }. `target` is null when there is no
+ * <target> element; `state` is null when the target has no state attribute. `notes` is
+ * [{ from, text }]; a translator can explain itself there, e.g. project A's <note from="qa">.
  * Throws if the text is not XLIFF 1.2 or has a shape we don't handle (several <file>s, <group>s).
  */
 export function parseXliff(xml, what = 'XLIFF file') {
@@ -55,7 +56,8 @@ function readUnit(node) {
         sizeUnit: attr(node, 'size-unit') ?? 'pixel',
         source: xmlToText(innerXml(node.source)),
         target: hasTarget ? xmlToText(innerXml(node.target)) : null,
-        state: hasTarget ? (attr(node.target, 'state') ?? null) : null
+        state: hasTarget ? (attr(node.target, 'state') ?? null) : null,
+        notes: (node.note ?? []).map((note) => ({ from: attr(note, 'from') ?? null, text: xmlToText(innerXml(note)) }))
     };
 }
 

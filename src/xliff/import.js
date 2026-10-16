@@ -65,7 +65,11 @@ export function checkUnit(unit, label) {
     }
 
     if (unit.state !== null && !FINAL_STATES.includes(unit.state)) {
-        issues.push(issue('warning', 'not-final', `Target state is ${unit.state}`));
+        // Pass on the translator's own reason (project A writes it in <note from="qa">), so the
+        // reviewer sees why the unit was flagged without opening the XLIFF.
+        const qa = (unit.notes ?? []).filter((n) => n.from === 'qa').map((n) => n.text.trim());
+        const reason = qa.length > 0 ? `: ${qa.join('; ')}` : '';
+        issues.push(issue('warning', 'not-final', `Target state is ${unit.state}${reason}`));
     }
 
     // The English text changed after export: the translation may describe the old text.

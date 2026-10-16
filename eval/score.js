@@ -28,12 +28,14 @@ const hasIssue = (row, issue) => row.issue.split(';').map((s) => s.trim()).inclu
 export const FAMILIES = {
     strings: {
         label: 'Hardcoded user-facing strings (R1, R2, R4)',
-        rules: ['R1', 'R2', 'R4'],
+        counts: (f) => ['R1', 'R2', 'R4'].includes(f.ruleId),
         units: (rows) => rows.filter((r) => hasIssue(r, 'hardcoded')).map((r) => [r])
     },
     fragments: {
-        label: 'Fragmented sentences and plurals (R3)',
-        rules: ['R3'],
+        label: 'Fragmented sentences and plurals (R3, R4 concatenated)',
+        // R3 covers templates. In JS, the contract has R4 report concatenations and template
+        // literals with ${} and mark them context.concatenated: the same problem, found in JS.
+        counts: (f) => f.ruleId === 'R3' || (f.ruleId === 'R4' && f.context?.concatenated === true),
         // One unit per fragment_group (all its rows), plus plural rows that have no group.
         units: (rows) => {
             const groups = new Map();
@@ -51,7 +53,7 @@ export const FAMILIES = {
     },
     locale: {
         label: 'Hardcoded currency/locale (R5)',
-        rules: ['R5'],
+        counts: (f) => f.ruleId === 'R5',
         units: (rows) => rows.filter((r) => hasIssue(r, 'locale')).map((r) => [r])
     }
 };
@@ -85,7 +87,7 @@ export function matchFamily(family, findings, goldRows) {
     const matched = [];
     const matchedMaybe = [];
     const unmatched = [];
-    for (const f of findings.filter((x) => family.rules.includes(x.ruleId))) {
+    for (const f of findings.filter(family.counts)) {
         const candidates = (rowIndex.get(keyOf(f.file, f.text)) ?? [])
             .map((c) => ({ ...c, delta: Math.abs(Number(c.row.line) - f.line) }))
             .filter((c) => c.delta <= LINE_TOLERANCE)

@@ -77,3 +77,12 @@ test('gold text with HTML entities matches the decoded scanner text', () => {
     const r = matchFamily(FAMILIES.strings, [finding('R2', 12, 'MSRP:')], rows);
     assert.equal(r.matched.length, 1);
 });
+
+test('fragments family counts R4 findings marked concatenated, not plain R4', () => {
+    const rows = [gold('G1', 7, 'Order status set to "${value}"', { fragment_group: 'F1', source_kind: 'js' })];
+    const concatenated = { ...finding('R4', 7, 'Order status set to "${value}"'), context: { concatenated: true } };
+    const plain = { ...finding('R4', 9, 'Success'), context: { concatenated: false } };
+    const r = matchFamily(FAMILIES.fragments, [concatenated, plain], rows);
+    assert.equal(r.matched.length, 1);
+    assert.equal(r.unmatched.length, 0);
+});

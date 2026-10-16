@@ -1,0 +1,37 @@
+name: LWC i18n readiness
+description: >
+  Flags i18n problems in Salesforce LWC/SFDX source before strings reach translation:
+  hardcoded UI text, fragmented sentences, hardcoded currency/locale, Custom Labels without translator context.
+inputs:
+  baseline:
+    description: >
+      Path (in the checked-out repo) to a baseline file written by `lwc-i18n scan . --write-baseline`.
+      Findings already in the baseline are reported but don't fail the check; only new ones do.
+    required: false
+    default: ''
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+
+    - name: Install scanner
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm ci --omit=dev --no-audit --no-fund
+
+    # Inputs go through env vars, never straight into the script, so a crafted
+    # input can't inject shell commands (GitHub's script-injection guidance).
+    - name: Scan
+      shell: bash
+      env:
+        CLI: ${{ github.action_path }}/src/cli.js
+        BASELINE: ${{ inputs.baseline }}
+      run: |
+        args=(.)
+        if [ -n "$BASELINE" ]; then args+=(--baseline "$BASELINE"); fi
+        # Full report in the job summary: annotations are capped per step, the summary is not.
+        node "$CLI" scan "${args[@]}" --format markdown >> "$GITHUB_STEP_SUMMARY" || true
+        # Inline annotations on the PR diff; the exit code fails the check only for new errors.
+        node "$CLI" scan "${args[@]}" --format github

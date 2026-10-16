@@ -58,7 +58,7 @@ All commands exited with code 0.
 | `import-stub.report.txt` / `.json` | 23 units: 0 written, 23 skipped, 0 rejected, 0 held back. No translation file written |
 | `import-pseudo.report.txt` / `.json` | 23 units: 23 written, 0 skipped, 0 rejected, 0 held back (0 errors, 0 warnings) |
 | `import-pseudo/zh_CN.translation-meta.xml` | the 23 labels written back in Salesforce source format |
-| `r6-findings.json` | 36 R6 findings on 23 labels |
+| `r6-findings.json` | 43 R6 findings on 23 labels |
 
 R6 findings by subrule:
 
@@ -67,12 +67,15 @@ R6 findings by subrule:
 | `no-ui-category` | 23 (the file uses no `categories` at all) |
 | `description-repeats-value` | 13 (e.g. `LMR_Save`: description `Save`, value `Save`) |
 | `unexplained-placeholder` | 0 (no label has `{0}` placeholders) |
+| `fragment-value` | 7: `items`, `sorted by`, `of`, `filter`, `filters`, `selected`, `select` |
 
 The labels that pass `description-repeats-value` show what useful context looks like:
 `LMR_Of` (value `of`) is described as "when filtering the data - X items of Y". That description
 also suggests that `items` and `of` are fragments joined into one sentence at runtime, a pattern
-many languages cannot translate word by word. This can't be confirmed here: no file in the repo
-at this commit references the `LMR_` labels outside the labels file itself.
+many languages cannot translate word by word. This file is why R6 has a `fragment-value` subrule:
+externalizing text into labels doesn't help if each label is only a piece of a sentence. The usage
+can't be confirmed here: no file in the repo at this commit references the `LMR_` labels outside
+the labels file itself.
 
 ## Notes
 

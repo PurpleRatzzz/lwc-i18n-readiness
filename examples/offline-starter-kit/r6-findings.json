@@ -108,6 +108,19 @@
     "ruleName": "label-context",
     "severity": "warning",
     "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 28,
+    "column": 9,
+    "text": "LMR_Items",
+    "message": "The value starts in lower case, so code probably glues it to other text (e.g. \"X items of Y\"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.",
+    "context": {
+      "subrule": "fragment-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
     "line": 35,
     "column": 9,
     "text": "LMR_SortedBy",
@@ -127,6 +140,19 @@
     "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
     "context": {
       "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 35,
+    "column": 9,
+    "text": "LMR_SortedBy",
+    "message": "The value starts in lower case, so code probably glues it to other text (e.g. \"X items of Y\"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.",
+    "context": {
+      "subrule": "fragment-value"
     }
   },
   {
@@ -160,6 +186,19 @@
     "ruleName": "label-context",
     "severity": "warning",
     "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 49,
+    "column": 9,
+    "text": "LMR_Of",
+    "message": "The value starts in lower case, so code probably glues it to other text (e.g. \"X items of Y\"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.",
+    "context": {
+      "subrule": "fragment-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
     "line": 57,
     "column": 9,
     "text": "LMR_filter",
@@ -186,6 +225,19 @@
     "ruleName": "label-context",
     "severity": "warning",
     "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 57,
+    "column": 9,
+    "text": "LMR_filter",
+    "message": "The value starts in lower case, so code probably glues it to other text (e.g. \"X items of Y\"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.",
+    "context": {
+      "subrule": "fragment-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
     "line": 64,
     "column": 9,
     "text": "LMR_filters",
@@ -205,6 +257,19 @@
     "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
     "context": {
       "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 64,
+    "column": 9,
+    "text": "LMR_filters",
+    "message": "The value starts in lower case, so code probably glues it to other text (e.g. \"X items of Y\"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.",
+    "context": {
+      "subrule": "fragment-value"
     }
   },
   {
@@ -290,12 +355,38 @@
     "ruleName": "label-context",
     "severity": "warning",
     "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 107,
+    "column": 9,
+    "text": "LMR_Selected",
+    "message": "The value starts in lower case, so code probably glues it to other text (e.g. \"X items of Y\"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.",
+    "context": {
+      "subrule": "fragment-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
     "line": 114,
     "column": 9,
     "text": "LMR_Select",
     "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
     "context": {
       "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 114,
+    "column": 9,
+    "text": "LMR_Select",
+    "message": "The value starts in lower case, so code probably glues it to other text (e.g. \"X items of Y\"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.",
+    "context": {
+      "subrule": "fragment-value"
     }
   },
   {

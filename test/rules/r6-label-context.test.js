@@ -80,3 +80,13 @@ test('rule metadata matches the contract', () => {
     assert.deepEqual(r6.kinds, ['labels']);
     assert.equal(r6.severity, 'warning');
 });
+
+test('fragment-value fires on values that start in lower case', () => {
+    for (const value of ['of', 'items', 'sorted by', 'éditer']) {
+        assert.ok(subrules(label({ value })).includes('fragment-value'), value);
+    }
+    // Whole messages, including ones that start with a placeholder, are fine.
+    for (const value of ['Apply', '{0} items of {1}', '  Start Date']) {
+        assert.ok(!subrules(label({ value })).includes('fragment-value'), value);
+    }
+});

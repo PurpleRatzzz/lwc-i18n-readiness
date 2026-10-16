@@ -11,7 +11,7 @@ const rule = {
     name: 'label-context',
     kinds: ['labels'],
     severity: 'warning',
-    description: 'Custom Label lacks translator context: description repeats the value, no ui: category, unexplained {0} placeholders.',
+    description: 'Custom Label lacks translator context: description repeats the value, no ui: category, unexplained {0} placeholders, or the value is a sentence fragment.',
     check(ctx) {
         // Rules must be pure (docs/ARCHITECTURE.md): parse ctx.source, never read the file ourselves.
         const findings = [];
@@ -61,6 +61,16 @@ export function labelProblems(label) {
         problems.push({
             subrule: 'unexplained-placeholder',
             message: `The value has ${unexplained.join(', ')} but the description does not say what ${unexplained.length > 1 ? 'they stand' : 'it stands'} for; add e.g. "{0} is the number of records".`
+        });
+    }
+
+    // Externalizing text doesn't help if the label is only a piece of a sentence. Real example
+    // (offline-app-developer-starter-kit): "items", "of", "sorted by", whose description reads
+    // "X items of Y". A UI string that starts in lower case is almost always such a piece.
+    if (/^\p{Ll}/u.test(label.value.trim())) {
+        problems.push({
+            subrule: 'fragment-value',
+            message: 'The value starts in lower case, so code probably glues it to other text (e.g. "X items of Y"); make the whole sentence one label with {0}/{1} placeholders so translators can reorder it.'
         });
     }
 

@@ -1,0 +1,8 @@
+node_modules/
+# Pinned clones of the scanned repos (see targets.json, scripts/fetch-targets.sh)
+.targets/
+# Local working copies (e.g. the dreamhouse-lwc branch being externalized)
+work/
+# Scratch output of CLI runs
+out/
+.DS_Store

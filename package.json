@@ -1,0 +1,24 @@
+{
+  "name": "lwc-i18n-readiness",
+  "version": "0.1.0",
+  "description": "Upstream i18n readiness checks for Salesforce LWC/SFDX projects: scanner, pseudo-localization, Custom Labels <-> XLIFF round trip",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "lwc-i18n": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "fetch-targets": "bash scripts/fetch-targets.sh",
+    "scan": "node src/cli.js scan"
+  },
+  "dependencies": {
+    "@babel/parser": "8.0.6",
+    "fast-xml-parser": "5.11.2",
+    "parse5": "8.0.1"
+  }
+}

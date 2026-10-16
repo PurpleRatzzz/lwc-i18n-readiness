@@ -1,0 +1,20 @@
+{
+  "dreamhouse-lwc": {
+    "url": "https://github.com/trailheadapps/dreamhouse-lwc.git",
+    "sha": "3f496e4e28c0fc8d00ca059622e2ab92ac2612ea",
+    "license": "Apache-2.0",
+    "role": "Main scan target; gold set for precision and recall"
+  },
+  "ebikes-lwc": {
+    "url": "https://github.com/trailheadapps/ebikes-lwc.git",
+    "sha": "c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee",
+    "license": "CC0-1.0",
+    "role": "Second scan target; precision only"
+  },
+  "offline-app-developer-starter-kit": {
+    "url": "https://github.com/salesforce/offline-app-developer-starter-kit.git",
+    "sha": "fb66da8fb5e477b23ee56f805ab80dee70df3156",
+    "license": "BSD-3-Clause",
+    "role": "Real CustomLabels file for R6, pseudo-localization and the XLIFF round trip"
+  }
+}

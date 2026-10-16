@@ -1,0 +1,100 @@
+{
+  "repo": "ebikes-lwc",
+  "summaries": {
+    "strings": {
+      "goldUnits": 66,
+      "maybeUnits": 6,
+      "findings": 70,
+      "matched": 66,
+      "matchedMaybe": 4,
+      "unmatched": 0,
+      "missed": 0,
+      "pending": 0,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 66,
+          "denominator": 66
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 66,
+          "denominator": 66
+        }
+      },
+      "adjudicated": {
+        "tp": 66,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 66,
+          "denominator": 66
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 66,
+          "denominator": 66
+        }
+      }
+    },
+    "fragments": {
+      "goldUnits": 4,
+      "maybeUnits": 2,
+      "findings": 2,
+      "matched": 2,
+      "matchedMaybe": 0,
+      "unmatched": 0,
+      "missed": 3,
+      "pending": 3,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 2,
+          "denominator": 2
+        },
+        "recall": {
+          "value": 0.25,
+          "numerator": 1,
+          "denominator": 4
+        }
+      },
+      "adjudicated": null
+    },
+    "locale": {
+      "goldUnits": 4,
+      "maybeUnits": 0,
+      "findings": 4,
+      "matched": 4,
+      "matchedMaybe": 0,
+      "unmatched": 0,
+      "missed": 0,
+      "pending": 0,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        }
+      },
+      "adjudicated": {
+        "tp": 4,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        }
+      }
+    }
+  }
+}

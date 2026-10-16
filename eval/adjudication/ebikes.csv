@@ -1,0 +1,4 @@
+family,kind,rule,file,line,text,gold_ids,decision,note
+fragments,missed-gold,,force-app/main/default/lwc/orderBuilder/orderBuilder.html,14,Total Items: {orderQuantity},G022,,
+fragments,missed-gold,,force-app/main/default/lwc/orderStatusPath/orderStatusPath.js,139,"Order status set to ""${value}""",G042,,
+fragments,missed-gold,,force-app/main/default/lwc/orderStatusPath/orderStatusPath.js,145,"Failed to update order status to ""${value}""",G043,,

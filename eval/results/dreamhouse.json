@@ -1,0 +1,87 @@
+{
+  "repo": "dreamhouse-lwc",
+  "summaries": {
+    "strings": {
+      "goldUnits": 62,
+      "maybeUnits": 7,
+      "findings": 65,
+      "matched": 59,
+      "matchedMaybe": 6,
+      "unmatched": 0,
+      "missed": 3,
+      "pending": 3,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 59,
+          "denominator": 59
+        },
+        "recall": {
+          "value": 0.9516129032258065,
+          "numerator": 59,
+          "denominator": 62
+        }
+      },
+      "adjudicated": null
+    },
+    "fragments": {
+      "goldUnits": 10,
+      "maybeUnits": 0,
+      "findings": 7,
+      "matched": 7,
+      "matchedMaybe": 0,
+      "unmatched": 0,
+      "missed": 4,
+      "pending": 4,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 7,
+          "denominator": 7
+        },
+        "recall": {
+          "value": 0.6,
+          "numerator": 6,
+          "denominator": 10
+        }
+      },
+      "adjudicated": null
+    },
+    "locale": {
+      "goldUnits": 1,
+      "maybeUnits": 0,
+      "findings": 1,
+      "matched": 1,
+      "matchedMaybe": 0,
+      "unmatched": 0,
+      "missed": 0,
+      "pending": 0,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 1,
+          "denominator": 1
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 1,
+          "denominator": 1
+        }
+      },
+      "adjudicated": {
+        "tp": 1,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 1,
+          "denominator": 1
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+family,kind,rule,file,line,text,gold_ids,decision,note
+strings,missed-gold,,force-app/main/default/lwc/barcodeScanner/barcodeScanner.js,28,Scan a QR Code,G008,,
+strings,missed-gold,,force-app/main/default/lwc/barcodeScanner/barcodeScanner.js,29,Scanning complete.,G009,,
+strings,missed-gold,,force-app/main/default/lwc/listContactsFromDevice/listContactsFromDevice.js,21,Allow access to your contacts to enable contacts processing.,G030,,
+fragments,missed-gold,,force-app/main/default/lwc/barcodeScanner/barcodeScanner.js,70,There was a problem scanning the QR code:,G013,,
+fragments,missed-gold,,force-app/main/default/lwc/propertyListMap/propertyListMap.js,177,"<div class=""tooltip-picture"" style=""background-image:url(${property.Thumbnail__c})""> <div class=""lower-third""> <h1>${property.Name}</h1> <p>Beds: ${property.Beds__c} - Baths: ${property.Baths__c}</p> </div> </div>",G046,,
+fragments,missed-gold,,force-app/main/default/lwc/propertyLocation/propertyLocation.html,23,Distance to property: | miles,G051 G052,,
+fragments,missed-gold,,force-app/main/default/lwc/propertyMap/propertyMap.js,42,<b>Address</b>: ${property.Address__c.value},G057,,

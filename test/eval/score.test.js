@@ -71,3 +71,9 @@ test('fragments family: a group counts once, any matching piece detects it', () 
     assert.equal(r.detectedUnits.length, 1);
     assert.deepEqual(r.missed.map((u) => u[0].id), ['G3']);
 });
+
+test('gold text with HTML entities matches the decoded scanner text', () => {
+    const rows = [gold('G1', 12, 'MSRP:&nbsp;')];
+    const r = matchFamily(FAMILIES.strings, [finding('R2', 12, 'MSRP:')], rows);
+    assert.equal(r.matched.length, 1);
+});

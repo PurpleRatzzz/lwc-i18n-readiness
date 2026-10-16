@@ -47,7 +47,7 @@ Every rule returns `Finding[]` built with `makeFinding`:
 The gold set in `eval/` uses the same units, which is what makes precision/recall computable:
 
 - **Template attribute**: the attribute value, e.g. `Reset` for `label="Reset"`.
-- **Template text node**: the whole parse5 text node, `{expressions}` included, whitespace collapsed, e.g. `Beds: {property.Beds__c} - Baths: {property.Baths__c}`. `days on <br />the market` is two text nodes: `days on` and `the market`.
+- **Template text node**: the whole parse5 text node, `{expressions}` included, entities decoded as parse5 returns them (`&nbsp;` becomes a space), whitespace collapsed, e.g. `Beds: {property.Beds__c} - Baths: {property.Baths__c}`. `days on <br />the market` is two text nodes: `days on` and `the market`.
 - **JS string**: the literal's content without quotes. For template literals keep `${...}` as written, e.g. `Order status set to "${value}"`. For `+` concatenations, report each literal operand separately.
 - **Label (R6)**: the label's `fullName`.
 
@@ -68,8 +68,8 @@ The orchestrator parses each file once and passes the result to every rule that 
 
 | `ctx.kind` | files | fields |
 |---|---|---|
-| `template` | `**/lwc/<c>/<c>.html` (not `__tests__`) | `file`, `source`, `ast` (parse5 `parseFragment` with `sourceCodeLocationInfo: true`), `component`, `config` |
-| `script` | `**/lwc/<c>/*.js` (not `__tests__`, not `*.test.js`) | `file`, `source`, `ast` (`@babel/parser` File), `component`, `config`, `templateAst` (the component's own template, if any) |
+| `template` | every `.html` under `**/lwc/<c>/`, including subfolders such as `templates/` used by components with several templates (not `__tests__`) | `file`, `source`, `ast` (parse5 `parseFragment` with `sourceCodeLocationInfo: true`), `component`, `config` |
+| `script` | `**/lwc/<c>/*.js` (not `__tests__`, not `*.test.js`) | `file`, `source`, `ast` (`@babel/parser` File), `component`, `config`, `templateAst` (the component's `<c>.html`, if any) |
 | `labels` | `**/labels/*.labels-meta.xml` | `file`, `source`, `config` (the rule parses with `src/labels/read.js`) |
 
 Rules must be pure: no file I/O and no global state. The orchestrator may add fields to `ctx`; rules must ignore fields they don't know.

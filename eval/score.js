@@ -56,7 +56,10 @@ export const FAMILIES = {
     }
 };
 
-const keyOf = (file, text) => `${file}\u0000${normalizeText(text)}`;
+// Annotators may copy text with entities as written (`MSRP:&nbsp;`); the scanner sees parse5's decoded text.
+const ENTITIES = { '&nbsp;': ' ', '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&apos;': "'" };
+const decodeEntities = (text) => String(text).replace(/&(nbsp|amp|lt|gt|quot|#39|apos);/g, (m) => ENTITIES[m]);
+const keyOf = (file, text) => `${file}\u0000${normalizeText(decodeEntities(text))}`;
 const isMaybeUnit = (unit) => unit.every((r) => r.user_visible === 'maybe');
 const unitText = (unit) => unit.map((r) => normalizeText(r.text)).join(' | ');
 const disagreementKey = (d) => [d.family, d.kind, d.file, d.text].join('\u0000');

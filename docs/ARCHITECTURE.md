@@ -6,7 +6,7 @@ The contracts below let the scanner and the label tooling be built in parallel. 
 
 ```
 src/
-  cli.js                 command dispatcher: lwc-i18n <scan|pseudo|xliff-export|xliff-import>
+  cli.js                 command dispatcher: lwc-i18n <scan|pseudo|xliff-export|translate|xliff-import>
   finding.js             Finding shape, normalizeText, fingerprint
   baseline.js            "only new findings fail" logic
   commands/<name>.js     one file per CLI command, exports run(argv) -> exit code

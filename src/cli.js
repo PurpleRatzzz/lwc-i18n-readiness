@@ -7,7 +7,8 @@ const commands = {
     scan: () => import('./commands/scan.js'),
     pseudo: () => import('./commands/pseudo.js'),
     'xliff-export': () => import('./commands/xliff-export.js'),
-    'xliff-import': () => import('./commands/xliff-import.js')
+    'xliff-import': () => import('./commands/xliff-import.js'),
+    translate: () => import('./commands/translate.js')
 };
 
 const [name, ...argv] = process.argv.slice(2);

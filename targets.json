@@ -1,4 +1,10 @@
 {
+  "lwc-recipes": {
+    "url": "https://github.com/trailheadapps/lwc-recipes.git",
+    "sha": "d6a89c734f7a3401ff474220ead3f449e8b44f3e",
+    "license": "CC0-1.0",
+    "role": "Development set for the scanner (dreamhouse-lwc and ebikes-lwc are held out for evaluation)"
+  },
   "dreamhouse-lwc": {
     "url": "https://github.com/trailheadapps/dreamhouse-lwc.git",
     "sha": "3f496e4e28c0fc8d00ca059622e2ab92ac2612ea",

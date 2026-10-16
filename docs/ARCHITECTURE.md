@@ -69,12 +69,12 @@ The orchestrator parses each file once and passes the result to every rule that 
 | `ctx.kind` | files | fields |
 |---|---|---|
 | `template` | every `.html` under `**/lwc/<c>/`, including subfolders such as `templates/` used by components with several templates (not `__tests__`) | `file`, `source`, `ast` (parse5 `parseFragment` with `sourceCodeLocationInfo: true`), `component`, `config` |
-| `script` | `**/lwc/<c>/*.js` (not `__tests__`, not `*.test.js`) | `file`, `source`, `ast` (`@babel/parser` File), `component`, `config`, `templateAst` (the component's `<c>.html`, if any) |
+| `script` | `**/lwc/<c>/*.js` (not `__tests__`, not `*.test.js`) | `file`, `source`, `ast` (`@babel/parser` File), `component`, `config`, `templateAst` (the component's `<c>.html`, if any), `componentTemplates` (ASTs of every template in the component folder, for components that pick one in `render()`) |
 | `labels` | `**/labels/*.labels-meta.xml` | `file`, `source`, `config` (the rule parses with `src/labels/read.js`) |
 
 Rules must be pure: no file I/O and no global state. The orchestrator may add fields to `ctx`; rules must ignore fields they don't know.
 
-Ignore comments: `<!-- i18n-ignore-next-line -->` in templates and `// i18n-ignore-next-line` in JS suppress findings that start on the following line.
+Ignore comments: `<!-- i18n-ignore-next-line -->` in templates and `// i18n-ignore-next-line` in JS suppress findings that start on the following line. The scope is exactly one line. Prettier puts each attribute on its own line, so put the comment directly above the attribute (`label=...`), not above the element.
 
 ## Custom Label context convention
 
@@ -101,3 +101,15 @@ The round trip with project A uses files, not function calls: **XLIFF 1.2 in, XL
   - **held back**: warnings only (`maxwidth`, `same-as-source`, `not-final`, `source-changed`) and no `--allow-warnings`.
   - **written**: everything else.
   Passing units are written even when others fail. Exit code: 1 if any error, or any warning without `--allow-warnings`; 2 for usage errors. Salesforce language codes use underscores (`zh_CN`), XLIFF uses BCP 47 (`zh-CN`); `src/xliff/` owns the mapping.
+
+## Scan output and exit codes
+
+- Exit 0 if there are no new error-severity findings, 1 if there are, 2 for usage errors (including an unreadable `--baseline`). `--write-baseline` exits 0, because writing a baseline accepts the current findings.
+- Files that can't be read or parsed, and rules that throw on a file, are printed to stderr. They don't change the exit code.
+- `github` format: new findings are `::error` or `::warning` by severity; findings already in the baseline are `::notice` with "(baseline)" in the title.
+- `markdown` format lists at most 200 new findings, because GitHub caps the step summary at 1 MiB.
+
+## Rule scope notes
+
+- R3 `interpolated` skips a single `Label: {value}` pair, because the label can be its own Custom Label in any language. Two or more pairs in one text node are still reported.
+- R4 follows strings only through direct sinks, module-level constants and one level of method parameters. It does not follow local variables, function return values or other modules.

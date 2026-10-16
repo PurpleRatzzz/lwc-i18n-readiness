@@ -1,0 +1,24 @@
+<template>
+    <p class="slds-text-body_small">
+        Beds: {property.Beds__c} - Baths: {property.Baths__c}
+    </p>
+    <div class="status">
+        {totalItemCount} items • page {currentPageNumber} of
+        {totalPages}
+    </div>
+    <p class="days">
+        {daysOnMarket}
+        <span class="label">days on <br />the market</span>
+    </p>
+    <p>Click <a href={helpUrl}>here</a> to read the guide, or <b>skip</b> it.</p>
+    <p>Valid for 30 days.</p>
+    <p>{contact.Name}, {contact.Title}</p>
+    <p>{account.Name} has no open cases.</p>
+    <div>
+        Step one
+        <lightning-input label={labels.name}></lightning-input>
+        Step two
+    </div>
+    <p>{status}</p>
+    <p>Owner: {record.Owner.Name}</p>
+</template>

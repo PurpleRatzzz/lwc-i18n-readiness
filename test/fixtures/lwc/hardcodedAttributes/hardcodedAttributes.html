@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Property Filters" icon-name="standard:filter">
+        <lightning-input
+            label="Search Key"
+            placeholder="Search..."
+            value={searchKey}
+            onchange={handleSearchKeyChange}
+        ></lightning-input>
+        <lightning-button label="Reset" variant="brand" onclick={handleReset}></lightning-button>
+        <lightning-button label={labels.reset} variant="neutral"></lightning-button>
+        <lightning-button-icon
+            icon-name="utility:delete"
+            alternative-text="Delete"
+            data-label="delete-button"
+        ></lightning-button-icon>
+        <lightning-input
+            type="number"
+            label="100"
+            message-when-value-missing="Enter a maximum price"
+        ></lightning-input>
+        <img src={logoUrl} alt="Company logo" class="slds-avatar" />
+        <c-error-panel friendly-message="Error retrieving data" errors={error}></c-error-panel>
+        <c-property-tile record-id="a0B000000000001" title={property.Name}></c-property-tile>
+        <lightning-helptext content="Prices include tax"></lightning-helptext>
+        <a href="https://example.com/help" title="https://example.com/help">{helpLabel}</a>
+        <lightning-tab label="HelloBinding" title="LinkedIn"></lightning-tab>
+    </lightning-card>
+</template>

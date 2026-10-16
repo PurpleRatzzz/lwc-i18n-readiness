@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title={labels.title} icon-name="standard:contact">
+        <lightning-button label={labels.reset} variant="brand" onclick={handleReset}></lightning-button>
+        <p class={pathClass}>{message}</p>
+        <lightning-formatted-number value={price} format-style="currency" currency-code={currency}></lightning-formatted-number>
+    </lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title={cardTitle}>
+        <p class={itemClass}>{greeting}</p>
+        <p>{status.message}</p>
+        <c-error-panel friendly-message={errorText} errors={errors}></c-error-panel>
+        <img src={logoUrl} alt={logoAlt} />
+        <lightning-input value={searchKey} label={labels.search}></lightning-input>
+        <div lwc:dom="manual" class="map"></div>
+    </lightning-card>
+</template>

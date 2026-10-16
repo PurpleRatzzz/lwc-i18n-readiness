@@ -1,0 +1,23 @@
+<template>
+    <style>
+        .note { color: red; }
+    </style>
+    <h2>Contacts</h2>
+    <p>
+        No contacts
+        found for this account.
+    </p>
+    <p>{contact.Name}, {contact.Title}</p>
+    <p>MSRP:&nbsp;<lightning-formatted-number value={price}></lightning-formatted-number></p>
+    <span>&nbsp;Total</span>
+    <p>
+        <!-- a comment is not text -->
+        &times; | {count} / {total}
+    </p>
+    <legend>c-contact-tile</legend>
+    <pre>{"name": "value"}</pre>
+    <code>this.template.querySelector('p')</code>
+    <template lwc:if={hasDetails}>
+        These are the details!
+    </template>
+</template>

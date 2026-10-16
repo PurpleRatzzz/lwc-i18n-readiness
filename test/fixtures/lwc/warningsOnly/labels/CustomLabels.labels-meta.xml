@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Reset_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Button that clears all filters in the property filter panel</shortDescription>
+        <value>Reset</value>
+    </labels>
+</CustomLabels>

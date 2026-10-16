@@ -1,0 +1,9 @@
+<template>
+    <lightning-formatted-number
+        value={price}
+        format-style="currency"
+        currency-code="USD"
+    ></lightning-formatted-number>
+    <lightning-formatted-number value={price} format-style="currency" currency-code={currencyCode}></lightning-formatted-number>
+    <lightning-formatted-date-time value={createdDate} year="numeric"></lightning-formatted-date-time>
+</template>

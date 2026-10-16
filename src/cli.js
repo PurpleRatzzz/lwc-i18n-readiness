@@ -11,6 +11,13 @@ const commands = {
     translate: () => import('./commands/translate.js')
 };
 
+// `lwc-i18n scan . | head` closes the pipe before we finish writing. That is the reader's
+// choice, not our failure, so exit quietly instead of printing an EPIPE stack trace.
+process.stdout.on('error', (err) => {
+    if (err.code === 'EPIPE') process.exit(0);
+    throw err;
+});
+
 const [name, ...argv] = process.argv.slice(2);
 
 if (!name || !commands[name]) {

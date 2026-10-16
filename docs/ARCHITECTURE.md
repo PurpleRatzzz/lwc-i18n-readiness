@@ -49,7 +49,7 @@ The gold set in `eval/` uses the same units, which is what makes precision/recal
 - **Template attribute**: the attribute value, e.g. `Reset` for `label="Reset"`.
 - **Template text node**: the whole parse5 text node, `{expressions}` included, entities decoded as parse5 returns them (`&nbsp;` becomes a space), whitespace collapsed, e.g. `Beds: {property.Beds__c} - Baths: {property.Baths__c}`. `days on <br />the market` is two text nodes: `days on` and `the market`.
 - **JS string**: the literal's content without quotes. For template literals keep `${...}` as written, e.g. `Order status set to "${value}"`. For `+` concatenations, report each literal operand separately.
-- **Label (R6)**: the label's `fullName`.
+- **Label (R6)**: the label's `fullName`; `line`/`column` point at its `<fullName>` tag.
 
 ## Rules (src/rules/*.js)
 
@@ -92,7 +92,12 @@ CustomLabel metadata has only `fullName`, `categories` (≤255 chars), `language
 
 The round trip with project A uses files, not function calls: **XLIFF 1.2 in, XLIFF 1.2 out**.
 
-- Export writes one `<file>` per label file, one `<trans-unit id="<fullName>">` per label, `<source>` = value, `<note>` = shortDescription plus categories. Placeholders such as `{0}` stay plain text.
+- Export writes one `<file>` per label file and one `<trans-unit id="<fullName>">` per label: `<source>` = value, `<note from="developer">` = shortDescription, `<note from="context">` = categories, and `maxlen:N` becomes `maxwidth="N" size-unit="char"`. No `<target>` is written. Placeholders such as `{0}` stay plain text.
 - A translator fills `<target state="translated">` (or leaves `state="needs-translation"`).
 - Adapters: `stub` (copies source, keeps `needs-translation`), `pseudo` (pseudo-localized target, for exercising the write path), and `command` (runs the external command in `LWC_I18N_TRANSLATOR_CMD` with `{in}`, `{out}` and `{lang}` substituted; this is where project A plugs in).
-- Import validates every unit (placeholder parity, inline tag parity, `maxlen`, empty or untranslated target) before writing `translations/<sfLang>.translation-meta.xml`. Salesforce language codes use underscores (`zh_CN`), XLIFF uses BCP 47 (`zh-CN`); `src/xliff/` owns the mapping.
+- Import validates every unit before writing `translations/<sfLang>.translation-meta.xml`. Each unit ends up with one outcome:
+  - **skipped**: no or empty target, or state `new`/`needs-translation`. Doesn't fail the run.
+  - **rejected**: any error, i.e. placeholder or tag mismatch, or an unknown or duplicate id.
+  - **held back**: warnings only (`maxwidth`, `same-as-source`, `not-final`, `source-changed`) and no `--allow-warnings`.
+  - **written**: everything else.
+  Passing units are written even when others fail. Exit code: 1 if any error, or any warning without `--allow-warnings`; 2 for usage errors. Salesforce language codes use underscores (`zh_CN`), XLIFF uses BCP 47 (`zh-CN`); `src/xliff/` owns the mapping.

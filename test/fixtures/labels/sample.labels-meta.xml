@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- A commented-out label must not count or shift line numbers:
+    <labels>
+        <fullName>Old_Label</fullName>
+        <value>Old</value>
+    </labels>
+    -->
+    <labels>
+        <fullName>Apply_Button</fullName>
+        <categories>component:propertyFilter, ui:button, maxlen:12</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Button in the filter panel that applies the selected filters</shortDescription>
+        <value>Apply</value>
+    </labels>
+    <labels>
+        <fullName>Records_Updated</fullName>
+        <categories>ui:toast</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Toast after a bulk edit; {0} is the number of records</shortDescription>
+        <value>{0} records updated &amp; saved</value>
+    </labels>
+    <labels>
+        <fullName>Terms_Html</fullName>
+        <categories>component:signup,ui:text,team:legal,ui:label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >Rich text under the sign-up form; {0} is the user&apos;s first name</shortDescription>
+        <value>Hi &lt;b&gt;{0}&lt;/b&gt;, read our &quot;Terms&quot; &amp; Conditions &#169;</value>
+    </labels>
+    <labels>
+        <fullName>Page_Of</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Page of</shortDescription>
+        <value>Page {0} of {1}</value>
+    </labels>
+    <labels>
+        <fullName>Max_Items</fullName>
+        <categories>ui:label, maxlen:abc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Number on the items badge, always the literal ten</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>Search_Spaced</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>search</shortDescription>
+        <value> Search </value>
+    </labels>
+</CustomLabels>

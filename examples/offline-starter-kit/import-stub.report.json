@@ -1,0 +1,273 @@
+{
+  "xliff": "examples/offline-starter-kit/labels.zh-CN.stub.xlf",
+  "labels": ".targets/offline-app-developer-starter-kit/force-app/main/default/labels/CustomLabels.labels-meta.xml",
+  "targetLanguage": "zh-CN",
+  "salesforceLanguage": "zh_CN",
+  "output": null,
+  "allowWarnings": false,
+  "summary": {
+    "units": 23,
+    "written": 0,
+    "skipped": 23,
+    "rejected": 0,
+    "heldBack": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "missingFromXliff": [],
+  "units": [
+    {
+      "id": "LMR_Cancel",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Save",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Search",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Items",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_SortedBy",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_FilterTitle",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Of",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_filter",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_filters",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Apply",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_ClearAll",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_SuccessTitle",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_RecordIsUpdated",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_ErrorTitle",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Selected",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Select",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_DefineDateRangeTitle",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_StartDate",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_EndDate",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_None",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Enabled",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "LMR_Disabled",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    },
+    {
+      "id": "FSL_LMR_Test",
+      "outcome": "skipped",
+      "issues": [
+        {
+          "severity": "skip",
+          "check": "not-translated",
+          "message": "Target state is needs-translation"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 5,
+    "column": 9,
+    "text": "LMR_Cancel",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 5,
+    "column": 9,
+    "text": "LMR_Cancel",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 13,
+    "column": 9,
+    "text": "LMR_Save",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 13,
+    "column": 9,
+    "text": "LMR_Save",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 21,
+    "column": 9,
+    "text": "LMR_Search",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 21,
+    "column": 9,
+    "text": "LMR_Search",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 28,
+    "column": 9,
+    "text": "LMR_Items",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 28,
+    "column": 9,
+    "text": "LMR_Items",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 35,
+    "column": 9,
+    "text": "LMR_SortedBy",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 35,
+    "column": 9,
+    "text": "LMR_SortedBy",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 42,
+    "column": 9,
+    "text": "LMR_FilterTitle",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 49,
+    "column": 9,
+    "text": "LMR_Of",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 57,
+    "column": 9,
+    "text": "LMR_filter",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 57,
+    "column": 9,
+    "text": "LMR_filter",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 64,
+    "column": 9,
+    "text": "LMR_filters",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 64,
+    "column": 9,
+    "text": "LMR_filters",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 71,
+    "column": 9,
+    "text": "LMR_Apply",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 78,
+    "column": 9,
+    "text": "LMR_ClearAll",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 85,
+    "column": 9,
+    "text": "LMR_SuccessTitle",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 92,
+    "column": 9,
+    "text": "LMR_RecordIsUpdated",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 100,
+    "column": 9,
+    "text": "LMR_ErrorTitle",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 107,
+    "column": 9,
+    "text": "LMR_Selected",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 114,
+    "column": 9,
+    "text": "LMR_Select",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 121,
+    "column": 9,
+    "text": "LMR_DefineDateRangeTitle",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 121,
+    "column": 9,
+    "text": "LMR_DefineDateRangeTitle",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 128,
+    "column": 9,
+    "text": "LMR_StartDate",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 128,
+    "column": 9,
+    "text": "LMR_StartDate",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 135,
+    "column": 9,
+    "text": "LMR_EndDate",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 135,
+    "column": 9,
+    "text": "LMR_EndDate",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 142,
+    "column": 9,
+    "text": "LMR_None",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 149,
+    "column": 9,
+    "text": "LMR_Enabled",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 149,
+    "column": 9,
+    "text": "LMR_Enabled",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 156,
+    "column": 9,
+    "text": "LMR_Disabled",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 156,
+    "column": 9,
+    "text": "LMR_Disabled",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 163,
+    "column": 9,
+    "text": "FSL_LMR_Test",
+    "message": "The description only repeats the label value; say where the text appears and what it does, e.g. \"Button in the filter panel that applies the selected filters\".",
+    "context": {
+      "subrule": "description-repeats-value"
+    }
+  },
+  {
+    "ruleId": "R6",
+    "ruleName": "label-context",
+    "severity": "warning",
+    "file": "force-app/main/default/labels/CustomLabels.labels-meta.xml",
+    "line": 163,
+    "column": 9,
+    "text": "FSL_LMR_Test",
+    "message": "No ui: category; add one such as ui:button or ui:heading to Categories so the translator knows what kind of UI element this is.",
+    "context": {
+      "subrule": "no-ui-category"
+    }
+  }
+]

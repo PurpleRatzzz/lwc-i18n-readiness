@@ -1,0 +1,135 @@
+{
+  "xliff": "examples/offline-starter-kit/labels.zh-CN.pseudo.xlf",
+  "labels": ".targets/offline-app-developer-starter-kit/force-app/main/default/labels/CustomLabels.labels-meta.xml",
+  "targetLanguage": "zh-CN",
+  "salesforceLanguage": "zh_CN",
+  "output": "examples/offline-starter-kit/import-pseudo/zh_CN.translation-meta.xml",
+  "allowWarnings": false,
+  "summary": {
+    "units": 23,
+    "written": 23,
+    "skipped": 0,
+    "rejected": 0,
+    "heldBack": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "missingFromXliff": [],
+  "units": [
+    {
+      "id": "LMR_Cancel",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Save",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Search",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Items",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_SortedBy",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_FilterTitle",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Of",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_filter",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_filters",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Apply",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_ClearAll",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_SuccessTitle",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_RecordIsUpdated",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_ErrorTitle",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Selected",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Select",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_DefineDateRangeTitle",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_StartDate",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_EndDate",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_None",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Enabled",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "LMR_Disabled",
+      "outcome": "written",
+      "issues": []
+    },
+    {
+      "id": "FSL_LMR_Test",
+      "outcome": "written",
+      "issues": []
+    }
+  ]
+}

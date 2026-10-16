@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>[Ţéšţ Ļåbéļ ~~~~ ~~~~ ~~~~ ~~]</label>
+        <name>FSL_LMR_Test</name>
+    </customLabels>
+    <customLabels>
+        <label>[Åppļý ~~~~ ~~]</label>
+        <name>LMR_Apply</name>
+    </customLabels>
+    <customLabels>
+        <label>[Çåñçéļ ~~~~ ~~~~]</label>
+        <name>LMR_Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label>[Çļéåŕ Åļļ ~~~~ ~~~~ ~~~~~]</label>
+        <name>LMR_ClearAll</name>
+    </customLabels>
+    <customLabels>
+        <label>[Ðéfîñé å ðåţé ŕåñĝé ~~~~ ~~~~ ~~~~ ~]</label>
+        <name>LMR_DefineDateRangeTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>[Ðîšåbļéð ~~~~ ~~~~ ~~~]</label>
+        <name>LMR_Disabled</name>
+    </customLabels>
+    <customLabels>
+        <label>[Éñåbļéð ~~~~ ~~~~ ~]</label>
+        <name>LMR_Enabled</name>
+    </customLabels>
+    <customLabels>
+        <label>[Éñð Ðåţé ~~~~ ~~~~ ~~~]</label>
+        <name>LMR_EndDate</name>
+    </customLabels>
+    <customLabels>
+        <label>[Šöméţĥîñĝ ŵéñţ ŵŕöñĝ. ~~~~ ~~~~ ~~~~]</label>
+        <name>LMR_ErrorTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>[Fîļţéŕ ~~~~ ~~~~]</label>
+        <name>LMR_FilterTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>[îţémš ~~~~ ~~]</label>
+        <name>LMR_Items</name>
+    </customLabels>
+    <customLabels>
+        <label>[Ñöñé ~~~~~]</label>
+        <name>LMR_None</name>
+    </customLabels>
+    <customLabels>
+        <label>[öf ~]</label>
+        <name>LMR_Of</name>
+    </customLabels>
+    <customLabels>
+        <label>[Ŕéçöŕð Îš Üpðåţéð ~~~~ ~~~~ ~~~~]</label>
+        <name>LMR_RecordIsUpdated</name>
+    </customLabels>
+    <customLabels>
+        <label>[Šåvé ~~~~~]</label>
+        <name>LMR_Save</name>
+    </customLabels>
+    <customLabels>
+        <label>[Šéåŕçĥ ~~~~ ~~~~]</label>
+        <name>LMR_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>[šéļéçţ ~~~~ ~~~~]</label>
+        <name>LMR_Select</name>
+    </customLabels>
+    <customLabels>
+        <label>[šéļéçţéð ~~~~ ~~~~ ~~~]</label>
+        <name>LMR_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label>[šöŕţéð bý ~~~~ ~~~~ ~~~~~]</label>
+        <name>LMR_SortedBy</name>
+    </customLabels>
+    <customLabels>
+        <label>[Šţåŕţ Ðåţé ~~~~ ~~~~ ~~~~ ~~]</label>
+        <name>LMR_StartDate</name>
+    </customLabels>
+    <customLabels>
+        <label>[Šüççéšš ~~~~ ~~~~ ~]</label>
+        <name>LMR_SuccessTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>[fîļţéŕ ~~~~ ~~~~]</label>
+        <name>LMR_filter</name>
+    </customLabels>
+    <customLabels>
+        <label>[fîļţéŕš ~~~~ ~~~~ ~]</label>
+        <name>LMR_filters</name>
+    </customLabels>
+</Translations>

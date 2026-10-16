@@ -1,0 +1,29 @@
+XLIFF import: examples/offline-starter-kit/labels.zh-CN.stub.xlf
+  labels:   .targets/offline-app-developer-starter-kit/force-app/main/default/labels/CustomLabels.labels-meta.xml
+  language: zh-CN (Salesforce zh_CN)
+  output:   nothing written (no unit passed)
+  23 units: 0 written, 23 skipped, 0 rejected, 0 held back (0 errors, 0 warnings)
+
+  SKIP    LMR_Cancel: Target state is needs-translation
+  SKIP    LMR_Save: Target state is needs-translation
+  SKIP    LMR_Search: Target state is needs-translation
+  SKIP    LMR_Items: Target state is needs-translation
+  SKIP    LMR_SortedBy: Target state is needs-translation
+  SKIP    LMR_FilterTitle: Target state is needs-translation
+  SKIP    LMR_Of: Target state is needs-translation
+  SKIP    LMR_filter: Target state is needs-translation
+  SKIP    LMR_filters: Target state is needs-translation
+  SKIP    LMR_Apply: Target state is needs-translation
+  SKIP    LMR_ClearAll: Target state is needs-translation
+  SKIP    LMR_SuccessTitle: Target state is needs-translation
+  SKIP    LMR_RecordIsUpdated: Target state is needs-translation
+  SKIP    LMR_ErrorTitle: Target state is needs-translation
+  SKIP    LMR_Selected: Target state is needs-translation
+  SKIP    LMR_Select: Target state is needs-translation
+  SKIP    LMR_DefineDateRangeTitle: Target state is needs-translation
+  SKIP    LMR_StartDate: Target state is needs-translation
+  SKIP    LMR_EndDate: Target state is needs-translation
+  SKIP    LMR_None: Target state is needs-translation
+  SKIP    LMR_Enabled: Target state is needs-translation
+  SKIP    LMR_Disabled: Target state is needs-translation
+  SKIP    FSL_LMR_Test: Target state is needs-translation

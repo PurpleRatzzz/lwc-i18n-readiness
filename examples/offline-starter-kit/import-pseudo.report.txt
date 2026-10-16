@@ -1,0 +1,5 @@
+XLIFF import: examples/offline-starter-kit/labels.zh-CN.pseudo.xlf
+  labels:   .targets/offline-app-developer-starter-kit/force-app/main/default/labels/CustomLabels.labels-meta.xml
+  language: zh-CN (Salesforce zh_CN)
+  output:   examples/offline-starter-kit/import-pseudo/zh_CN.translation-meta.xml
+  23 units: 23 written, 0 skipped, 0 rejected, 0 held back (0 errors, 0 warnings)

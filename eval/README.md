@@ -18,7 +18,14 @@ How well does the scanner find user-visible hardcoded text, and how much of what
    - **scanner-fp**: the scanner was wrong
    - **gold-miss**: the annotator missed it
 
-`score.js` matches findings to gold rows on file plus normalized text, within ±2 lines. It scores three families:
+`score.js` matches each finding to the closest gold row with the same file and normalized text, within ±2 lines. It counts two different things and never mixes them:
+
+- **Units**: problems in the gold set. A fragment group (a sentence split into several rows) is one unit. Recall = units found / units.
+- **Findings**: scanner reports. Precision = correct findings / (correct + wrong). Several findings can hit one unit; for example, R3 reports the paginator's `{totalItemCount} items • page …` both as `interpolated` and as `plural`. Each of those findings is correct, and the unit is counted once as found.
+
+Adjudication changes both counts consistently. A `gold-error` unit leaves the gold set; a `gold-miss` finding becomes correct and adds a unit. Each per-repo report lists every decision it applied.
+
+It scores three families:
 
 - **Strings**: R1, R2 and R4.
 - **Fragmented sentences and plurals**: R3, plus R4 findings marked `concatenated`.
@@ -55,11 +62,13 @@ Every step is a commit, so the numbers can be traced.
 | **Strings, total** | **125/125 (100%)** | **125/133 (94.0%)** |
 | **Fragments, total** | **14/14 (100%)** | **12/15 (80.0%)** |
 
-Misses:
+Misses (9 source locations; 2 of them are counted in both families):
 
 - Text passed to native mobile features (dreamhouse `barcodeScanner.js:28,29`, `listContactsFromDevice.js:21`). These options weren't in R4's list of UI sinks.
 - Separators with no letters (ebikes `orderStatusPath.js:197`, `orderBuilder.js:134,174,204`; dreamhouse `propertyMap.js:34`). R4 required letters.
 - A sentence whose second half is nested inside `<b>` after a number (dreamhouse `propertyLocation.html:23`). R3 only compared sibling text nodes.
+
+One gold unit was removed in adjudication: ebikes G022, `Total Items: {orderQuantity}`. A single `Label: {value}` pair is not a fragmented sentence under the R3 definition fixed before evaluation, and the label is still counted as a hardcoded string.
 
 Per-repo tables: [results/dreamhouse.md](results/dreamhouse.md), [results/ebikes.md](results/ebikes.md).
 

@@ -7,112 +7,153 @@
   },
   "summaries": {
     "strings": {
-      "goldUnits": 70,
-      "maybeUnits": 4,
-      "findings": 70,
-      "matched": 66,
-      "matchedMaybe": 4,
-      "unmatched": 0,
-      "missed": 4,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 66,
-          "denominator": 66
-        },
-        "recall": {
-          "value": 0.9428571428571428,
-          "numerator": 66,
-          "denominator": 70
-        }
+      "units": {
+        "total": 70,
+        "found": 66,
+        "missed": 4
       },
-      "adjudicated": {
-        "tp": 66,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 66,
-          "denominator": 66
+      "findings": {
+        "total": 70,
+        "correct": 66,
+        "wrong": 0,
+        "notScored": 4
+      },
+      "maybeUnits": 4,
+      "precision": {
+        "value": 1,
+        "numerator": 66,
+        "denominator": 66
+      },
+      "recall": {
+        "value": 0.9428571428571428,
+        "numerator": 66,
+        "denominator": 70
+      },
+      "decisions": [
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+          "line": "197",
+          "text": ": ${reduceErrors(cause).join(', ')}",
+          "gold_ids": "G044",
+          "decision": "scanner-fn",
+          "note": "Human review round 2: counted. Separator and list join glued to a UI message; R4 skips literals without letters."
         },
-        "recall": {
-          "value": 0.9428571428571428,
-          "numerator": 66,
-          "denominator": 70
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+          "line": "134",
+          "text": ",",
+          "gold_ids": "G077",
+          "decision": "scanner-fn",
+          "note": "Human review round 2: hardcoded list separator in a toast message; R4 skips literals without letters."
+        },
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+          "line": "174",
+          "text": ",",
+          "gold_ids": "G078",
+          "decision": "scanner-fn",
+          "note": "Same as G077."
+        },
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+          "line": "204",
+          "text": ",",
+          "gold_ids": "G079",
+          "decision": "scanner-fn",
+          "note": "Same as G077."
         }
-      }
+      ]
     },
     "fragments": {
-      "goldUnits": 5,
-      "maybeUnits": 0,
-      "findings": 4,
-      "matched": 4,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 2,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        },
-        "recall": {
-          "value": 0.6,
-          "numerator": 3,
-          "denominator": 5
-        }
+      "units": {
+        "total": 4,
+        "found": 3,
+        "missed": 1
       },
-      "adjudicated": {
-        "tp": 4,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
+      "findings": {
+        "total": 4,
+        "correct": 4,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 4,
+        "denominator": 4
+      },
+      "recall": {
+        "value": 0.75,
+        "numerator": 3,
+        "denominator": 4
+      },
+      "decisions": [
+        {
+          "family": "fragments",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.html",
+          "line": "14",
+          "text": "Total Items: {orderQuantity}",
+          "gold_ids": "G022",
+          "decision": "gold-error",
+          "note": "Human review: a single 'Label: {value}' pair is not a fragmented sentence (R3 definition fixed before evaluation); the label is still counted as hardcoded text."
         },
-        "recall": {
-          "value": 0.75,
-          "numerator": 3,
-          "denominator": 4
+        {
+          "family": "fragments",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+          "line": "197",
+          "text": ": ${reduceErrors(cause).join(', ')}",
+          "gold_ids": "G044",
+          "decision": "scanner-fn",
+          "note": "Human review round 2: counted. Separator and list join glued to a UI message; R4 skips literals without letters."
         }
-      }
+      ]
     },
     "locale": {
-      "goldUnits": 4,
-      "maybeUnits": 0,
-      "findings": 4,
-      "matched": 4,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 0,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        }
+      "units": {
+        "total": 4,
+        "found": 4,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 4,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        }
-      }
+      "findings": {
+        "total": 4,
+        "correct": 4,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 4,
+        "denominator": 4
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 4,
+        "denominator": 4
+      },
+      "decisions": []
     }
   }
 }

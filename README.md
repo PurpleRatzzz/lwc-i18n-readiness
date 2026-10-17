@@ -50,9 +50,11 @@ The method, in short (details in [eval/README.md](eval/README.md)):
 | **Hardcoded strings, both repos** | **100% (125/125)** | **94.0% (125/133)** |
 | **Fragmented sentences and plurals, both repos** | **100% (14/14)** | **80.0% (12/15)** |
 
+Precision counts scanner findings; recall counts problems in the gold set. One problem can be hit by two findings (R3 reports `{n} items • page {p} of {t}` as both interpolated and plural), so the two counts can differ. Per-repo tables, with every human decision listed: [eval/results](eval/results).
+
 Hardcoded currency codes (5 in total, all found) are reported to developers but not scored. The currency code has to follow where the amount comes from, so swapping it is not a translation fix.
 
-The 9 misses fall into three kinds:
+The misses are at 9 source locations: 8 string units and 3 fragment units, 2 of which are the same location counted in both families. They fall into three kinds:
 
 - text passed to native mobile features (barcode scanner instructions, a permission rationale);
 - separators with no letters glued into messages or titles (`': ' + details`, `errors.join(', ')`, `` `${Address}, ${City}` ``);

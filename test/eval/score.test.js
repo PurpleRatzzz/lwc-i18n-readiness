@@ -42,10 +42,13 @@ test('strings family: match within line tolerance, unmatched and missed', () => 
     assert.deepEqual(r.missed.map((u) => u[0].id), ['G2']);
 
     const s = summarize(r, disagreements('strings', r));
-    assert.equal(s.raw.precision.value, 1 / 2);
-    assert.equal(s.raw.recall.value, 1 / 2);
+    // Undecided: raw counts, every disagreement against the scanner.
+    assert.equal(s.adjudicated, false);
     assert.equal(s.pending, 2);
-    assert.equal(s.adjudicated, null);
+    assert.deepEqual(s.units, { total: 2, found: 1, missed: 1 });
+    assert.deepEqual(s.findings, { total: 3, correct: 1, wrong: 1, notScored: 1 });
+    assert.equal(s.precision.value, 1 / 2);
+    assert.equal(s.recall.value, 1 / 2);
 });
 
 test('adjudication: gold-miss counts for the scanner, gold-error leaves the denominator', () => {
@@ -56,8 +59,20 @@ test('adjudication: gold-miss counts for the scanner, gold-error leaves the deno
         decision: d.kind === 'unmatched-finding' ? 'gold-miss' : 'gold-error'
     }));
     const s = summarize(r, decided);
-    assert.equal(s.adjudicated.precision.value, 1); // 2 of 2 findings are real problems
-    assert.equal(s.adjudicated.recall.value, 1); // (1 detected + 1 gold-miss) / (2 - 1 gold-error + 1)
+    // The columns agree with the ratios: G2 left the gold set, Max Price joined it.
+    assert.equal(s.adjudicated, true);
+    assert.deepEqual(s.units, { total: 2, found: 2, missed: 0 });
+    assert.deepEqual(s.findings, { total: 2, correct: 2, wrong: 0, notScored: 0 });
+    assert.equal(s.precision.value, 1);
+    assert.equal(s.recall.value, 1);
+});
+
+test('one gold unit hit by two findings: both findings are correct, the unit is found once', () => {
+    const rows = [gold('G1', 15, '{n} items • page {p} of {t}', { fragment_group: 'F1', plural: 'yes' })];
+    const twice = [finding('R3', 15, '{n} items • page {p} of {t}'), finding('R3', 15, '{n} items • page {p} of {t}')];
+    const s = summarize(matchFamily(FAMILIES.fragments, twice, rows), []);
+    assert.deepEqual(s.units, { total: 1, found: 1, missed: 0 });
+    assert.equal(s.findings.correct, 2);
 });
 
 test('fragments family: a group counts once, any matching piece detects it', () => {
@@ -92,4 +107,10 @@ test('rows a reviewer set to user_visible=no are not gold units', () => {
     const r = matchFamily(FAMILIES.strings, [finding('R1', 9, 'Reset')], rows);
     assert.equal(r.units.length, 1);
     assert.equal(r.missed.length, 0);
+});
+
+test('the same text twice in one file keeps two separate decisions', () => {
+    const rows = [gold('G1', 134, ', '), gold('G2', 174, ', ')];
+    const d = disagreements('strings', matchFamily(FAMILIES.strings, [], rows));
+    assert.equal(new Set(d.map((x) => `${x.line} ${x.gold_ids}`)).size, 2);
 });

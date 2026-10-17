@@ -7,112 +7,153 @@
   },
   "summaries": {
     "strings": {
-      "goldUnits": 63,
-      "maybeUnits": 6,
-      "findings": 65,
-      "matched": 59,
-      "matchedMaybe": 6,
-      "unmatched": 0,
-      "missed": 4,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 59,
-          "denominator": 59
-        },
-        "recall": {
-          "value": 0.9365079365079365,
-          "numerator": 59,
-          "denominator": 63
-        }
+      "units": {
+        "total": 63,
+        "found": 59,
+        "missed": 4
       },
-      "adjudicated": {
-        "tp": 59,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 59,
-          "denominator": 59
+      "findings": {
+        "total": 65,
+        "correct": 59,
+        "wrong": 0,
+        "notScored": 6
+      },
+      "maybeUnits": 6,
+      "precision": {
+        "value": 1,
+        "numerator": 59,
+        "denominator": 59
+      },
+      "recall": {
+        "value": 0.9365079365079365,
+        "numerator": 59,
+        "denominator": 63
+      },
+      "decisions": [
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/barcodeScanner/barcodeScanner.js",
+          "line": "28",
+          "text": "Scan a QR Code",
+          "gold_ids": "G008",
+          "decision": "scanner-fn",
+          "note": "Human review: true miss. Mobile BarcodeScanner instructionText is shown to the same user in the scanner UI; R4 has no sink for lightning/mobileCapabilities options."
         },
-        "recall": {
-          "value": 0.9365079365079365,
-          "numerator": 59,
-          "denominator": 63
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/barcodeScanner/barcodeScanner.js",
+          "line": "29",
+          "text": "Scanning complete.",
+          "gold_ids": "G009",
+          "decision": "scanner-fn",
+          "note": "Human review: true miss, same as G008 (successText)."
+        },
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/listContactsFromDevice/listContactsFromDevice.js",
+          "line": "21",
+          "text": "Allow access to your contacts to enable contacts processing.",
+          "gold_ids": "G030",
+          "decision": "scanner-fn",
+          "note": "Human review: true miss, same as G008 (ContactsService permissionRationaleText)."
+        },
+        {
+          "family": "strings",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/propertyMap/propertyMap.js",
+          "line": "34",
+          "text": "${property.Address__c.value}, ${property.City__c.value}",
+          "gold_ids": "G071",
+          "decision": "scanner-fn",
+          "note": "Human review round 3: separator glued between values in a displayed title; v1 R4 required letters."
         }
-      }
+      ]
     },
     "fragments": {
-      "goldUnits": 11,
-      "maybeUnits": 0,
-      "findings": 10,
-      "matched": 10,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 2,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 10,
-          "denominator": 10
-        },
-        "recall": {
-          "value": 0.8181818181818182,
-          "numerator": 9,
-          "denominator": 11
-        }
+      "units": {
+        "total": 11,
+        "found": 9,
+        "missed": 2
       },
-      "adjudicated": {
-        "tp": 10,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 10,
-          "denominator": 10
+      "findings": {
+        "total": 10,
+        "correct": 10,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 10,
+        "denominator": 10
+      },
+      "recall": {
+        "value": 0.8181818181818182,
+        "numerator": 9,
+        "denominator": 11
+      },
+      "decisions": [
+        {
+          "family": "fragments",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/propertyLocation/propertyLocation.html",
+          "line": "23",
+          "text": "Distance to property: | miles",
+          "gold_ids": "G051 G052",
+          "decision": "scanner-fn",
+          "note": "Human review: true miss. Second half of the sentence is nested inside <b>; R3 only compares sibling text nodes."
         },
-        "recall": {
-          "value": 0.8181818181818182,
-          "numerator": 9,
-          "denominator": 11
+        {
+          "family": "fragments",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/propertyMap/propertyMap.js",
+          "line": "34",
+          "text": "${property.Address__c.value}, ${property.City__c.value}",
+          "gold_ids": "G071",
+          "decision": "scanner-fn",
+          "note": "Human review round 3: separator glued between values in a displayed title; v1 R4 required letters."
         }
-      }
+      ]
     },
     "locale": {
-      "goldUnits": 1,
-      "maybeUnits": 0,
-      "findings": 1,
-      "matched": 1,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 0,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        }
+      "units": {
+        "total": 1,
+        "found": 1,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 1,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        }
-      }
+      "findings": {
+        "total": 1,
+        "correct": 1,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 1,
+        "denominator": 1
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 1,
+        "denominator": 1
+      },
+      "decisions": []
     }
   }
 }

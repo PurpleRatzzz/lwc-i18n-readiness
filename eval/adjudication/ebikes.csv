@@ -1,6 +1,6 @@
 family,kind,rule,file,line,text,gold_ids,decision,note
 strings,missed-gold,,force-app/main/default/lwc/orderStatusPath/orderStatusPath.js,197,": ${reduceErrors(cause).join(', ')}",G044,scanner-fn,Human review round 2: counted. Separator and list join glued to a UI message; R4 skips literals without letters.
-strings,missed-gold,,force-app/main/default/lwc/orderBuilder/orderBuilder.js,134,",",G077,scanner-fn,Same as G077.
+strings,missed-gold,,force-app/main/default/lwc/orderBuilder/orderBuilder.js,134,",",G077,scanner-fn,Human review round 2: hardcoded list separator in a toast message; R4 skips literals without letters.
 strings,missed-gold,,force-app/main/default/lwc/orderBuilder/orderBuilder.js,174,",",G078,scanner-fn,Same as G077.
 strings,missed-gold,,force-app/main/default/lwc/orderBuilder/orderBuilder.js,204,",",G079,scanner-fn,Same as G077.
 fragments,missed-gold,,force-app/main/default/lwc/orderBuilder/orderBuilder.html,14,Total Items: {orderQuantity},G022,gold-error,Human review: a single 'Label: {value}' pair is not a fragmented sentence (R3 definition fixed before evaluation); the label is still counted as hardcoded text.

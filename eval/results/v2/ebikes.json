@@ -7,112 +7,97 @@
   },
   "summaries": {
     "strings": {
-      "goldUnits": 70,
-      "maybeUnits": 4,
-      "findings": 74,
-      "matched": 70,
-      "matchedMaybe": 4,
-      "unmatched": 0,
-      "missed": 0,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 70,
-          "denominator": 70
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 70,
-          "denominator": 70
-        }
+      "units": {
+        "total": 70,
+        "found": 70,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 70,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 70,
-          "denominator": 70
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 70,
-          "denominator": 70
-        }
-      }
+      "findings": {
+        "total": 74,
+        "correct": 70,
+        "wrong": 0,
+        "notScored": 4
+      },
+      "maybeUnits": 4,
+      "precision": {
+        "value": 1,
+        "numerator": 70,
+        "denominator": 70
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 70,
+        "denominator": 70
+      },
+      "decisions": []
     },
     "fragments": {
-      "goldUnits": 5,
-      "maybeUnits": 0,
-      "findings": 5,
-      "matched": 5,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 1,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 5,
-          "denominator": 5
-        },
-        "recall": {
-          "value": 0.8,
-          "numerator": 4,
-          "denominator": 5
-        }
+      "units": {
+        "total": 4,
+        "found": 4,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 5,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 5,
-          "denominator": 5
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
+      "findings": {
+        "total": 5,
+        "correct": 5,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 5,
+        "denominator": 5
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 4,
+        "denominator": 4
+      },
+      "decisions": [
+        {
+          "family": "fragments",
+          "kind": "missed-gold",
+          "rule": "",
+          "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.html",
+          "line": "14",
+          "text": "Total Items: {orderQuantity}",
+          "gold_ids": "G022",
+          "decision": "gold-error",
+          "note": "Human review: a single 'Label: {value}' pair is not a fragmented sentence (R3 definition fixed before evaluation); the label is still counted as hardcoded text."
         }
-      }
+      ]
     },
     "locale": {
-      "goldUnits": 4,
-      "maybeUnits": 0,
-      "findings": 4,
-      "matched": 4,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 0,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        }
+      "units": {
+        "total": 4,
+        "found": 4,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 4,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 4,
-          "denominator": 4
-        }
-      }
+      "findings": {
+        "total": 4,
+        "correct": 4,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 4,
+        "denominator": 4
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 4,
+        "denominator": 4
+      },
+      "decisions": []
     }
   }
 }

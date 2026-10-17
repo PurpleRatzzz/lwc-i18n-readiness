@@ -7,112 +7,85 @@
   },
   "summaries": {
     "strings": {
-      "goldUnits": 63,
-      "maybeUnits": 6,
-      "findings": 69,
-      "matched": 63,
-      "matchedMaybe": 6,
-      "unmatched": 0,
-      "missed": 0,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 63,
-          "denominator": 63
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 63,
-          "denominator": 63
-        }
+      "units": {
+        "total": 63,
+        "found": 63,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 63,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 63,
-          "denominator": 63
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 63,
-          "denominator": 63
-        }
-      }
+      "findings": {
+        "total": 69,
+        "correct": 63,
+        "wrong": 0,
+        "notScored": 6
+      },
+      "maybeUnits": 6,
+      "precision": {
+        "value": 1,
+        "numerator": 63,
+        "denominator": 63
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 63,
+        "denominator": 63
+      },
+      "decisions": []
     },
     "fragments": {
-      "goldUnits": 11,
-      "maybeUnits": 0,
-      "findings": 12,
-      "matched": 12,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 0,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 12,
-          "denominator": 12
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 11,
-          "denominator": 11
-        }
+      "units": {
+        "total": 11,
+        "found": 11,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 12,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 12,
-          "denominator": 12
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 11,
-          "denominator": 11
-        }
-      }
+      "findings": {
+        "total": 12,
+        "correct": 12,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 12,
+        "denominator": 12
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 11,
+        "denominator": 11
+      },
+      "decisions": []
     },
     "locale": {
-      "goldUnits": 1,
-      "maybeUnits": 0,
-      "findings": 1,
-      "matched": 1,
-      "matchedMaybe": 0,
-      "unmatched": 0,
-      "missed": 0,
+      "adjudicated": true,
       "pending": 0,
-      "raw": {
-        "precision": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        }
+      "units": {
+        "total": 1,
+        "found": 1,
+        "missed": 0
       },
-      "adjudicated": {
-        "tp": 1,
-        "fp": 0,
-        "precision": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        },
-        "recall": {
-          "value": 1,
-          "numerator": 1,
-          "denominator": 1
-        }
-      }
+      "findings": {
+        "total": 1,
+        "correct": 1,
+        "wrong": 0,
+        "notScored": 0
+      },
+      "maybeUnits": 0,
+      "precision": {
+        "value": 1,
+        "numerator": 1,
+        "denominator": 1
+      },
+      "recall": {
+        "value": 1,
+        "numerator": 1,
+        "denominator": 1
+      },
+      "decisions": []
     }
   }
 }

@@ -67,7 +67,9 @@ const decodeEntities = (text) => String(text).replace(/&(nbsp|amp|lt|gt|quot|#39
 const keyOf = (file, text) => `${file}\u0000${normalizeText(decodeEntities(text))}`;
 const isMaybeUnit = (unit) => unit.every((r) => r.user_visible === 'maybe');
 const unitText = (unit) => unit.map((r) => normalizeText(r.text)).join(' | ');
-const disagreementKey = (d) => [d.family, d.kind, d.file, d.text].join('\u0000');
+// Line and gold ids are part of the key: the same text can occur several times in one file
+// (three toasts with .join(', ') in orderBuilder.js), and each occurrence has its own decision.
+const disagreementKey = (d) => [d.family, d.kind, d.file, String(d.line), d.gold_ids ?? '', d.text].join('\u0000');
 
 export function loadFindings(path) {
     const data = JSON.parse(readFileSync(path, 'utf8'));
@@ -146,43 +148,43 @@ export function disagreements(familyName, result) {
     ];
 }
 
-/** Apply human decisions. Returns raw and (when complete) adjudicated precision/recall. */
+/**
+ * Apply human decisions and count two different things, never mixed in one number:
+ * - units: problems in the gold set. Recall = found / total.
+ * - findings: what the scanner reported. Precision = correct / (correct + wrong).
+ * One unit can be hit by several findings (R3 'interpolated' and 'plural' on the same text
+ * node), so `correct` can be larger than `found`.
+ * Until every disagreement is decided, the counts are raw: every disagreement counts against
+ * the scanner. After that they are adjudicated:
+ *   gold-error  the unit leaves the gold set          gold-miss   the finding is correct, and adds a unit
+ *   scanner-fn  the unit stays missed                 scanner-fp  the finding is wrong
+ */
 export function summarize(result, rows) {
-    const decided = (kind, decision) => rows.filter((d) => d.kind === kind && d.decision === decision).length;
+    const count = (kind, decision) => rows.filter((d) => d.kind === kind && d.decision === decision).length;
     const pending = rows.filter((d) => !d.decision).length;
-    const tp = result.matched.length;
-    const unmatched = result.unmatched.length;
+    const adjudicated = pending === 0;
+    const goldMiss = adjudicated ? count('unmatched-finding', 'gold-miss') : 0;
+    const goldError = adjudicated ? count('missed-gold', 'gold-error') : 0;
 
-    const raw = {
-        precision: ratio(tp, tp + unmatched),
-        recall: ratio(result.detectedUnits.length, result.yesUnits.length)
-    };
-
-    const goldMiss = decided('unmatched-finding', 'gold-miss');
-    const scannerFp = decided('unmatched-finding', 'scanner-fp');
-    const goldError = decided('missed-gold', 'gold-error');
-    const adjusted = {
-        tp: tp + goldMiss,
-        fp: scannerFp,
-        precision: ratio(tp + goldMiss, tp + goldMiss + scannerFp),
-        // Each finding the annotator missed is a real problem the scanner did find.
-        recall: ratio(
-            result.detectedUnits.length + goldMiss,
-            result.yesUnits.length - goldError + goldMiss
-        )
-    };
+    const unitsTotal = result.yesUnits.length - goldError + goldMiss;
+    const unitsFound = result.detectedUnits.length + goldMiss;
+    const correct = result.matched.length + goldMiss;
+    const wrong = adjudicated ? count('unmatched-finding', 'scanner-fp') : result.unmatched.length;
 
     return {
-        goldUnits: result.yesUnits.length,
-        maybeUnits: result.maybeUnits.length,
-        findings: tp + result.matchedMaybe.length + unmatched,
-        matched: tp,
-        matchedMaybe: result.matchedMaybe.length,
-        unmatched,
-        missed: result.missed.length,
+        adjudicated,
         pending,
-        raw,
-        adjudicated: pending === 0 ? adjusted : null
+        units: { total: unitsTotal, found: unitsFound, missed: unitsTotal - unitsFound },
+        findings: {
+            total: result.matched.length + result.matchedMaybe.length + result.unmatched.length,
+            correct,
+            wrong,
+            notScored: result.matchedMaybe.length // findings on rows the annotator marked 'maybe'
+        },
+        maybeUnits: result.maybeUnits.length,
+        precision: ratio(correct, correct + wrong),
+        recall: ratio(unitsFound, unitsTotal),
+        decisions: rows.filter((d) => d.decision)
     };
 }
 
@@ -193,28 +195,47 @@ function ratio(a, b) {
 const pct = (r) => (r ? `${(r.value * 100).toFixed(1)}% (${r.numerator}/${r.denominator})` : 'n/a');
 
 export function renderMarkdown(repo, summaries) {
+    const all = Object.values(summaries);
+    const pending = all.reduce((sum, s) => sum + s.pending, 0);
     const lines = [`# Scanner evaluation: ${repo}`, ''];
-    lines.push('| Family | Gold units | Maybe units | Findings | Matched | Matched maybe | Unmatched | Missed | Pending | Precision | Recall |');
-    lines.push('|---|---|---|---|---|---|---|---|---|---|---|');
+    lines.push(
+        pending === 0
+            ? 'All disagreements between scanner and gold set are decided; every number below is adjudicated.'
+            : `**Raw numbers**: ${pending} disagreement(s) still undecided, each counted against the scanner.`,
+        ''
+    );
+    lines.push('| Family | Gold units | Found | Missed | Findings | Correct | Wrong | Not scored | Precision | Recall |');
+    lines.push('|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|');
     for (const [name, s] of Object.entries(summaries)) {
         if (FAMILIES[name].scored === false) continue;
-        const final = s.adjudicated ?? s.raw;
-        const tag = s.adjudicated ? '' : ' (raw)';
         lines.push(
-            `| ${FAMILIES[name].label} | ${s.goldUnits} | ${s.maybeUnits} | ${s.findings} | ${s.matched} | ${s.matchedMaybe} | ${s.unmatched} | ${s.missed} | ${s.pending} | ${pct(final.precision)}${tag} | ${pct(final.recall)}${tag} |`
+            `| ${FAMILIES[name].label} | ${s.units.total} | ${s.units.found} | ${s.units.missed} | ${s.findings.total} | ${s.findings.correct} | ${s.findings.wrong} | ${s.findings.notScored} | ${pct(s.precision)} | ${pct(s.recall)} |`
         );
     }
-    const unscored = Object.entries(summaries).filter(([name]) => FAMILIES[name].scored === false);
-    if (unscored.length > 0) {
-        lines.push('', 'Reported, not scored:', '');
-        for (const [name, s] of unscored) {
-            lines.push(`- ${FAMILIES[name].label}: ${s.goldUnits} in the gold set, ${s.matched} found, ${s.missed} missed, ${s.unmatched} not in the gold set.`);
+    lines.push(
+        '',
+        '- **Gold units, Found, Missed** count problems in the gold set. Recall = Found / Gold units.',
+        '- **Findings, Correct, Wrong** count scanner reports. Precision = Correct / (Correct + Wrong). One problem can be hit by more than one finding (R3 `interpolated` and `plural` on the same text node), so Correct can be larger than Found.',
+        '- **Not scored**: findings on rows the annotator marked `maybe`.'
+    );
+
+    const decisions = Object.entries(summaries).flatMap(([name, s]) => s.decisions.map((d) => ({ ...d, family: name })));
+    if (decisions.length > 0) {
+        lines.push('', '## Human decisions applied', '');
+        for (const d of decisions) {
+            const where = `${d.file.split('/').pop()}:${d.line}`;
+            const ids = d.gold_ids ? ` ${d.gold_ids}` : '';
+            lines.push(`- ${d.family} · ${d.kind}${ids} · \`${where}\` "${d.text}" → **${d.decision}**. ${d.note}`);
         }
     }
-    lines.push('');
-    lines.push(
-        '"Raw" numbers count every disagreement against the scanner. Adjudicated numbers apply the human decisions in the adjudication file.'
-    );
+
+    const unscored = Object.entries(summaries).filter(([name]) => FAMILIES[name].scored === false);
+    if (unscored.length > 0) {
+        lines.push('', '## Reported, not scored', '');
+        for (const [name, s] of unscored) {
+            lines.push(`- ${FAMILIES[name].label}: ${s.units.total} in the gold set, ${s.units.found} found, ${s.units.missed} missed, ${s.findings.wrong} not in the gold set.`);
+        }
+    }
     return lines.join('\n') + '\n';
 }
 

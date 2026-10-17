@@ -22,7 +22,6 @@ src/
 test/                    node:test files, mirroring src/; fixtures in test/fixtures/
 eval/                    gold set and scoring for precision/recall
 docs/                    this file, the engineer checklist
-upstream/                drafts of issues/PRs for upstream repos (posted only after review)
 ```
 
 ## Finding (src/finding.js)

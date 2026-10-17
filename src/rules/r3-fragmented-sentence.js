@@ -48,7 +48,10 @@ const rule = {
                 }
             }
             // Split sentences are a property of a parent's children, so look at them from the parent.
-            if (isElement(node) || node.nodeName === '#document-fragment') {
+            // An inline element inside another element is part of its parent's sentence, which was
+            // already checked from the parent; checking it again would report the same sentence twice.
+            const insideSentence = isElement(node) && isInline(node, ctx.config) && parent && isElement(parent);
+            if ((isElement(node) || node.nodeName === '#document-fragment') && !insideSentence) {
                 for (const run of sentencesSplitByMarkup(node, ctx.config)) {
                     const start = shorten(run[0].value, 40);
                     report(run[0], node, 'split-by-markup',
@@ -63,26 +66,37 @@ const rule = {
 };
 
 /**
- * Groups of 2+ sibling text nodes (with letters) that are separated only by inline
- * elements such as <br>, <b> or <a>: in "days on <br />the market" the translator would get
- * "days on" and "the market" as two unrelated strings. Anything else between them (a <div>,
- * a <lightning-*>, a <template>, a comment) ends the sentence. Text without letters
- * ("{price}", " - ") neither starts nor ends one.
+ * Groups of 2+ text nodes (with letters) that belong to one sentence but sit in different nodes:
+ * in "days on <br />the market" the translator would get "days on" and "the market" as two
+ * unrelated strings. The text is collected in reading order, looking inside inline elements
+ * (<b>, <strong>, <a>...), so "Distance to property: <b>{n} miles</b>" counts too. A value element
+ * such as <lightning-formatted-number> sits inside the sentence like a {binding}. Anything else
+ * (a <div>, another <lightning-*>, a <template>, a comment) ends the sentence. Text without
+ * letters ("{price}", " - ") neither starts nor ends one.
  */
 function sentencesSplitByMarkup(parent, config) {
     const runs = [];
     let current = [];
-    for (const child of childrenOf(parent)) {
-        if (isText(child)) {
-            if (isTranslatableText(child, parent, config)) current.push(child);
-        } else if (!(isElement(child) && config.template.inlineElements.includes(child.tagName))) {
-            runs.push(current);
-            current = [];
+    const collect = (node) => {
+        for (const child of childrenOf(node)) {
+            if (isText(child)) {
+                if (isTranslatableText(child, node, config)) current.push(child);
+            } else if (isElement(child) && isInline(child, config)) {
+                collect(child);
+            } else if (!(isElement(child) && isValueElement(child, config))) {
+                runs.push(current);
+                current = [];
+            }
         }
-    }
+    };
+    collect(parent);
     runs.push(current);
     return runs.filter((run) => run.length >= 2);
 }
+
+const isInline = (element, config) => config.template.inlineElements.includes(element.tagName);
+const isValueElement = (element, config) =>
+    config.template.valueElementPrefixes.some((prefix) => element.tagName.startsWith(prefix));
 
 /**
  * "Name: {contact.Name}" is a label followed by its value, not a sentence: the label can become

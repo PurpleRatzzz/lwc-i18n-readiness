@@ -15,10 +15,16 @@ test('R3 interpolated: words mixed with {bindings} in one text node', () => {
 });
 
 test('R3 split-by-markup: one sentence cut by inline elements, reported once on the first piece', () => {
-    assert.deepEqual(bySubrule('split-by-markup'), ['11:29 days on', '13:8 Click']);
+    assert.deepEqual(bySubrule('split-by-markup'), ['11:29 days on', '13:8 Click', '25:9 Distance to property:']);
+    // Text inside inline elements is part of the sentence: Click | here | to read the guide, or | skip | it.
     const click = findings.find((f) => f.text === 'Click');
-    assert.equal(click.context.pieces, 3);
+    assert.equal(click.context.pieces, 5);
     assert.equal(click.context.element, 'p');
+    // The second half sits inside <b>, after a value component: still one sentence, reported once.
+    const distance = findings.filter((f) => f.text === 'Distance to property:');
+    assert.deepEqual(distance.map((f) => f.context.pieces), [2]);
+    // "Order Total: <lightning-formatted-number>" is a label and a value: one piece, nothing split.
+    assert.ok(!findings.some((f) => f.text === 'Order Total:'));
 });
 
 test('R3 plural: a number or binding followed by a plural noun, also next to interpolated', () => {

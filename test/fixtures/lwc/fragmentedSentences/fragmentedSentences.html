@@ -21,4 +21,11 @@
     </div>
     <p>{status}</p>
     <p>Owner: {record.Owner.Name}</p>
+    <div class="distance">
+        Distance to property:&nbsp;<b>
+            <lightning-formatted-number value={distance}></lightning-formatted-number>
+            miles
+        </b>
+    </div>
+    <div>Order Total: <lightning-formatted-number value={total}></lightning-formatted-number></div>
 </template>

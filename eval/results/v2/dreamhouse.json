@@ -7,50 +7,76 @@
   },
   "summaries": {
     "strings": {
-      "goldUnits": 62,
+      "goldUnits": 63,
       "maybeUnits": 6,
       "findings": 69,
-      "matched": 62,
+      "matched": 63,
       "matchedMaybe": 6,
-      "unmatched": 1,
+      "unmatched": 0,
       "missed": 0,
-      "pending": 1,
+      "pending": 0,
       "raw": {
         "precision": {
-          "value": 0.9841269841269841,
-          "numerator": 62,
+          "value": 1,
+          "numerator": 63,
           "denominator": 63
         },
         "recall": {
           "value": 1,
-          "numerator": 62,
-          "denominator": 62
+          "numerator": 63,
+          "denominator": 63
         }
       },
-      "adjudicated": null
+      "adjudicated": {
+        "tp": 63,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 63,
+          "denominator": 63
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 63,
+          "denominator": 63
+        }
+      }
     },
     "fragments": {
-      "goldUnits": 10,
+      "goldUnits": 11,
       "maybeUnits": 0,
       "findings": 12,
-      "matched": 11,
+      "matched": 12,
       "matchedMaybe": 0,
-      "unmatched": 1,
+      "unmatched": 0,
       "missed": 0,
-      "pending": 1,
+      "pending": 0,
       "raw": {
         "precision": {
-          "value": 0.9166666666666666,
-          "numerator": 11,
+          "value": 1,
+          "numerator": 12,
           "denominator": 12
         },
         "recall": {
           "value": 1,
-          "numerator": 10,
-          "denominator": 10
+          "numerator": 11,
+          "denominator": 11
         }
       },
-      "adjudicated": null
+      "adjudicated": {
+        "tp": 12,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 12,
+          "denominator": 12
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 11,
+          "denominator": 11
+        }
+      }
     },
     "locale": {
       "goldUnits": 1,

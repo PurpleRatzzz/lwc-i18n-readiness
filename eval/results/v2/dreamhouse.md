@@ -2,8 +2,8 @@
 
 | Family | Gold units | Maybe units | Findings | Matched | Matched maybe | Unmatched | Missed | Pending | Precision | Recall |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Hardcoded user-facing strings (R1, R2, R4) | 62 | 6 | 69 | 62 | 6 | 1 | 0 | 1 | 98.4% (62/63) (raw) | 100.0% (62/62) (raw) |
-| Fragmented sentences and plurals (R3, R4 concatenated) | 10 | 0 | 12 | 11 | 0 | 1 | 0 | 1 | 91.7% (11/12) (raw) | 100.0% (10/10) (raw) |
+| Hardcoded user-facing strings (R1, R2, R4) | 63 | 6 | 69 | 63 | 6 | 0 | 0 | 0 | 100.0% (63/63) | 100.0% (63/63) |
+| Fragmented sentences and plurals (R3, R4 concatenated) | 11 | 0 | 12 | 12 | 0 | 0 | 0 | 0 | 100.0% (12/12) | 100.0% (11/11) |
 
 Reported, not scored:
 

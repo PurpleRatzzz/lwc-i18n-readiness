@@ -7,13 +7,13 @@
   },
   "summaries": {
     "strings": {
-      "goldUnits": 62,
+      "goldUnits": 63,
       "maybeUnits": 6,
       "findings": 65,
       "matched": 59,
       "matchedMaybe": 6,
       "unmatched": 0,
-      "missed": 3,
+      "missed": 4,
       "pending": 0,
       "raw": {
         "precision": {
@@ -22,9 +22,9 @@
           "denominator": 59
         },
         "recall": {
-          "value": 0.9516129032258065,
+          "value": 0.9365079365079365,
           "numerator": 59,
-          "denominator": 62
+          "denominator": 63
         }
       },
       "adjudicated": {
@@ -36,20 +36,20 @@
           "denominator": 59
         },
         "recall": {
-          "value": 0.9516129032258065,
+          "value": 0.9365079365079365,
           "numerator": 59,
-          "denominator": 62
+          "denominator": 63
         }
       }
     },
     "fragments": {
-      "goldUnits": 10,
+      "goldUnits": 11,
       "maybeUnits": 0,
       "findings": 10,
       "matched": 10,
       "matchedMaybe": 0,
       "unmatched": 0,
-      "missed": 1,
+      "missed": 2,
       "pending": 0,
       "raw": {
         "precision": {
@@ -58,9 +58,9 @@
           "denominator": 10
         },
         "recall": {
-          "value": 0.9,
+          "value": 0.8181818181818182,
           "numerator": 9,
-          "denominator": 10
+          "denominator": 11
         }
       },
       "adjudicated": {
@@ -72,9 +72,9 @@
           "denominator": 10
         },
         "recall": {
-          "value": 0.9,
+          "value": 0.8181818181818182,
           "numerator": 9,
-          "denominator": 10
+          "denominator": 11
         }
       }
     },

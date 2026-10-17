@@ -69,3 +69,4 @@ G067,force-app/main/default/lwc/sampleDataImporter/sampleDataImporter.html,13,Im
 G068,force-app/main/default/lwc/sampleDataImporter/sampleDataImporter.js,10,Success,js,ShowToastEvent.title,yes,hardcoded,,,
 G069,force-app/main/default/lwc/sampleDataImporter/sampleDataImporter.js,11,Sample data successfully imported,js,ShowToastEvent.message,yes,hardcoded,,,
 G070,force-app/main/default/lwc/sampleDataImporter/sampleDataImporter.js,18,Error while importing data,js,ShowToastEvent.title,yes,hardcoded,,,Toast message is e.message (data).
+G071,force-app/main/default/lwc/propertyMap/propertyMap.js,34,"${property.Address__c.value}, ${property.City__c.value}",js,this.address (lightning-card@title),yes,hardcoded,F09,,"Human review round 3 (2026-10-16): added. A separator glued between two values in a card title, the same criterion as ebikes G044/G077-G079; the annotator had excluded it as address order. Surfaced by the v2 scan; counts against v1 too, which missed it."

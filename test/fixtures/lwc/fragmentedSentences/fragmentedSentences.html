@@ -28,4 +28,10 @@
         </b>
     </div>
     <div>Order Total: <lightning-formatted-number value={total}></lightning-formatted-number></div>
+    <div>
+        <span>
+            <a lwc:if={showLogin} href={loginUrl}>Log In</a>
+            <a lwc:else href={logoutUrl}>Log Out</a>
+        </span>
+    </div>
 </template>

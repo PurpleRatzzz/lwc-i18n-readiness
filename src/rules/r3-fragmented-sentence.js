@@ -50,7 +50,8 @@ const rule = {
             // Split sentences are a property of a parent's children, so look at them from the parent.
             // An inline element inside another element is part of its parent's sentence, which was
             // already checked from the parent; checking it again would report the same sentence twice.
-            const insideSentence = isElement(node) && isInline(node, ctx.config) && parent && isElement(parent);
+            const insideSentence =
+                isElement(node) && isInline(node, ctx.config) && !isConditional(node) && parent && isElement(parent);
             if ((isElement(node) || node.nodeName === '#document-fragment') && !insideSentence) {
                 for (const run of sentencesSplitByMarkup(node, ctx.config)) {
                     const start = shorten(run[0].value, 40);
@@ -71,8 +72,9 @@ const rule = {
  * unrelated strings. The text is collected in reading order, looking inside inline elements
  * (<b>, <strong>, <a>...), so "Distance to property: <b>{n} miles</b>" counts too. A value element
  * such as <lightning-formatted-number> sits inside the sentence like a {binding}. Anything else
- * (a <div>, another <lightning-*>, a <template>, a comment) ends the sentence. Text without
- * letters ("{price}", " - ") neither starts nor ends one.
+ * (a <div>, another <lightning-*>, a <template>, a comment) ends the sentence, and so does an
+ * element rendered conditionally: <a lwc:if>Log In</a><a lwc:else>Log Out</a> are alternatives,
+ * never one sentence. Text without letters ("{price}", " - ") neither starts nor ends one.
  */
 function sentencesSplitByMarkup(parent, config) {
     const runs = [];
@@ -81,7 +83,7 @@ function sentencesSplitByMarkup(parent, config) {
         for (const child of childrenOf(node)) {
             if (isText(child)) {
                 if (isTranslatableText(child, node, config)) current.push(child);
-            } else if (isElement(child) && isInline(child, config)) {
+            } else if (isElement(child) && isInline(child, config) && !isConditional(child)) {
                 collect(child);
             } else if (!(isElement(child) && isValueElement(child, config))) {
                 runs.push(current);
@@ -95,6 +97,8 @@ function sentencesSplitByMarkup(parent, config) {
 }
 
 const isInline = (element, config) => config.template.inlineElements.includes(element.tagName);
+// lwc:if / lwc:elseif / lwc:else, and the older if:true / if:false.
+const isConditional = (element) => element.attrs.some((attr) => /^(lwc:(if|elseif|else)|if:(true|false))$/.test(attr.name));
 const isValueElement = (element, config) =>
     config.template.valueElementPrefixes.some((prefix) => element.tagName.startsWith(prefix));
 

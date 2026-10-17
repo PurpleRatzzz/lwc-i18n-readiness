@@ -25,6 +25,8 @@ test('R3 split-by-markup: one sentence cut by inline elements, reported once on 
     assert.deepEqual(distance.map((f) => f.context.pieces), [2]);
     // "Order Total: <lightning-formatted-number>" is a label and a value: one piece, nothing split.
     assert.ok(!findings.some((f) => f.text === 'Order Total:'));
+    // lwc:if / lwc:else links are alternatives, not one sentence "Log In Log Out".
+    assert.ok(!findings.some((f) => f.text === 'Log In'));
 });
 
 test('R3 plural: a number or binding followed by a plural noun, also next to interpolated', () => {

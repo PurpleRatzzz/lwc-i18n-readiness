@@ -8,6 +8,9 @@ test('R5 template: a literal currency-code, not a bound one', () => {
     assert.deepEqual(located(findings), ['5:9 USD']);
     assert.deepEqual(findings[0].context, { element: 'lightning-formatted-number', attribute: 'currency-code' });
     assert.match(findings[0].message, /CurrencyIsoCode/);
+    // A person has to check where the amount comes from, so it reports but does not fail a PR.
+    assert.equal(findings[0].severity, 'warning');
+    assert.match(findings[0].message, /without converting the amount/);
 });
 
 test('R5 script: Intl and toLocale* locales, currency options, locale/currency variables', () => {

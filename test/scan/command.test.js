@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { FIXTURES } from './helpers.js';
 
 const CLI = fileURLToPath(new URL('../../src/cli.js', import.meta.url));
-const WITH_FINDINGS = join(FIXTURES, 'hardcodedLocale');
+const WITH_FINDINGS = join(FIXTURES, 'hardcodedAttributes');
 const CLEAN = join(FIXTURES, 'cleanComponent');
 
 function scan(...args) {
@@ -22,7 +22,7 @@ const tempFile = (name) => join(mkdtempSync(join(tmpdir(), 'lwc-i18n-')), name);
 test('exit 1 when there are error findings and no baseline (every finding is new)', () => {
     const { code, stdout } = scan(WITH_FINDINGS);
     assert.equal(code, 1);
-    assert.match(stdout, /hardcodedLocale\.html:5:9 {2}error {2}R5 hardcoded-locale/);
+    assert.match(stdout, /hardcodedAttributes\.html:2:21 {2}error {2}R1 hardcoded-attribute/);
 });
 
 test('exit 0 for a clean project', () => {
@@ -67,10 +67,16 @@ test('exit 0 when the only new findings are warnings (R6 label context)', () => 
     assert.match(stdout, /warning {2}R6 label-context/);
 });
 
+test('exit 0 when the only findings are R5 currency/locale warnings', () => {
+    const { code, stdout } = scan(join(FIXTURES, 'hardcodedLocale'), '--rules', 'R5');
+    assert.equal(code, 0);
+    assert.match(stdout, /hardcodedLocale\.html:5:9 {2}warning {2}R5 hardcoded-locale/);
+});
+
 test('--rules limits the rules, and the exit code follows', () => {
-    assert.equal(scan(WITH_FINDINGS, '--rules', 'R5').code, 1);
-    // The fixture's only R1-R3 problems would be in its template, which has none.
-    assert.equal(scan(WITH_FINDINGS, '--rules', 'R1,R2,R3').code, 0);
+    assert.equal(scan(WITH_FINDINGS, '--rules', 'R1').code, 1);
+    // The fixture's problems are all R1 attributes.
+    assert.equal(scan(WITH_FINDINGS, '--rules', 'R2,R3,R4,R5').code, 0);
 });
 
 test('exit 2 for usage errors', () => {

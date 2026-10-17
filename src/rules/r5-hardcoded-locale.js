@@ -3,20 +3,25 @@
 //   script    new Intl.NumberFormat('en-US'), date.toLocaleDateString('en-US'),
 //             { currency: 'USD' } in Intl options or datatable typeAttributes,
 //             japanLocale = 'ja-JP', const DEFAULT_CURRENCY = 'EUR'
-// The fix is always the same: take the value from the user or the record
-// (@salesforce/i18n/locale, @salesforce/i18n/currency, the record's CurrencyIsoCode).
+// A locale only controls formatting, so the fix is to use the user's (@salesforce/i18n/locale).
+// A currency code is different: it must match the currency the amount is stored in. Swapping in
+// the user's currency without converting the amount turns $1,000 into €1,000. So R5 is a warning
+// that asks a person to check where the amount comes from, not an automatic "replace with X".
 import { makeFinding } from '../finding.js';
 import { walkTemplate, isElement, isDynamic, attributePosition } from '../scan/template.js';
 import { walkScript, keyName, thisPath, literalPosition, inIgnoredContext } from '../scan/script.js';
 
 const LOCALE_FIX = 'the user\'s locale from @salesforce/i18n/locale';
-const CURRENCY_FIX = 'the record\'s CurrencyIsoCode or the user\'s currency from @salesforce/i18n/currency';
+const CURRENCY_ADVICE =
+    'check that the amount is really stored in this currency. Take the code from where the amount comes from ' +
+    '(the record\'s CurrencyIsoCode in multi-currency orgs, otherwise the org currency), and never switch it to the ' +
+    'user\'s currency without converting the amount (e.g. SOQL convertCurrency()).';
 
 const rule = {
     id: 'R5',
     name: 'hardcoded-locale',
     kinds: ['template', 'script'],
-    severity: 'error',
+    severity: 'warning',
     description: 'Currency or locale is hardcoded (currency-code="USD", Intl/toLocale* with a literal locale).',
     check(ctx) {
         return ctx.kind === 'template' ? checkTemplate(ctx) : checkScript(ctx);
@@ -51,7 +56,7 @@ function checkTemplate(ctx) {
                     ctx,
                     attributePosition(node, attr.name),
                     attr.value,
-                    `Replace the hardcoded currency "${attr.value.trim()}" in ${attr.name} on <${node.tagName}> with a binding to ${CURRENCY_FIX}.`,
+                    `Currency "${attr.value.trim()}" is hardcoded in ${attr.name} on <${node.tagName}>: ${CURRENCY_ADVICE}`,
                     { element: node.tagName, attribute: attr.name }
                 )
             );
@@ -73,7 +78,7 @@ function checkScript(ctx) {
     const reportCurrency = (literal, sink) => {
         if (literal?.type !== 'StringLiteral' || !currencyValuePattern.test(literal.value) || found.has(literal.start)) return;
         found.set(literal.start, finding(ctx, literalPosition(literal, ctx.source), literal.value,
-            `Replace the hardcoded currency "${literal.value}" with ${CURRENCY_FIX}.`, { sink }));
+            `Currency "${literal.value}" is hardcoded: ${CURRENCY_ADVICE}`, { sink }));
     };
     // A name that says "I hold a locale/currency" plus a value of that shape.
     const checkNamed = (name, value) => {

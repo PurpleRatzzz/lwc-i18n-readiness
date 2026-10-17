@@ -1,0 +1,118 @@
+{
+  "repo": "ebikes-lwc",
+  "scored": {
+    "strings": true,
+    "fragments": true,
+    "locale": false
+  },
+  "summaries": {
+    "strings": {
+      "goldUnits": 70,
+      "maybeUnits": 4,
+      "findings": 74,
+      "matched": 70,
+      "matchedMaybe": 4,
+      "unmatched": 0,
+      "missed": 0,
+      "pending": 0,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 70,
+          "denominator": 70
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 70,
+          "denominator": 70
+        }
+      },
+      "adjudicated": {
+        "tp": 70,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 70,
+          "denominator": 70
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 70,
+          "denominator": 70
+        }
+      }
+    },
+    "fragments": {
+      "goldUnits": 5,
+      "maybeUnits": 0,
+      "findings": 5,
+      "matched": 5,
+      "matchedMaybe": 0,
+      "unmatched": 0,
+      "missed": 1,
+      "pending": 0,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "recall": {
+          "value": 0.8,
+          "numerator": 4,
+          "denominator": 5
+        }
+      },
+      "adjudicated": {
+        "tp": 5,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        }
+      }
+    },
+    "locale": {
+      "goldUnits": 4,
+      "maybeUnits": 0,
+      "findings": 4,
+      "matched": 4,
+      "matchedMaybe": 0,
+      "unmatched": 0,
+      "missed": 0,
+      "pending": 0,
+      "raw": {
+        "precision": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        }
+      },
+      "adjudicated": {
+        "tp": 4,
+        "fp": 0,
+        "precision": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        },
+        "recall": {
+          "value": 1,
+          "numerator": 4,
+          "denominator": 4
+        }
+      }
+    }
+  }
+}

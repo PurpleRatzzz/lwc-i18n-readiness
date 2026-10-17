@@ -1,0 +1,1295 @@
+{
+  "findings": [
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/accountMap/accountMap.html",
+      "line": 10,
+      "column": 28,
+      "text": "No address to map",
+      "message": "Move friendly-message \"No address to map\" on <c-error-panel> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-error-panel",
+        "attribute": "friendly-message"
+      },
+      "fingerprint": "02a45ec09d9380cb",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/accountMap/accountMap.html",
+      "line": 14,
+      "column": 17,
+      "text": "Error retrieving map data",
+      "message": "Move friendly-message \"Error retrieving map data\" on <c-error-panel> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-error-panel",
+        "attribute": "friendly-message"
+      },
+      "fingerprint": "17074582ed08e7a0",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/createCase/createCase.html",
+      "line": 11,
+      "column": 13,
+      "text": "Case Information",
+      "message": "Move the text \"Case Information\" in <h3> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "h3"
+      },
+      "fingerprint": "b9076042b3218e7d",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/createCase/createCase.html",
+      "line": 34,
+      "column": 13,
+      "text": "Description Information",
+      "message": "Move the text \"Description Information\" in <h3> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "h3"
+      },
+      "fingerprint": "21ba1460eea9f8d4",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/createCase/createCase.html",
+      "line": 51,
+      "column": 17,
+      "text": "Submit",
+      "message": "Move label \"Submit\" on <lightning-button> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-button",
+        "attribute": "label"
+      },
+      "fingerprint": "b790a5f643d77e16",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/createCase/createCase.html",
+      "line": 56,
+      "column": 14,
+      "text": "Case Created",
+      "message": "Move the text \"Case Created\" in <div> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "div"
+      },
+      "fingerprint": "41332d6092848fb5",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/createCase/createCase.html",
+      "line": 57,
+      "column": 14,
+      "text": "You have successfully created a Case.",
+      "message": "Move the text \"You have successfully created a Case.\" in <div> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "div"
+      },
+      "fingerprint": "a6e6159ed751c163",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/createCase/createCase.js",
+      "line": 29,
+      "column": 21,
+      "text": "Case Created",
+      "message": "Move \"Case Created\" (toast label) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "toast",
+        "key": "label",
+        "concatenated": false
+      },
+      "fingerprint": "6843414157b78172",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/createCase/createCase.js",
+      "line": 30,
+      "column": 23,
+      "text": "You have successfully created a case.",
+      "message": "Move \"You have successfully created a case.\" (toast message) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "toast",
+        "key": "message",
+        "concatenated": false
+      },
+      "fingerprint": "71ced28c2336c9f0",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/errorPanel/errorPanel.js",
+      "line": 10,
+      "column": 29,
+      "text": "Error retrieving data",
+      "message": "Move \"Error retrieving data\" (default of @api friendlyMessage, which the template shows) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "field-default",
+        "field": "friendlyMessage",
+        "api": true,
+        "via": "template",
+        "concatenated": false
+      },
+      "fingerprint": "a7803a807ad081b3",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/errorPanel/templates/inlineMessage.html",
+      "line": 6,
+      "column": 54,
+      "text": "Show details.",
+      "message": "Move the text \"Show details.\" in <a> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "a"
+      },
+      "fingerprint": "5b915357bc7df610",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/errorPanel/templates/noDataIllustration.html",
+      "line": 246,
+      "column": 53,
+      "text": "Show details",
+      "message": "Move the text \"Show details\" in <a> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "a"
+      },
+      "fingerprint": "3e8cf7e38e93ac69",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/heroDetails/heroDetails.js",
+      "line": 8,
+      "column": 19,
+      "text": "Hero Details",
+      "message": "Move \"Hero Details\" (default of @api title, which the template shows) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "field-default",
+        "field": "title",
+        "api": true,
+        "via": "template",
+        "concatenated": false
+      },
+      "fingerprint": "4384e1ef520e3954",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/navigationMenu/navigationMenu.html",
+      "line": 39,
+      "column": 33,
+      "text": "Primary action",
+      "message": "Move title \"Primary action\" on <lightning-button> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-button",
+        "attribute": "title"
+      },
+      "fingerprint": "31aa52cefd85fb9b",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/navigationMenu/navigationMenu.html",
+      "line": 50,
+      "column": 34,
+      "text": "My Account",
+      "message": "Move the text \"My Account\" in <a> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "a"
+      },
+      "fingerprint": "b6cf3b0391255eea",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/navigationMenu/navigationMenu.html",
+      "line": 105,
+      "column": 30,
+      "text": "Log In",
+      "message": "Move the text \"Log In\" in <a> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "a"
+      },
+      "fingerprint": "9f833878eaa4f0e2",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/navigationMenu/navigationMenu.html",
+      "line": 108,
+      "column": 30,
+      "text": "Log Out",
+      "message": "Move the text \"Log Out\" in <a> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "a"
+      },
+      "fingerprint": "de3ee6059018191f",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/navigationMenuLogo/navigationMenuLogo.html",
+      "line": 3,
+      "column": 25,
+      "text": "Logo",
+      "message": "Move alt \"Logo\" on <img> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "img",
+        "attribute": "alt"
+      },
+      "fingerprint": "c4bd280ba9cec46d",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.html",
+      "line": 6,
+      "column": 21,
+      "text": "Order Total:",
+      "message": "Move the text \"Order Total:\" in <div> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "div"
+      },
+      "fingerprint": "0495c743d48a2758",
+      "isNew": true
+    },
+    {
+      "ruleId": "R5",
+      "ruleName": "hardcoded-locale",
+      "severity": "warning",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.html",
+      "line": 10,
+      "column": 25,
+      "text": "USD",
+      "message": "Currency \"USD\" is hardcoded in currency-code on <lightning-formatted-number>: check that the amount is really stored in this currency. Take the code from where the amount comes from (the record's CurrencyIsoCode in multi-currency orgs, otherwise the org currency), and never switch it to the user's currency without converting the amount (e.g. SOQL convertCurrency()).",
+      "context": {
+        "element": "lightning-formatted-number",
+        "attribute": "currency-code"
+      },
+      "fingerprint": "a1708a4348ea4bb3",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.html",
+      "line": 14,
+      "column": 36,
+      "text": "Total Items: {orderQuantity}",
+      "message": "Move the text \"Total Items: {orderQuantity}\" in <div> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "div"
+      },
+      "fingerprint": "e939a7955bf3f100",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.html",
+      "line": 33,
+      "column": 25,
+      "text": "Drag products here to add items to the order",
+      "message": "Move message \"Drag products here to add items to the order\" on <c-placeholder> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-placeholder",
+        "attribute": "message"
+      },
+      "fingerprint": "2581dac30f5515f2",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+      "line": 133,
+      "column": 33,
+      "text": "Error creating order",
+      "message": "Move \"Error creating order\" (toast title) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "toast",
+        "key": "title",
+        "concatenated": false
+      },
+      "fingerprint": "e4b4406ab68f9088",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+      "line": 134,
+      "column": 56,
+      "text": ",",
+      "message": "List items are joined with \",\" (toast message); use new Intl.ListFormat(LOCALE).format(items) so each language gets its own separator.",
+      "context": {
+        "sink": "toast",
+        "key": "message",
+        "concatenated": false,
+        "subrule": "list-join"
+      },
+      "fingerprint": "92c95935f5855f3a",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+      "line": 173,
+      "column": 33,
+      "text": "Error updating order item",
+      "message": "Move \"Error updating order item\" (toast title) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "toast",
+        "key": "title",
+        "concatenated": false
+      },
+      "fingerprint": "c5ee004d07b59b58",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+      "line": 174,
+      "column": 56,
+      "text": ",",
+      "message": "List items are joined with \",\" (toast message); use new Intl.ListFormat(LOCALE).format(items) so each language gets its own separator.",
+      "context": {
+        "sink": "toast",
+        "key": "message",
+        "concatenated": false,
+        "subrule": "list-join"
+      },
+      "fingerprint": "92c95935f5855f3a",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+      "line": 203,
+      "column": 33,
+      "text": "Error deleting order item",
+      "message": "Move \"Error deleting order item\" (toast title) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "toast",
+        "key": "title",
+        "concatenated": false
+      },
+      "fingerprint": "75a46f3051d2098c",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderBuilder/orderBuilder.js",
+      "line": 204,
+      "column": 56,
+      "text": ",",
+      "message": "List items are joined with \",\" (toast message); use new Intl.ListFormat(LOCALE).format(items) so each language gets its own separator.",
+      "context": {
+        "sink": "toast",
+        "key": "message",
+        "concatenated": false,
+        "subrule": "list-join"
+      },
+      "fingerprint": "92c95935f5855f3a",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderItemTile/orderItemTile.html",
+      "line": 6,
+      "column": 13,
+      "text": "Product picture",
+      "message": "Move alt \"Product picture\" on <img> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "img",
+        "attribute": "alt"
+      },
+      "fingerprint": "c088f13593629db4",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderItemTile/orderItemTile.html",
+      "line": 12,
+      "column": 13,
+      "text": "MSRP:",
+      "message": "Move the text \"MSRP:\" in <p> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "p"
+      },
+      "fingerprint": "28fefc862c49e1b2",
+      "isNew": true
+    },
+    {
+      "ruleId": "R5",
+      "ruleName": "hardcoded-locale",
+      "severity": "warning",
+      "file": "force-app/main/default/lwc/orderItemTile/orderItemTile.html",
+      "line": 16,
+      "column": 17,
+      "text": "USD",
+      "message": "Currency \"USD\" is hardcoded in currency-code on <lightning-formatted-number>: check that the amount is really stored in this currency. Take the code from where the amount comes from (the record's CurrencyIsoCode in multi-currency orgs, otherwise the org currency), and never switch it to the user's currency without converting the amount (e.g. SOQL convertCurrency()).",
+      "context": {
+        "element": "lightning-formatted-number",
+        "attribute": "currency-code"
+      },
+      "fingerprint": "7c78fdb69db1891f",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderItemTile/orderItemTile.html",
+      "line": 24,
+      "column": 17,
+      "text": "Price",
+      "message": "Move label \"Price\" on <lightning-input> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-input",
+        "attribute": "label"
+      },
+      "fingerprint": "da0d0a640bf53a09",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderItemTile/orderItemTile.html",
+      "line": 33,
+      "column": 17,
+      "text": "Small",
+      "message": "Move label \"Small\" on <lightning-input> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-input",
+        "attribute": "label"
+      },
+      "fingerprint": "52a61af62ded62a3",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderItemTile/orderItemTile.html",
+      "line": 42,
+      "column": 17,
+      "text": "Medium",
+      "message": "Move label \"Medium\" on <lightning-input> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-input",
+        "attribute": "label"
+      },
+      "fingerprint": "489f9854f2ed03ca",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderItemTile/orderItemTile.html",
+      "line": 51,
+      "column": 17,
+      "text": "Large",
+      "message": "Move label \"Large\" on <lightning-input> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-input",
+        "attribute": "label"
+      },
+      "fingerprint": "a01e22196ac9ae0b",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.html",
+      "line": 20,
+      "column": 41,
+      "text": "Picklist values",
+      "message": "Move aria-label \"Picklist values\" on <ul> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "ul",
+        "attribute": "aria-label"
+      },
+      "fingerprint": "811cbcf34365d788",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.html",
+      "line": 53,
+      "column": 62,
+      "text": "Current Stage:",
+      "message": "Move the text \"Current Stage:\" in <span> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "span"
+      },
+      "fingerprint": "94bca5f63d03e722",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 48,
+      "column": 31,
+      "text": "Failed to retrieve picklist values",
+      "message": "Move \"Failed to retrieve picklist values\" (passed to reportError(), which shows it in this.errorMessage) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "method-argument",
+        "method": "reportError",
+        "field": "errorMessage",
+        "concatenated": false
+      },
+      "fingerprint": "b6500ccfdcdf94f8",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 71,
+      "column": 31,
+      "text": "Failed to retrieve record data",
+      "message": "Move \"Failed to retrieve record data\" (passed to reportError(), which shows it in this.errorMessage) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "method-argument",
+        "method": "reportError",
+        "field": "errorMessage",
+        "concatenated": false
+      },
+      "fingerprint": "fc4d87f2bbba8ffe",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 79,
+      "column": 31,
+      "text": "The EMP API is not enabled.",
+      "message": "Move \"The EMP API is not enabled.\" (passed to reportError(), which shows it in this.errorMessage) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "method-argument",
+        "method": "reportError",
+        "field": "errorMessage",
+        "concatenated": false
+      },
+      "fingerprint": "523decbe9a07bedd",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 85,
+      "column": 31,
+      "text": "EMP API error",
+      "message": "Move \"EMP API error\" (passed to reportError(), which shows it in this.errorMessage) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "method-argument",
+        "method": "reportError",
+        "field": "errorMessage",
+        "concatenated": false
+      },
+      "fingerprint": "d402ea39f6c71153",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 98,
+      "column": 31,
+      "text": "EMP API error: failed to subscribe",
+      "message": "Move \"EMP API error: failed to subscribe\" (passed to reportError(), which shows it in this.errorMessage) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "method-argument",
+        "method": "reportError",
+        "field": "errorMessage",
+        "concatenated": false
+      },
+      "fingerprint": "669fa9428a8521b8",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 138,
+      "column": 29,
+      "text": "Order Updated",
+      "message": "Move \"Order Updated\" (toast title) into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "sink": "toast",
+        "key": "title",
+        "concatenated": false
+      },
+      "fingerprint": "418dbce5dfe929fe",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 139,
+      "column": 31,
+      "text": "Order status set to \"${value}\"",
+      "message": "Replace \"Order status set to \"${value}\"\" (toast message) with one Custom Label that has {0} placeholders, so translators see the whole sentence.",
+      "context": {
+        "sink": "toast",
+        "key": "message",
+        "concatenated": true
+      },
+      "fingerprint": "357d77bea7cdc5f8",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 145,
+      "column": 18,
+      "text": "Failed to update order status to \"${value}\"",
+      "message": "Replace \"Failed to update order status to \"${value}\"\" (passed to reportError(), which shows it in this.errorMessage) with one Custom Label that has {0} placeholders, so translators see the whole sentence.",
+      "context": {
+        "sink": "method-argument",
+        "method": "reportError",
+        "field": "errorMessage",
+        "concatenated": true
+      },
+      "fingerprint": "6e6212b58c9ec4ee",
+      "isNew": true
+    },
+    {
+      "ruleId": "R4",
+      "ruleName": "js-ui-string",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/orderStatusPath/orderStatusPath.js",
+      "line": 197,
+      "column": 25,
+      "text": ": ${reduceErrors(cause).join(', ')}",
+      "message": "Punctuation \": ${reduceErrors(cause).join(', ')}\" is glued to dynamic text (appended to the message reportError() shows in this.errorMessage); put the whole message in one Custom Label with {0} placeholders so translators control the punctuation.",
+      "context": {
+        "sink": "message-builder",
+        "method": "reportError",
+        "field": "errorMessage",
+        "concatenated": true,
+        "subrule": "punctuation"
+      },
+      "fingerprint": "615c89b24502f142",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/paginator/paginator.html",
+      "line": 11,
+      "column": 25,
+      "text": "Previous",
+      "message": "Move the text \"Previous\" in <label> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "label"
+      },
+      "fingerprint": "e2973b419f3768ec",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/paginator/paginator.html",
+      "line": 15,
+      "column": 13,
+      "text": "{totalItemCount} items • page {currentPageNumber} of {totalPages}",
+      "message": "Move the text \"{totalItemCount} items • page {currentPageNumber} of {total…\" in <div> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "div"
+      },
+      "fingerprint": "3abf151040606468",
+      "isNew": true
+    },
+    {
+      "ruleId": "R3",
+      "ruleName": "fragmented-sentence",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/paginator/paginator.html",
+      "line": 15,
+      "column": 13,
+      "text": "{totalItemCount} items • page {currentPageNumber} of {totalPages}",
+      "message": "Text \"{totalItemCount} items • page {currentPageNumber} of {total…\" builds a sentence around {bindings}, so translators can't reorder it; use one Custom Label with {0} placeholders and fill it in JS.",
+      "context": {
+        "element": "div",
+        "subrule": "interpolated"
+      },
+      "fingerprint": "20f323d866c0a12c",
+      "isNew": true
+    },
+    {
+      "ruleId": "R3",
+      "ruleName": "fragmented-sentence",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/paginator/paginator.html",
+      "line": 15,
+      "column": 13,
+      "text": "{totalItemCount} items • page {currentPageNumber} of {totalPages}",
+      "message": "\"{totalItemCount} items\" hardcodes an English plural after a number; choose the label by count with Intl.PluralRules instead.",
+      "context": {
+        "element": "div",
+        "subrule": "plural",
+        "phrases": [
+          "{totalItemCount} items"
+        ]
+      },
+      "fingerprint": "20f323d866c0a12c",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/paginator/paginator.html",
+      "line": 23,
+      "column": 25,
+      "text": "Next",
+      "message": "Move the text \"Next\" in <label> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "label"
+      },
+      "fingerprint": "a21fe6bd4542c092",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/placeholder/placeholder.html",
+      "line": 3,
+      "column": 41,
+      "text": "Company logo",
+      "message": "Move alt \"Company logo\" on <img> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "img",
+        "attribute": "alt"
+      },
+      "fingerprint": "a2162971b97b7063",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 9,
+      "column": 25,
+      "text": "Open Record",
+      "message": "Move the text \"Open Record\" in <label> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "label"
+      },
+      "fingerprint": "ec68f53fbb6c782c",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 16,
+      "column": 21,
+      "text": "Product picture",
+      "message": "Move alt \"Product picture\" on <img> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "img",
+        "attribute": "alt"
+      },
+      "fingerprint": "0f57eb65f8689b22",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 34,
+      "column": 30,
+      "text": "Electric Components",
+      "message": "Move the text \"Electric Components\" in <section> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "section"
+      },
+      "fingerprint": "d173c624ceed5bf3",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 44,
+      "column": 30,
+      "text": "Frame",
+      "message": "Move the text \"Frame\" in <section> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "section"
+      },
+      "fingerprint": "d4e0153cc983c038",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 52,
+      "column": 30,
+      "text": "Brakes",
+      "message": "Move the text \"Brakes\" in <section> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "section"
+      },
+      "fingerprint": "d4dcb69e484f18dc",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 54,
+      "column": 64,
+      "text": "Front",
+      "message": "Move the text \"Front\" in <span> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "span"
+      },
+      "fingerprint": "279886a7dfd6c47e",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 64,
+      "column": 64,
+      "text": "Rear",
+      "message": "Move the text \"Rear\" in <span> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "span"
+      },
+      "fingerprint": "135b9112f568e579",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productCard/productCard.html",
+      "line": 79,
+      "column": 17,
+      "text": "Select a product to see details",
+      "message": "Move message \"Select a product to see details\" on <c-placeholder> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-placeholder",
+        "attribute": "message"
+      },
+      "fingerprint": "2d352f28edb7c869",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 2,
+      "column": 21,
+      "text": "Filters",
+      "message": "Move title \"Filters\" on <lightning-card> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-card",
+        "attribute": "title"
+      },
+      "fingerprint": "95b5b98b354d03a8",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 5,
+      "column": 17,
+      "text": "Search Key",
+      "message": "Move label \"Search Key\" on <lightning-input> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-input",
+        "attribute": "label"
+      },
+      "fingerprint": "1bb2db2fefd4b4c4",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 11,
+      "column": 21,
+      "text": "Max Price",
+      "message": "Move label \"Max Price\" on <lightning-slider> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-slider",
+        "attribute": "label"
+      },
+      "fingerprint": "d4e8cc968960b63a",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 20,
+      "column": 21,
+      "text": "Category",
+      "message": "Move the text \"Category\" in <h1> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "h1"
+      },
+      "fingerprint": "dab99e8a897e03f1",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 40,
+      "column": 25,
+      "text": "Error loading categories",
+      "message": "Move friendly-message \"Error loading categories\" on <c-error-panel> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-error-panel",
+        "attribute": "friendly-message"
+      },
+      "fingerprint": "4ffcd8ce4647fb64",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 46,
+      "column": 21,
+      "text": "Material",
+      "message": "Move the text \"Material\" in <h1> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "h1"
+      },
+      "fingerprint": "88e3a411b0f8d7e0",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 66,
+      "column": 25,
+      "text": "Error loading materials",
+      "message": "Move friendly-message \"Error loading materials\" on <c-error-panel> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-error-panel",
+        "attribute": "friendly-message"
+      },
+      "fingerprint": "245a2cb1b81ba49e",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 72,
+      "column": 21,
+      "text": "Level",
+      "message": "Move the text \"Level\" in <h1> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "h1"
+      },
+      "fingerprint": "7f5a9ce3be86382a",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productFilter/productFilter.html",
+      "line": 89,
+      "column": 25,
+      "text": "Error loading levels",
+      "message": "Move friendly-message \"Error loading levels\" on <c-error-panel> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-error-panel",
+        "attribute": "friendly-message"
+      },
+      "fingerprint": "3bea45c0b58da67a",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productListItem/productListItem.html",
+      "line": 7,
+      "column": 17,
+      "text": "Product picture",
+      "message": "Move alt \"Product picture\" on <img> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "img",
+        "attribute": "alt"
+      },
+      "fingerprint": "0528b4427c2373d7",
+      "isNew": true
+    },
+    {
+      "ruleId": "R5",
+      "ruleName": "hardcoded-locale",
+      "severity": "warning",
+      "file": "force-app/main/default/lwc/productListItem/productListItem.html",
+      "line": 17,
+      "column": 21,
+      "text": "USD",
+      "message": "Currency \"USD\" is hardcoded in currency-code on <lightning-formatted-number>: check that the amount is really stored in this currency. Take the code from where the amount comes from (the record's CurrencyIsoCode in multi-currency orgs, otherwise the org currency), and never switch it to the user's currency without converting the amount (e.g. SOQL convertCurrency()).",
+      "context": {
+        "element": "lightning-formatted-number",
+        "attribute": "currency-code"
+      },
+      "fingerprint": "19e9c29f9438db11",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productListItem/productListItem.html",
+      "line": 26,
+      "column": 17,
+      "text": "View Details",
+      "message": "Move label \"View Details\" on <lightning-button> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-button",
+        "attribute": "label"
+      },
+      "fingerprint": "20aa4ecbc227051a",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productTile/productTile.html",
+      "line": 8,
+      "column": 21,
+      "text": "Product picture",
+      "message": "Move alt \"Product picture\" on <img> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "img",
+        "attribute": "alt"
+      },
+      "fingerprint": "de33e11376d33b5e",
+      "isNew": true
+    },
+    {
+      "ruleId": "R2",
+      "ruleName": "hardcoded-text",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productTile/productTile.html",
+      "line": 13,
+      "column": 25,
+      "text": "MSRP:",
+      "message": "Move the text \"MSRP:\" in <p> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "p"
+      },
+      "fingerprint": "a065e739a9b329c4",
+      "isNew": true
+    },
+    {
+      "ruleId": "R5",
+      "ruleName": "hardcoded-locale",
+      "severity": "warning",
+      "file": "force-app/main/default/lwc/productTile/productTile.html",
+      "line": 16,
+      "column": 29,
+      "text": "USD",
+      "message": "Currency \"USD\" is hardcoded in currency-code on <lightning-formatted-number>: check that the amount is really stored in this currency. Take the code from where the amount comes from (the record's CurrencyIsoCode in multi-currency orgs, otherwise the org currency), and never switch it to the user's currency without converting the amount (e.g. SOQL convertCurrency()).",
+      "context": {
+        "element": "lightning-formatted-number",
+        "attribute": "currency-code"
+      },
+      "fingerprint": "18982bb938b91ec4",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productTileList/productTileList.html",
+      "line": 5,
+      "column": 17,
+      "text": "Search Key",
+      "message": "Move label \"Search Key\" on <lightning-input> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-input",
+        "attribute": "label"
+      },
+      "fingerprint": "c759ebdf0a71f66b",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/productTileList/productTileList.html",
+      "line": 38,
+      "column": 21,
+      "text": "There are no products matching your current selection",
+      "message": "Move message \"There are no products matching your current selection\" on <c-placeholder> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-placeholder",
+        "attribute": "message"
+      },
+      "fingerprint": "473810929f86e0cf",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/similarProducts/similarProducts.html",
+      "line": 2,
+      "column": 21,
+      "text": "Similar Products",
+      "message": "Move title \"Similar Products\" on <lightning-card> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "lightning-card",
+        "attribute": "title"
+      },
+      "fingerprint": "005efc7b7ccb6970",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/similarProducts/similarProducts.html",
+      "line": 13,
+      "column": 25,
+      "text": "No similar products",
+      "message": "Move message \"No similar products\" on <c-placeholder> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-placeholder",
+        "attribute": "message"
+      },
+      "fingerprint": "5dba679751ec7ebc",
+      "isNew": true
+    },
+    {
+      "ruleId": "R1",
+      "ruleName": "hardcoded-attribute",
+      "severity": "error",
+      "file": "force-app/main/default/lwc/similarProducts/similarProducts.html",
+      "line": 19,
+      "column": 21,
+      "text": "An error has occurred while retrieving similar products",
+      "message": "Move friendly-message \"An error has occurred while retrieving similar products\" on <c-error-panel> into a Custom Label and import it via @salesforce/label.",
+      "context": {
+        "element": "c-error-panel",
+        "attribute": "friendly-message"
+      },
+      "fingerprint": "b4f5d105fe8cbd8b",
+      "isNew": true
+    }
+  ]
+}

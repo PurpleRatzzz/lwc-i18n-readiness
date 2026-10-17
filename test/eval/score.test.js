@@ -86,3 +86,10 @@ test('fragments family counts R4 findings marked concatenated, not plain R4', ()
     assert.equal(r.matched.length, 1);
     assert.equal(r.unmatched.length, 0);
 });
+
+test('rows a reviewer set to user_visible=no are not gold units', () => {
+    const rows = [gold('G1', 5, '© OpenStreetMap', { user_visible: 'no' }), gold('G2', 9, 'Reset')];
+    const r = matchFamily(FAMILIES.strings, [finding('R1', 9, 'Reset')], rows);
+    assert.equal(r.units.length, 1);
+    assert.equal(r.missed.length, 0);
+});

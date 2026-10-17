@@ -73,7 +73,8 @@ export function loadFindings(path) {
 
 /** Match one family's findings to its gold units. Pure function, no I/O. */
 export function matchFamily(family, findings, goldRows) {
-    const units = family.units(goldRows);
+    // user_visible=no: rows a human reviewer removed (kept in the file, with the reason, for the record).
+    const units = family.units(goldRows.filter((r) => r.user_visible !== 'no'));
     const rowIndex = new Map(); // key -> [{ row, unit }]
     for (const unit of units) {
         for (const row of unit) {

@@ -28,6 +28,7 @@ One row per source string, using the units from `docs/ARCHITECTURE.md`:
 - `console.*` messages, thrown errors that are never displayed, test files
 - CSS classes, styles, icon names (`utility:chevronleft`), URLs and paths, object/field API names (`Property__c`), event names, `data-*` attributes, `variant`/`size` values
 - Strings with no letters at all (`•`, `:`, numbers)
+- Legal notices, attributions and brand names that must stay untranslated (e.g. `© OpenStreetMap` in a map's attribution control)
 - Text coming from data (`{property.Name}` alone is not hardcoded)
 
 If you aren't sure whether something reaches the UI, include it with `user_visible=maybe` and explain in `notes`.
@@ -42,7 +43,7 @@ If you aren't sure whether something reaches the UI, include it with `user_visib
 | `text` | as defined above. Quote with `"` and double any inner `"` (RFC 4180) |
 | `source_kind` | `attribute` / `text` / `js` |
 | `where` | element+attribute (`lightning-button@label`), or JS sink (`ShowToastEvent.title`, `this.error.message`, `getter:title`) |
-| `user_visible` | `yes` / `maybe` |
+| `user_visible` | `yes` / `maybe`; a human reviewer may set `no` to exclude a row, with the reason at the start of `notes` |
 | `issue` | `hardcoded` (needs a Custom Label), `locale` (hardcoded currency/locale), or both separated by `;` |
 | `fragment_group` | empty, or the same short id (e.g. `F01`) on every row that belongs to one sentence split into pieces or around variables. A single text node with `{expressions}` inside also gets a group id |
 | `plural` | `yes` if the text puts a number next to a noun that needs plural forms (`{totalItemCount} items`, `30 days`), else empty |

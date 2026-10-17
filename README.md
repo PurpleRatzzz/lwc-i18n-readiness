@@ -45,22 +45,22 @@ The method, in short (details in [eval/README.md](eval/README.md)):
 
 | v1 (`eval-freeze-1`) | Precision | Recall |
 |---|---|---|
-| Hardcoded user-facing strings, dreamhouse-lwc | 59/59 | 59/62 |
+| Hardcoded user-facing strings, dreamhouse-lwc | 59/59 | 59/63 |
 | Hardcoded user-facing strings, ebikes-lwc | 66/66 | 66/70 |
-| **Hardcoded strings, both repos** | **100% (125/125)** | **94.7% (125/132)** |
-| **Fragmented sentences and plurals, both repos** | **100% (14/14)** | **85.7% (12/14)** |
+| **Hardcoded strings, both repos** | **100% (125/125)** | **94.0% (125/133)** |
+| **Fragmented sentences and plurals, both repos** | **100% (14/14)** | **80.0% (12/15)** |
 
 Hardcoded currency codes (5 in total, all found) are reported to developers but not scored. The currency code has to follow where the amount comes from, so swapping it is not a translation fix.
 
-The 8 misses fall into three kinds:
+The 9 misses fall into three kinds:
 
 - text passed to native mobile features (barcode scanner instructions, a permission rationale);
-- separators with no letters glued into messages (`': ' + details`, `errors.join(', ')`);
+- separators with no letters glued into messages or titles (`': ' + details`, `errors.join(', ')`, `` `${Address}, ${City}` ``);
 - a sentence whose second half is nested inside `<b>` after a number.
 
 The v2 rules (tag `eval-v2`) cover all three. Because v2 was written after seeing these repos, its results there are in-sample and are kept separately in [eval/results/v2](eval/results/v2). On the lwc-recipes dev set, v2 added 8 findings: 5 list joins in toasts and messages, and 3 sentences split by a link.
 
-The sample is small: two apps, 132 hardcoded strings. These numbers show that the method works; they are not a benchmark.
+The sample is small: two apps, 133 hardcoded strings. These numbers show that the method works; they are not a benchmark.
 
 ### Custom Labels in the wild
 
@@ -113,6 +113,10 @@ To plug in a real translator, set `LWC_I18N_TRANSLATOR_CMD` to any command that 
 - **Not every problem is a rule.** A picklist API value shown where its label belongs needs a human reviewer; the checklist covers it.
 - **Not yet run in a Salesforce org.** The pseudo-localized file has not been deployed to an org; `eo` is a placeholder locale until a Developer Edition org confirms which languages can be enabled.
 - **Small evaluation.** Two sample apps.
+
+## How this was built
+
+Built with [Claude Code](https://claude.com/claude-code) as an AI pair programmer. Claude Code helped with research, implementation and the first-pass gold annotation. The scope, the design decisions and every evaluation judgment (gold set review and adjudication) are mine, and the commit history records each step.
 
 ## Repository map
 

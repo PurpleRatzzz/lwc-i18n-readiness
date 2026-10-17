@@ -37,9 +37,10 @@ Every step is a commit, so the numbers can be traced.
 | `00265fa` | **Scorer** fix: the fragments family ignored R4's `concatenated` JS findings, which the contract assigned to R4 from the start. The scanner itself was not changed. |
 | `df00b72` | Review round 1: two rows excluded (`© OpenStreetMap` is a legal attribution; `{friendlyMessage}.` is only a period). |
 | `03638d4` | Review round 2: hardcoded separators and list joins in UI messages (`': ' + details`, `.join(', ')`) count as untranslated strings. The same criterion was applied to every instance, adding 3 ebikes rows. Currency codes are no longer scored. |
-| `4295472` | **v1 results, adjudicated.** |
+| `4295472` | v1 results, adjudicated. |
 | `4771007`, `6eec6d8`, `78519bc` | v2 rules for the three kinds of misses, plus one false positive the change introduced on ebikes (`lwc:if`/`lwc:else` alternatives). |
 | `5da33ce` | v2 results. **In-sample**: written after seeing these repos, so not an independent measure. |
+| (review round 3) | The v2 scan surfaced dreamhouse `propertyMap.js:34` `` `${Address}, ${City}` `` (a card title). The reviewer judged it an annotation miss under the round-2 criterion, so it was added to the gold set (G071). v1 missed it as well, so **the v1 numbers below include it**. |
 
 ## Results
 
@@ -47,24 +48,24 @@ Every step is a commit, so the numbers can be traced.
 
 | | Precision | Recall |
 |---|---|---|
-| Strings, dreamhouse-lwc | 59/59 | 59/62 |
+| Strings, dreamhouse-lwc | 59/59 | 59/63 |
 | Strings, ebikes-lwc | 66/66 | 66/70 |
-| Fragments, dreamhouse-lwc | 10/10 | 9/10 |
+| Fragments, dreamhouse-lwc | 10/10 | 9/11 |
 | Fragments, ebikes-lwc | 4/4 | 3/4 |
-| **Strings, total** | **125/125 (100%)** | **125/132 (94.7%)** |
-| **Fragments, total** | **14/14 (100%)** | **12/14 (85.7%)** |
+| **Strings, total** | **125/125 (100%)** | **125/133 (94.0%)** |
+| **Fragments, total** | **14/14 (100%)** | **12/15 (80.0%)** |
 
 Misses:
 
 - Text passed to native mobile features (dreamhouse `barcodeScanner.js:28,29`, `listContactsFromDevice.js:21`). These options weren't in R4's list of UI sinks.
-- Separators with no letters (ebikes `orderStatusPath.js:197`, `orderBuilder.js:134,174,204`). R4 required letters.
+- Separators with no letters (ebikes `orderStatusPath.js:197`, `orderBuilder.js:134,174,204`; dreamhouse `propertyMap.js:34`). R4 required letters.
 - A sentence whose second half is nested inside `<b>` after a number (dreamhouse `propertyLocation.html:23`). R3 only compared sibling text nodes.
 
 Per-repo tables: [results/dreamhouse.md](results/dreamhouse.md), [results/ebikes.md](results/ebikes.md).
 
 ### v2 (`eval-v2`): in-sample
 
-See [results/v2/](results/v2/). The changes recover all v1 misses. One new disagreement is waiting for a decision: dreamhouse `propertyMap.js:34`, `` `${Address}, ${City}` `` used as a card title.
+See [results/v2/](results/v2/). On both repos v2 finds every gold item with no false positives (dreamhouse strings 63/63, fragments 11/11; ebikes 70/70, 4/4). While doing that it surfaced one item the annotator had missed (review round 3), and it introduced one false positive (`lwc:if`/`lwc:else` links), which was fixed. Treat these numbers as a check that the fixes work, not as a measure.
 
 ## Reproduce
 
@@ -79,5 +80,5 @@ Run this at `eval-freeze-1` for the v1 scan. The scorer keeps decisions already 
 
 ## Caveats
 
-- **Two small apps.** 132 scored strings and 14 scored fragmented sentences.
-- **Correlated judgment.** The annotators and the scanner were both built with AI assistance, so they may share blind spots. The human review is what guards against that. It changed the gold set in 6 places (2 rows excluded, 1 row counted, 3 rows added) and overruled the annotator once more during adjudication.
+- **Two small apps.** 133 scored strings and 15 scored fragmented sentences.
+- **Correlated judgment.** The annotators and the scanner were both built with AI assistance, so they may share blind spots. The human review is what guards against that. It changed the gold set in 7 places (2 rows excluded, 1 row counted, 4 rows added) and overruled the annotator once more during adjudication.

@@ -54,6 +54,9 @@ export const FAMILIES = {
     locale: {
         label: 'Hardcoded currency/locale (R5)',
         counts: (f) => f.ruleId === 'R5',
+        // Human review decision: a hardcoded currency code is a locale assumption to report to
+        // developers, not an untranslated string. Matched and shown, but not part of the score.
+        scored: false,
         units: (rows) => rows.filter((r) => hasIssue(r, 'locale')).map((r) => [r])
     }
 };
@@ -194,11 +197,19 @@ export function renderMarkdown(repo, summaries) {
     lines.push('| Family | Gold units | Maybe units | Findings | Matched | Matched maybe | Unmatched | Missed | Pending | Precision | Recall |');
     lines.push('|---|---|---|---|---|---|---|---|---|---|---|');
     for (const [name, s] of Object.entries(summaries)) {
+        if (FAMILIES[name].scored === false) continue;
         const final = s.adjudicated ?? s.raw;
         const tag = s.adjudicated ? '' : ' (raw)';
         lines.push(
             `| ${FAMILIES[name].label} | ${s.goldUnits} | ${s.maybeUnits} | ${s.findings} | ${s.matched} | ${s.matchedMaybe} | ${s.unmatched} | ${s.missed} | ${s.pending} | ${pct(final.precision)}${tag} | ${pct(final.recall)}${tag} |`
         );
+    }
+    const unscored = Object.entries(summaries).filter(([name]) => FAMILIES[name].scored === false);
+    if (unscored.length > 0) {
+        lines.push('', 'Reported, not scored:', '');
+        for (const [name, s] of unscored) {
+            lines.push(`- ${FAMILIES[name].label}: ${s.goldUnits} in the gold set, ${s.matched} found, ${s.missed} missed, ${s.unmatched} not in the gold set.`);
+        }
     }
     lines.push('');
     lines.push(
@@ -248,7 +259,8 @@ async function main() {
     if (values.adjudication) write(values.adjudication, toCsv(allRows, ADJ_COLUMNS));
     const markdown = renderMarkdown(values.repo, summaries);
     if (values.report) write(values.report, markdown);
-    if (values.json) write(values.json, JSON.stringify({ repo: values.repo, summaries }, null, 2) + '\n');
+    const scored = Object.fromEntries(Object.keys(FAMILIES).map((name) => [name, FAMILIES[name].scored !== false]));
+    if (values.json) write(values.json, JSON.stringify({ repo: values.repo, scored, summaries }, null, 2) + '\n');
     process.stdout.write(markdown);
     return 0;
 }

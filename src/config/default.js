@@ -49,6 +49,9 @@ export default {
         },
         // Elements that sit inside a sentence. Text on both sides of them is one sentence cut in pieces.
         inlineElements: ['br', 'b', 'strong', 'em', 'i', 'span', 'a'],
+        // Base components that render one value in the middle of a sentence, like a {binding} does:
+        // "Distance to property: <lightning-formatted-number> miles" is still one sentence.
+        valueElementPrefixes: ['lightning-formatted-', 'lightning-relative-date-time'],
         // Text inside these elements is code (CSS, JS, code samples, raw JSON), not UI.
         nonTextElements: ['style', 'script', 'code', 'pre'],
         // Attributes that take an ISO 4217 currency code (R5).
@@ -70,7 +73,10 @@ export default {
         ],
         // Object keys that hold display text wherever they appear: datatable columns,
         // combobox/radio options, tree and menu items, workspace tab labels, chart datasets.
-        displayKeys: ['label', 'alternativeText', 'placeholder'],
+        // The last three are options of native mobile features (lightning/mobileCapabilities):
+        // the barcode scanner's on-screen instructions and the text that explains a permission request.
+        // Added after evaluation v1, which missed them in dreamhouse-lwc.
+        displayKeys: ['label', 'alternativeText', 'placeholder', 'instructionText', 'successText', 'permissionRationaleText'],
         // DOM properties that put text on the page: el.innerText = '...' (lwc:dom="manual", light DOM).
         domTextProperties: ['innerText', 'textContent', 'innerHTML'],
         // Component fields that hold a message for the user even when we can't see the template

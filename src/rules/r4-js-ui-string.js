@@ -11,6 +11,13 @@
 //   method-argument   this.reportError('Failed to load'), when reportError() puts its argument in a shown field
 //   dom-text          el.innerText = 'Text changed', el.innerHTML = '<p>...</p>'
 //   html              `<h1>${name}</h1><p>Beds: ${beds}</p>`: markup with English built in JS
+//   message-builder   message += `: ${details}` inside a method like reportError() that shows `message`
+//
+// Besides text with letters, R4 reports two kinds of glue in those sinks (context.subrule), because
+// they have no letters, so reviewers miss them, yet every language punctuates differently:
+//   punctuation       `: ${details}`, `${a} - ${b}`: only punctuation between dynamic values
+//   list-join         errors.join(', '): a hardcoded list separator instead of Intl.ListFormat
+// (Both added after evaluation v1, from the human review of ebikes-lwc.)
 // What R4 deliberately does not do: follow values through local variables, function returns or
 // other modules. Those need real data-flow analysis; guessing would cost precision.
 import { makeFinding } from '../finding.js';
@@ -42,8 +49,10 @@ const rule = {
         // Keyed by the literal's offset: a string that reaches two sinks is still one finding.
         const found = new Map();
 
-        const report = ({ node, concatenated }, where, context) => {
-            if (found.has(node.start) || !isUiText(node, ctx.config)) return;
+        const report = ({ node, concatenated, listJoin }, where, context) => {
+            if (found.has(node.start)) return;
+            const subrule = glueKind({ node, concatenated, listJoin }, ctx.config);
+            if (!subrule && !isUiText(node, ctx.config)) return;
             const text = literalText(node, ctx.source);
             found.set(
                 node.start,
@@ -54,8 +63,8 @@ const rule = {
                     file: ctx.file,
                     ...literalPosition(node, ctx.source),
                     text,
-                    message: messageFor(text, where, concatenated),
-                    context: { ...context, concatenated }
+                    message: messageFor(text, where, concatenated, subrule),
+                    context: { ...context, concatenated, ...(subrule && { subrule }) }
                 })
             );
         };
@@ -126,11 +135,19 @@ const rule = {
                 reportAll(node.arguments[target.index], `passed to ${method}(), which shows it in this.${target.field}`, context);
             }
 
-            // `<h1>${name}</h1><p>Beds: ${beds}</p>` anywhere in the file
+            // `<h1>${name}</h1><p>Beds: ${beds}</p>` anywhere in the file (checked below the walk)
             if ((node.type === 'StringLiteral' || node.type === 'TemplateLiteral') && isHtmlWithText(node, ctx.config)) {
                 report({ node, concatenated: isGlued(node, ancestors.at(-1)) }, 'HTML markup built in JS', { sink: 'html' });
             }
         });
+        // message += `: ${details}` inside reportError(): what the method appends to the argument
+        // it shows is part of the message too.
+        for (const [method, target] of scope.messageMethods) {
+            const context = { sink: 'message-builder', method, field: target.field };
+            for (const expr of target.appended) {
+                reportAll(expr, `appended to the message ${method}() shows in this.${target.field}`, context, true);
+            }
+        }
         return [...found.values()];
     }
 };
@@ -224,7 +241,9 @@ function returnedValues(getter) {
  *     }
  * We follow the parameter through `let x = param`, `x = param + ...` and `x += ...` inside the
  * method, in source order, and record the method if a shown field receives it.
- * Returns Map(methodName -> { index: parameter position, field }).
+ * `appended` keeps what the method glues onto the message on the way (`message += ': ' + x`),
+ * because that text is displayed as part of the message as well.
+ * Returns Map(methodName -> { index: parameter position, field, appended: [expressions] }).
  */
 function findMessageMethods(ast, isShown) {
     const methods = new Map();
@@ -233,17 +252,25 @@ function findMessageMethods(ast, isShown) {
         method.params.forEach((param, index) => {
             if (param.type !== 'Identifier' || methods.has(keyName(method))) return;
             const carriers = new Set([param.name]); // local variables that hold (part of) the argument
+            const appended = [];
+            let field = null;
             walkScript(method.body, (node) => {
                 if (node.type === 'VariableDeclarator' && node.id.type === 'Identifier' && carriesVariable(node.init, carriers)) {
                     carriers.add(node.id.name);
+                    appended.push(node.init);
                 }
-                if (node.type !== 'AssignmentExpression' || !carriesVariable(node.right, carriers)) return;
-                if (node.left.type === 'Identifier') carriers.add(node.left.name);
-                const field = thisPath(node.left);
-                if (field && isShown(field) && !methods.has(keyName(method))) {
-                    methods.set(keyName(method), { index, field });
+                if (node.type !== 'AssignmentExpression') return;
+                // message += '...' extends the message even though the right side doesn't mention it.
+                const extendsCarrier = node.left.type === 'Identifier' && carriers.has(node.left.name) && node.operator === '+=';
+                if (!extendsCarrier && !carriesVariable(node.right, carriers)) return;
+                if (node.left.type === 'Identifier') {
+                    carriers.add(node.left.name);
+                    appended.push(node.right);
                 }
+                const target = thisPath(node.left);
+                if (target && isShown(target) && !field) field = target;
             });
+            if (field && !methods.has(keyName(method))) methods.set(keyName(method), { index, field, appended });
         });
     });
     return methods;
@@ -291,9 +318,28 @@ function htmlTag(config, flags = '') {
     return new RegExp(`</?(?:${config.script.htmlTags.join('|')})\\b[^>]*>`, `i${flags}`);
 }
 
+/**
+ * Glue with no letters that still needs translating, or null:
+ * - 'list-join': the separator of items.join(', ')
+ * - 'punctuation': a piece glued to dynamic values whose fixed part is only punctuation/symbols,
+ *   such as `: ${details}` or ' - ' (pure whitespace, like `${first} ${last}`, doesn't count)
+ */
+function glueKind({ node, concatenated, listJoin }, config) {
+    if (listJoin) return 'list-join';
+    if (!concatenated) return null;
+    const fixed = withoutMarkup(staticText(node), config).trim();
+    return fixed !== '' && /^[\p{P}\p{S}\s]+$/u.test(fixed) ? 'punctuation' : null;
+}
+
 /** One actionable sentence: concatenated text needs a placeholder label, plain text just a label. */
-function messageFor(text, where, concatenated) {
+function messageFor(text, where, concatenated, subrule) {
     const quoted = `"${shorten(text)}"`;
+    if (subrule === 'list-join') {
+        return `List items are joined with ${quoted} (${where}); use new Intl.ListFormat(LOCALE).format(items) so each language gets its own separator.`;
+    }
+    if (subrule === 'punctuation') {
+        return `Punctuation ${quoted} is glued to dynamic text (${where}); put the whole message in one Custom Label with {0} placeholders so translators control the punctuation.`;
+    }
     if (concatenated) {
         return `Replace ${quoted} (${where}) with one Custom Label that has {0} placeholders, so translators see the whole sentence.`;
     }

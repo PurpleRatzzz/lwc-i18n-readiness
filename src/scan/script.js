@@ -99,6 +99,8 @@ export function calleeName(callee) {
  * - cond ? 'a' : 'b' and x || 'a' give every branch; ['a', 'b'] gives every element
  * - a template literal is one piece, ${...} included
  * - NAME gives the literal of a module-level `const NAME = '...'` (from topLevelConstants)
+ * - items.join(', ') gives the separator ', ' marked `listJoin`: every language has its own list
+ *   punctuation ("、" in Chinese), which Intl.ListFormat knows and a hardcoded ', ' doesn't
  * `concatenated` is true when a piece is glued to other values: a sentence assembled
  * from pieces can't be translated as a whole, which is worth telling the engineer.
  */
@@ -119,6 +121,15 @@ export function stringPieces(expr, constants = new Map(), concatenated = false) 
             return [...stringPieces(expr.left, constants, concatenated), ...stringPieces(expr.right, constants, concatenated)];
         case 'ArrayExpression':
             return expr.elements.flatMap((element) => stringPieces(element, constants, concatenated));
+        case 'CallExpression': {
+            // Only a literal, visible separator: join(' ') or join('') puts no punctuation in the text.
+            const separator = expr.arguments[0];
+            const isJoin = expr.callee.type === 'MemberExpression' && calleeName(expr.callee) === 'join';
+            if (isJoin && separator?.type === 'StringLiteral' && separator.value.trim() !== '') {
+                return [{ node: separator, concatenated: false, listJoin: true }];
+            }
+            return [];
+        }
         default:
             return [];
     }

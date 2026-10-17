@@ -25,6 +25,7 @@ test('R4 reports exactly the strings that reach a sink', () => {
         '59:35 Could not load the property [rendered-field]',
         '60:25 Price is required [rendered-field]',
         '62:27 Failed to load properties [method-argument]',
+        '70:25 : [message-builder]',
         '77:13 <h1>${property.Name}</h1> <p>Beds: ${property.Beds__c} - Baths: ${property.Baths__c}</p> [html]'
     ]);
 });
@@ -32,6 +33,7 @@ test('R4 reports exactly the strings that reach a sink', () => {
 test('R4 marks concatenations and template literals with ${} as concatenated', () => {
     const concatenated = findings.filter((f) => f.context.concatenated).map((f) => f.text);
     assert.deepEqual(concatenated.sort(), [
+        ':',
         '<h1>${property.Name}</h1> <p>Beds: ${property.Beds__c} - Baths: ${property.Baths__c}</p>',
         'Photo of ${this.cardTitle}',
         'Property',
@@ -107,7 +109,11 @@ test('R4 += appends a piece; returns inside callbacks are not the getter\'s valu
         '}'
     ].join('\n');
     const findings = r4.check(inlineScript(source, '<template><p>{summary} {status}</p></template>'));
-    assert.deepEqual(findings.map((f) => `${f.text} ${f.context.sink} ${f.context.concatenated}`), ['(saved) rendered-field true']);
+    // The getter's list separator is shown too (list-join); the strings inside the callback are not.
+    assert.deepEqual(findings.map((f) => `${f.text} ${f.context.sink} ${f.context.concatenated}`), [
+        ', getter false',
+        '(saved) rendered-field true'
+    ]);
 });
 
 test('R4 dom-text, HTML pieces of a concatenation, and module constants', () => {
@@ -137,3 +143,46 @@ function byLine(a, b) {
     const [lb, cb] = b.split(' ')[0].split(':').map(Number);
     return la - lb || ca - cb;
 }
+
+test('R4 glue: punctuation between values, list separators, and what a message method appends', () => {
+    const glue = findings.filter((f) => f.context.subrule);
+    assert.deepEqual(glue.map((f) => `${f.text} ${f.context.subrule} ${f.context.sink}`), [': punctuation message-builder']);
+    assert.match(glue[0].message, /Punctuation ":" is glued to dynamic text/);
+
+    const source = [
+        "import { ShowToastEvent } from 'lightning/platformShowToastEvent';",
+        'export default class X {',
+        '    notify(e, first, last) {',
+        "        this.dispatchEvent(new ShowToastEvent({ title: 'Error', message: reduceErrors(e).join(', ') }));",
+        "        this.dispatchEvent(new ShowToastEvent({ title: `${first} ${last}`, message: names.join(' ') }));",
+        "        this.dispatchEvent(new ShowToastEvent({ title: 'Range', message: `${first} - ${last}` }));",
+        '    }',
+        '}'
+    ].join('\n');
+    const toast = r4.check(inlineScript(source, '<template></template>'));
+    assert.deepEqual(toast.map((f) => `${f.text} ${f.context.subrule ?? 'text'}`), [
+        'Error text',
+        ', list-join',
+        // `${first} ${last}` and join(' ') only add spaces: nothing to translate (name order is a separate, manual check)
+        'Range text',
+        '${first} - ${last} punctuation'
+    ]);
+    assert.match(toast[1].message, /Intl\.ListFormat/);
+});
+
+test('R4 native mobile feature options are display text', () => {
+    const source = [
+        'export default class X {',
+        '    scan() {',
+        "        const options = { instructionText: 'Scan a QR Code', successText: 'Scanning complete.' };",
+        "        getContacts({ permissionRationaleText: 'Allow access to your contacts.' });",
+        '    }',
+        '}'
+    ].join('\n');
+    const found = r4.check(inlineScript(source, '<template></template>'));
+    assert.deepEqual(found.map((f) => `${f.text} ${f.context.key}`), [
+        'Scan a QR Code instructionText',
+        'Scanning complete. successText',
+        'Allow access to your contacts. permissionRationaleText'
+    ]);
+});

@@ -1,6 +1,6 @@
 # i18n checklist for LWC engineers
 
-Eleven things to get right before your strings go to translation. Each item links to a real example in Salesforce's own sample apps (pinned commits) and names the scanner rule that catches it. "Manual" means no rule can catch it reliably, so it needs a reviewer.
+Twelve things to get right before your strings go to translation. Each item links to a real example in Salesforce's own sample apps (pinned commits) and names the scanner rule that catches it. "Manual" means no rule can catch it reliably, so it needs a reviewer.
 
 Run the checker from a clone of this repo with `node src/cli.js scan <path-to-your-project>`, or add the GitHub Action (see README) so it runs on every PR. Put `<!-- i18n-ignore-next-line -->` or `// i18n-ignore-next-line` above a line you've deliberately left untranslated.
 
@@ -50,3 +50,8 @@ Do: `alternative-text={labels.deleteItem}`. Accessibility text is UI text and ne
 **11. Let the platform format addresses and names.** · R4 catches the hardcoded separator; field order needs manual review
 Don't: `` `${Address__c}, ${City__c}` `` as a card title ([propertyMap](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/propertyMap/propertyMap.js#L34)). Field order and separators differ by country; a Japanese address runs from the largest unit to the smallest.
 Do: `lightning-formatted-address` and `lightning-formatted-name`, which follow the user's locale.
+
+**12. Units of measure follow the user's locale.** · Manual (R2 flags the hardcoded word, not the choice of unit)
+Don't: compute a distance in kilometers, convert it with `d / 1.609344` and always show "miles" ([propertyLocation.js](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/propertyLocation/propertyLocation.js#L87), [propertyLocation.html](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/propertyLocation/propertyLocation.html#L28)). A Chinese user sees 2.5 英里, which is translated correctly and still wrong: China uses kilometers. In the context experiment it failed in every condition, because no translation can fix it.
+Do: choose the unit system from the locale (or a user setting), then format with `new Intl.NumberFormat(LOCALE, { style: 'unit', unit: 'kilometer' })`, which also gives the right unit word and spacing.
+

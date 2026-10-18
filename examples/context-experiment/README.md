@@ -43,7 +43,7 @@ Every translation and verdict: [dreamhouse/results.md](dreamhouse/results.md), [
 
    This is why fragments have to be stopped upstream (R3, R4 concatenation, R6 `fragment-value`) or caught in in-context review (pseudo-localization, LQA). Better prompts won't find them.
 
-4. **Two upstream issues no translator can fix**: a hardcoded unit of measure, and word order fixed by the layout.
+4. **Two upstream issues no translator can fix**: a hardcoded unit of measure (now checklist item 12), and word order fixed by the layout.
 
 ## Caveats
 
@@ -54,5 +54,5 @@ Every translation and verdict: [dreamhouse/results.md](dreamhouse/results.md), [
 ## Deviations from the preregistration
 
 - **Two error types per unit.** For two units the judge gave two error types (dreamhouse `meaning;order`, starter kit `terminology;meaning`). Both are counted.
-- **"Name" in the starter-kit header.** The example sort field was left as "Name" in the sheet. At runtime Salesforce fills it with its own, translated, field label. The judge marked the C2 and C3 header units "acceptable if Name is not part of the translation", and they are scored as acceptable. If they were counted as failures, the starter kit would be 17 / 18 / 18.
+- **"Name" in the starter-kit header.** The example sort field was left as "Name" in the sheet. At runtime Salesforce fills it with its own, translated, field label. The judge marked the C2 and C3 header units "acceptable if Name is not part of the translation", and confirmed afterwards that they count as acceptable. If they were counted as failures, the starter kit would be 17 / 18 / 18.
 - **Miles.** The judge noted it is an internationalization issue, not a translation issue. It is scored as the preregistration says (not shippable as is) in all three conditions, so it doesn't change any comparison.

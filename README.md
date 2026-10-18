@@ -20,7 +20,7 @@ In October 2026 I checked four LWC sample apps in [trailheadapps](https://github
 | **PR gate** (`action.yml`) | Annotates findings on the PR diff and writes a full report to the job summary. Only findings that are not in the baseline fail the check, so a team can adopt it without fixing everything first. |
 | **Pseudo-localization** (`lwc-i18n pseudo`) | Writes a `translation-meta.xml` with accented, bracketed, expanded text, using IBM's length-tiered expansion guideline. In the UI, plain English means hardcoded text and a missing `]` means truncation. |
 | **XLIFF round trip** (`xliff-export` → `translate` → `xliff-import`) | Custom Labels → XLIFF 1.2: the description goes in `<note>`, `maxlen:` becomes `maxwidth`. A pluggable translator runs (stub, pseudo, or any command, e.g. an AI pipeline). Import validates placeholders, tags, length and state before writing `translations/<lang>.translation-meta.xml`. |
-| **Engineer checklist** | [docs/i18n-checklist.md](docs/i18n-checklist.md): 11 rules, each with a real example from Salesforce sample code and the rule that catches it, or a note that it needs manual review. |
+| **Engineer checklist** | [docs/i18n-checklist.md](docs/i18n-checklist.md): 12 rules, each with a real example from Salesforce sample code and the rule that catches it, or a note that it needs manual review. |
 
 ### Rules
 

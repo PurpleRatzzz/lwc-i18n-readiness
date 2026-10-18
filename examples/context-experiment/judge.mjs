@@ -101,7 +101,10 @@ if (mode === 'sheet') {
         const rows = verdicts.filter((v) => key.get(v.id).condition === c);
         const ok = rows.filter((v) => v.acceptable.trim().toLowerCase() === 'yes').length;
         const errors = {};
-        for (const v of rows.filter((r) => r.acceptable.trim().toLowerCase() === 'no')) errors[v.error_type || 'unspecified'] = (errors[v.error_type || 'unspecified'] ?? 0) + 1;
+        // The judge may give more than one type ("meaning;order"); each one is counted.
+        for (const v of rows.filter((r) => r.acceptable.trim().toLowerCase() === 'no')) {
+            for (const type of (v.error_type || 'unspecified').split(/[;,]\s*/)) errors[type] = (errors[type] ?? 0) + 1;
+        }
         const reviewed = rows.filter((v) => key.get(v.id).review.length > 0).length;
         lines.push(`| ${c.toUpperCase()} | ${ok}/${rows.length} | ${rows.length - ok} | ${Object.entries(errors).map(([k, n]) => `${k} ${n}`).join(', ') || '-'} | ${reviewed} |`);
     }

@@ -73,6 +73,14 @@ On the real `CustomLabels.labels-meta.xml` of [salesforce/offline-app-developer-
 
 The full round trip on that file (export, pseudo translation, validated import, all 23 labels written) is in [examples/offline-starter-kit](examples/offline-starter-kit).
 
+### Does the context help AI translation?
+
+A preregistered, blind-judged experiment with project A (an AI translation pipeline), on real dreamhouse strings and on the starter-kit labels. [Details](examples/context-experiment/README.md).
+
+- Context made **no difference for single strings**: 31 of 31 were acceptable without it.
+- Every translation failure was in **sentences assembled from pieces**, or in a **hardcoded unit of measure (miles)**. Neither can be fixed by translation or caught by a per-string QA gate, which passed all of them.
+- The upstream fix that matters is structure: whole sentences with placeholders, plus context that states layout constraints. Better descriptions alone are not enough.
+
 ## Quick start
 
 Requires Node.js 22.

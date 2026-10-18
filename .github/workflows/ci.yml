@@ -15,4 +15,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The repos the tests and examples refer to, pinned in targets.json; without them one test is skipped.
+      - run: npm run fetch-targets
       - run: npm test

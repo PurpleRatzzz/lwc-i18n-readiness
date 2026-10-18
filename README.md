@@ -104,7 +104,7 @@ To plug in a real translator, set `LWC_I18N_TRANSLATOR_CMD` to any command that 
 
 ```yaml
 - uses: actions/checkout@v4
-- uses: <owner>/lwc-i18n-readiness@<ref>
+- uses: PurpleRatzzz/lwc-i18n-readiness@v0.1.0
   with:
     baseline: .i18n-baseline.json
 ```

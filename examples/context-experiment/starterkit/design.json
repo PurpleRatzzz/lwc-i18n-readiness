@@ -1,0 +1,412 @@
+{
+  "source": "salesforce/offline-app-developer-starter-kit@fb66da8 force-app/main/default/labels/CustomLabels.labels-meta.xml",
+  "scenario": "Reconstructed, not observed: no code in the starter kit (full history) or on GitHub uses these labels. From the label set they belong to a mobile record list (LMR) with a search box, a sort order, a filter panel with a date range, and save/error toasts. This scenario is the ground truth for judging.",
+  "c1Rule": "the original file as found: real descriptions, no categories",
+  "notJudged": [
+    {
+      "name": "FSL_LMR_Test",
+      "value": "Test Label",
+      "where": "Test label, not UI",
+      "c1": {
+        "shortDescription": "Test Label",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Test Label",
+        "categories": ""
+      }
+    }
+  ],
+  "singles": [
+    {
+      "name": "LMR_Cancel",
+      "value": "Cancel",
+      "where": "Button in the filter panel; closes it without applying",
+      "c1": {
+        "shortDescription": "Cancel",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Button: closes the filter panel without applying changes",
+        "categories": "component:recordList, ui:button, maxlen:12"
+      }
+    },
+    {
+      "name": "LMR_Save",
+      "value": "Save",
+      "where": "Button on the record edit screen",
+      "c1": {
+        "shortDescription": "Save",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Button: saves the edited record",
+        "categories": "component:recordEdit, ui:button, maxlen:12"
+      }
+    },
+    {
+      "name": "LMR_Search",
+      "value": "Search",
+      "where": "Placeholder in the search box above the record list",
+      "c1": {
+        "shortDescription": "Search",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Placeholder text in the search box above the record list",
+        "categories": "component:recordList, ui:placeholder, maxlen:20"
+      }
+    },
+    {
+      "name": "LMR_FilterTitle",
+      "value": "Filter",
+      "where": "Title of the filter panel",
+      "c1": {
+        "shortDescription": "Filter title with capital F",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Title of the filter panel (a noun, not the verb)",
+        "categories": "component:recordList, ui:heading, maxlen:20"
+      }
+    },
+    {
+      "name": "LMR_Apply",
+      "value": "Apply",
+      "where": "Button in the filter panel",
+      "c1": {
+        "shortDescription": "Apply button",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Button: applies the selected filters to the list",
+        "categories": "component:recordList, ui:button, maxlen:12"
+      }
+    },
+    {
+      "name": "LMR_ClearAll",
+      "value": "Clear All",
+      "where": "Button in the filter panel",
+      "c1": {
+        "shortDescription": "Clear All filters button",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Button: removes all active filters",
+        "categories": "component:recordList, ui:button, maxlen:15"
+      }
+    },
+    {
+      "name": "LMR_SuccessTitle",
+      "value": "Success",
+      "where": "Toast title after a record is saved",
+      "c1": {
+        "shortDescription": "Success title on toast",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Title of the toast shown after a record is saved",
+        "categories": "component:recordEdit, ui:toast, maxlen:20"
+      }
+    },
+    {
+      "name": "LMR_RecordIsUpdated",
+      "value": "Record Is Updated",
+      "where": "Toast message after a record is saved",
+      "c1": {
+        "shortDescription": "Record Is Updated - toast body on save",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Message of the toast shown after a record is saved",
+        "categories": "component:recordEdit, ui:toast"
+      }
+    },
+    {
+      "name": "LMR_ErrorTitle",
+      "value": "Something went wrong.",
+      "where": "Toast title when saving fails",
+      "c1": {
+        "shortDescription": "Error title on toast",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Title of the toast shown when saving a record fails",
+        "categories": "component:recordEdit, ui:toast"
+      }
+    },
+    {
+      "name": "LMR_Select",
+      "value": "select",
+      "where": "Placeholder in a dropdown before a value is chosen",
+      "c1": {
+        "shortDescription": "select value from dropdown",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Placeholder in a dropdown before a value is chosen",
+        "categories": "component:recordList, ui:placeholder, maxlen:20"
+      }
+    },
+    {
+      "name": "LMR_DefineDateRangeTitle",
+      "value": "Define a date range",
+      "where": "Heading of the date range filter",
+      "c1": {
+        "shortDescription": "Define a date range",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Heading of the date range section in the filter panel",
+        "categories": "component:recordList, ui:heading"
+      }
+    },
+    {
+      "name": "LMR_StartDate",
+      "value": "Start Date",
+      "where": "Label of the first date field in the date range filter",
+      "c1": {
+        "shortDescription": "Start Date",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Label of the first date field of the date range filter",
+        "categories": "component:recordList, ui:label, maxlen:20"
+      }
+    },
+    {
+      "name": "LMR_EndDate",
+      "value": "End Date",
+      "where": "Label of the second date field in the date range filter",
+      "c1": {
+        "shortDescription": "End Date",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Label of the second date field of the date range filter",
+        "categories": "component:recordList, ui:label, maxlen:20"
+      }
+    },
+    {
+      "name": "LMR_None",
+      "value": "None",
+      "where": "Dropdown option meaning no value is selected",
+      "c1": {
+        "shortDescription": "None option for picklist dropdown",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Dropdown option meaning that no value is selected",
+        "categories": "component:recordList, ui:label"
+      }
+    },
+    {
+      "name": "LMR_Enabled",
+      "value": "Enabled",
+      "where": "Value shown for a checkbox field that is on, in the filter panel",
+      "c1": {
+        "shortDescription": "Enabled",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Value shown for a checkbox field that is on",
+        "categories": "component:recordList, ui:text, maxlen:15"
+      }
+    },
+    {
+      "name": "LMR_Disabled",
+      "value": "Disabled",
+      "where": "Value shown for a checkbox field that is off, in the filter panel",
+      "c1": {
+        "shortDescription": "Disabled",
+        "categories": ""
+      },
+      "c2": {
+        "shortDescription": "Value shown for a checkbox field that is off",
+        "categories": "component:recordList, ui:text, maxlen:15"
+      }
+    }
+  ],
+  "fragments": [
+    {
+      "unit": "header",
+      "where": "List header: record count and sort field",
+      "pieces": [
+        {
+          "name": "LMR_Items",
+          "value": "items",
+          "where": "Fragment: list header '{count} items • sorted by {field}' and filtered count '{shown} items of {total}'",
+          "c1": {
+            "shortDescription": "items",
+            "categories": ""
+          },
+          "c2": {
+            "shortDescription": "Word after a record count, e.g. the header '12 items'",
+            "categories": "component:recordList, ui:text"
+          }
+        },
+        {
+          "name": "LMR_SortedBy",
+          "value": "sorted by",
+          "where": "Fragment: list header '{count} items • sorted by {field}'",
+          "c1": {
+            "shortDescription": "sorted by",
+            "categories": ""
+          },
+          "c2": {
+            "shortDescription": "Words before the sort field in the list header: 'sorted by Name'",
+            "categories": "component:recordList, ui:text"
+          }
+        }
+      ],
+      "assemble": "{n} LMR_Items • LMR_SortedBy {field}",
+      "example": {
+        "n": "12",
+        "field": "Name"
+      },
+      "c3": {
+        "name": "LMR_ListHeader",
+        "value": "{0} items • sorted by {1}",
+        "shortDescription": "List header. {0} = number of records, {1} = name of the sort field",
+        "categories": "component:recordList, ui:text"
+      },
+      "c3Args": [
+        "n",
+        "field"
+      ]
+    },
+    {
+      "unit": "filtered",
+      "where": "Shown when a filter is active: records shown of all records",
+      "pieces": [
+        {
+          "name": "LMR_Items",
+          "value": "items",
+          "where": "Fragment: list header '{count} items • sorted by {field}' and filtered count '{shown} items of {total}'",
+          "c1": {
+            "shortDescription": "items",
+            "categories": ""
+          },
+          "c2": {
+            "shortDescription": "Word after a record count, e.g. the header '12 items'",
+            "categories": "component:recordList, ui:text"
+          }
+        },
+        {
+          "name": "LMR_Of",
+          "value": "of",
+          "where": "Fragment: '{shown} items of {total}' when a filter is active",
+          "c1": {
+            "shortDescription": "when filtering the data - X items of Y",
+            "categories": ""
+          },
+          "c2": {
+            "shortDescription": "Word between two counts when filtered: '10 items of 50'",
+            "categories": "component:recordList, ui:text"
+          }
+        }
+      ],
+      "assemble": "{shown} LMR_Items LMR_Of {total}",
+      "example": {
+        "shown": "10",
+        "total": "50"
+      },
+      "c3": {
+        "name": "LMR_FilteredCount",
+        "value": "{0} items of {1}",
+        "shortDescription": "Shown when filtered. {0} = records shown, {1} = all records",
+        "categories": "component:recordList, ui:text"
+      },
+      "c3Args": [
+        "shown",
+        "total"
+      ]
+    },
+    {
+      "unit": "filterCount",
+      "where": "Number of active filters (n = 3)",
+      "pieces": [
+        {
+          "name": "LMR_filter",
+          "value": "filter",
+          "where": "Fragment: '1 filter' (count of active filters)",
+          "c1": {
+            "shortDescription": "filter",
+            "categories": ""
+          },
+          "c2": {
+            "shortDescription": "Noun after the number of active filters, singular: '1 filter'",
+            "categories": "component:recordList, ui:text"
+          }
+        },
+        {
+          "name": "LMR_filters",
+          "value": "filters",
+          "where": "Fragment: '3 filters' (count of active filters)",
+          "c1": {
+            "shortDescription": "filters",
+            "categories": ""
+          },
+          "c2": {
+            "shortDescription": "Noun after the number of active filters, plural: '3 filters'",
+            "categories": "component:recordList, ui:text"
+          }
+        }
+      ],
+      "assemble": "{n} LMR_filters",
+      "example": {
+        "n": "3"
+      },
+      "c3": {
+        "name": "LMR_FilterCount_Other",
+        "value": "{0} filters",
+        "shortDescription": "Number of active filters when it is not 1. {0} = the number",
+        "categories": "component:recordList, ui:text"
+      },
+      "c3Args": [
+        "n"
+      ],
+      "c3Extra": [
+        {
+          "name": "LMR_FilterCount_One",
+          "value": "{0} filter",
+          "shortDescription": "Number of active filters when it is 1. {0} = the number",
+          "categories": "component:recordList, ui:text"
+        }
+      ]
+    },
+    {
+      "unit": "selected",
+      "where": "Number of values chosen in a multi-select filter",
+      "pieces": [
+        {
+          "name": "LMR_Selected",
+          "value": "selected",
+          "where": "Fragment: '3 selected' (number of values chosen in a multi-select filter)",
+          "c1": {
+            "shortDescription": "X selected",
+            "categories": ""
+          },
+          "c2": {
+            "shortDescription": "Word after the number of chosen values: '3 selected'",
+            "categories": "component:recordList, ui:text"
+          }
+        }
+      ],
+      "assemble": "{n} LMR_Selected",
+      "example": {
+        "n": "3"
+      },
+      "c3": {
+        "name": "LMR_SelectedCount",
+        "value": "{0} selected",
+        "shortDescription": "Number of values chosen in a multi-select filter. {0} = the number",
+        "categories": "component:recordList, ui:text"
+      },
+      "c3Args": [
+        "n"
+      ]
+    }
+  ],
+  "assembleNote": "Same rules as the dreamhouse set."
+}

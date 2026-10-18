@@ -6,3 +6,5 @@ work/
 # Scratch output of CLI runs
 out/
 .DS_Store
+# Context experiment: generated condition files are rebuilt by make-conditions.mjs
+examples/context-experiment/*/conditions/

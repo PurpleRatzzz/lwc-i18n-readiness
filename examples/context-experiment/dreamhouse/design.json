@@ -1,0 +1,371 @@
+{
+  "source": "trailheadapps/dreamhouse-lwc@3f496e4: real hardcoded strings from the gold set (eval/gold/dreamhouse.csv), externalized as Custom Labels",
+  "c1Rule": "shortDescription = value and no categories, the practice found in 13 of 23 labels of salesforce/offline-app-developer-starter-kit",
+  "singles": [
+    {
+      "name": "DH_Filter_Reset",
+      "value": "Reset",
+      "gold": "G038",
+      "source": "propertyFilter.html:5",
+      "where": "Button in the header of the Filters card; clears the search box and resets the price and room sliders",
+      "c2": {
+        "shortDescription": "Button: clears the search and resets all property filters",
+        "categories": "component:propertyFilter, ui:button, maxlen:12"
+      }
+    },
+    {
+      "name": "DH_Filter_SearchKey",
+      "value": "Search Key",
+      "gold": "G039",
+      "source": "propertyFilter.html:11",
+      "where": "Label of a text box; the text filters properties by name, city and tags",
+      "c2": {
+        "shortDescription": "Label of the text box that filters properties by name, city or tags",
+        "categories": "component:propertyFilter, ui:label, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Filter_MaxPrice",
+      "value": "Max Price",
+      "gold": "G040",
+      "source": "propertyFilter.html:17",
+      "where": "Label of a slider (0 to 1,200,000) that sets the highest price to show",
+      "c2": {
+        "shortDescription": "Label of the slider that sets the highest property price shown",
+        "categories": "component:propertyFilter, ui:label, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Filter_Bedrooms",
+      "value": "Bedrooms",
+      "gold": "G041",
+      "source": "propertyFilter.html:25",
+      "where": "Label of a slider (0 to 6) that sets the minimum number of bedrooms",
+      "c2": {
+        "shortDescription": "Label of the slider that sets the minimum number of bedrooms",
+        "categories": "component:propertyFilter, ui:label, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Filter_Title",
+      "value": "Filters",
+      "gold": "G037",
+      "source": "propertyFilter.html:2",
+      "where": "Title of the card that holds the property search filters",
+      "c2": {
+        "shortDescription": "Title of the card holding the property search filters",
+        "categories": "component:propertyFilter, ui:heading, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Broker_Title",
+      "value": "Broker",
+      "gold": "G014",
+      "source": "brokerCard.html:2",
+      "where": "Title of the card showing the real estate broker of the selected house",
+      "c2": {
+        "shortDescription": "Title of the card showing the real estate agent for the house",
+        "categories": "component:brokerCard, ui:heading, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Summary_PictureAlt",
+      "value": "Property picture",
+      "gold": "G059",
+      "source": "propertySummary.html:15",
+      "where": "Alt text of the photo of the selected house (property = real estate)",
+      "c2": {
+        "shortDescription": "Alt text for the photo of the selected house (real estate)",
+        "categories": "component:propertySummary, ui:alt"
+      }
+    },
+    {
+      "name": "DH_Carousel_AddPicture",
+      "value": "Add picture",
+      "gold": "G035",
+      "source": "propertyCarousel.html:32",
+      "where": "Label of the file upload control that adds a photo of the house",
+      "c2": {
+        "shortDescription": "Label of the file upload control that adds a house photo",
+        "categories": "component:propertyCarousel, ui:label, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Scanner_Button",
+      "value": "Scan QR Code",
+      "gold": "G005",
+      "source": "barcodeScanner.html:18",
+      "where": "Button that opens the phone camera to scan the QR code on a property sign",
+      "c2": {
+        "shortDescription": "Button: opens the phone camera to scan a property's QR code",
+        "categories": "component:barcodeScanner, ui:button, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Scanner_CanceledTitle",
+      "value": "Scanning Canceled",
+      "gold": "G010",
+      "source": "barcodeScanner.js:56",
+      "where": "Toast title when the user cancels QR code scanning",
+      "c2": {
+        "shortDescription": "Title of the toast shown when the user cancels QR code scanning",
+        "categories": "component:barcodeScanner, ui:toast, maxlen:25"
+      }
+    },
+    {
+      "name": "DH_Import_SuccessTitle",
+      "value": "Success",
+      "gold": "G068",
+      "source": "sampleDataImporter.js:10",
+      "where": "Toast title after the sample data import succeeds",
+      "c2": {
+        "shortDescription": "Title of the toast shown after sample data is imported",
+        "categories": "component:sampleDataImporter, ui:toast, maxlen:20"
+      }
+    },
+    {
+      "name": "DH_Import_SuccessMessage",
+      "value": "Sample data successfully imported",
+      "gold": "G069",
+      "source": "sampleDataImporter.js:11",
+      "where": "Toast message after sample houses and brokers are imported",
+      "c2": {
+        "shortDescription": "Toast message after the sample houses and brokers are imported",
+        "categories": "component:sampleDataImporter, ui:toast"
+      }
+    },
+    {
+      "name": "DH_ErrorRetrievingData",
+      "value": "Error retrieving data",
+      "gold": "G016",
+      "source": "brokerCard.html:22",
+      "where": "Message shown inside a card when its data could not be loaded",
+      "c2": {
+        "shortDescription": "Shown inside a card when its data could not be loaded",
+        "categories": "component:errorPanel, ui:error"
+      }
+    },
+    {
+      "name": "DH_Carousel_NoPictures",
+      "value": "There are currently no pictures for this property.",
+      "gold": "G034",
+      "source": "propertyCarousel.html:27",
+      "where": "Empty state of the photo carousel when the house has no photos",
+      "c2": {
+        "shortDescription": "Empty state of the photo carousel when a house has no photos",
+        "categories": "component:propertyCarousel, ui:text"
+      }
+    },
+    {
+      "name": "DH_Import_Instructions",
+      "value": "Click the button below to initialize the Property and Broker objects with sample data. All existing records in these objects will be deleted.",
+      "gold": "G066",
+      "source": "sampleDataImporter.html:8",
+      "where": "Instructions above the Import Data button; Property and Broker are Salesforce objects of this app",
+      "c2": {
+        "shortDescription": "Instructions above Import Data; Property and Broker are object names",
+        "categories": "component:sampleDataImporter, ui:text"
+      }
+    }
+  ],
+  "fragments": [
+    {
+      "unit": "daysOnMarket",
+      "gold": "F03 (G017, G018)",
+      "source": "daysOnMarket.html:7-9",
+      "where": "Badge: the number of days in large type, then 'days on' <br/> 'the market' below it",
+      "pieces": [
+        {
+          "name": "DH_Days_Part1",
+          "value": "days on",
+          "c2": {
+            "shortDescription": "First half of '18 days on the market', shown under the day count",
+            "categories": "component:daysOnMarket, ui:text"
+          }
+        },
+        {
+          "name": "DH_Days_Part2",
+          "value": "the market",
+          "c2": {
+            "shortDescription": "Second half of '18 days on the market', on the next line",
+            "categories": "component:daysOnMarket, ui:text"
+          }
+        }
+      ],
+      "assemble": "{n} DH_Days_Part1 DH_Days_Part2",
+      "example": {
+        "n": "18"
+      },
+      "c3": {
+        "name": "DH_DaysOnMarket",
+        "value": "{0} days on the market",
+        "shortDescription": "Badge text. {0} = number of days since the house was listed",
+        "categories": "component:daysOnMarket, ui:text"
+      },
+      "c3Args": [
+        "n"
+      ]
+    },
+    {
+      "unit": "distance",
+      "gold": "F06 (G051, G052)",
+      "source": "propertyLocation.html:23-28",
+      "where": "Line under the map: label, the distance number, then the unit",
+      "pieces": [
+        {
+          "name": "DH_Distance_Label",
+          "value": "Distance to property:",
+          "c2": {
+            "shortDescription": "Label before the distance from the user to the house",
+            "categories": "component:propertyLocation, ui:label"
+          }
+        },
+        {
+          "name": "DH_Distance_Unit",
+          "value": "miles",
+          "c2": {
+            "shortDescription": "Unit after the distance number: '2.5 miles'",
+            "categories": "component:propertyLocation, ui:text"
+          }
+        }
+      ],
+      "assemble": "DH_Distance_Label {n} DH_Distance_Unit",
+      "example": {
+        "n": "2.5"
+      },
+      "c3": {
+        "name": "DH_Distance",
+        "value": "Distance to property: {0} miles",
+        "shortDescription": "{0} = distance from the user to the house, in miles",
+        "categories": "component:propertyLocation, ui:text"
+      },
+      "c3Args": [
+        "n"
+      ]
+    },
+    {
+      "unit": "bedsBaths",
+      "gold": "F08 (G062)",
+      "source": "propertyTile.html:10",
+      "where": "Second line of a property tile: bedroom and bathroom counts",
+      "pieces": [
+        {
+          "name": "DH_Tile_Beds",
+          "value": "Beds:",
+          "c2": {
+            "shortDescription": "Label before the bedroom count on a property tile",
+            "categories": "component:propertyTile, ui:label"
+          }
+        },
+        {
+          "name": "DH_Tile_Baths",
+          "value": "Baths:",
+          "c2": {
+            "shortDescription": "Label before the bathroom count on a property tile",
+            "categories": "component:propertyTile, ui:label"
+          }
+        }
+      ],
+      "assemble": "DH_Tile_Beds {beds} - DH_Tile_Baths {baths}",
+      "example": {
+        "beds": "3",
+        "baths": "2"
+      },
+      "c3": {
+        "name": "DH_Tile_BedsBaths",
+        "value": "Beds: {0} - Baths: {1}",
+        "shortDescription": "Property tile. {0} = number of bedrooms, {1} = number of bathrooms",
+        "categories": "component:propertyTile, ui:text"
+      },
+      "c3Args": [
+        "beds",
+        "baths"
+      ]
+    },
+    {
+      "unit": "paginator",
+      "gold": "F04 (G032)",
+      "source": "paginator.html:15",
+      "where": "Center of the pager under the property list: total count and current page",
+      "pieces": [
+        {
+          "name": "DH_Pager_Items",
+          "value": "items",
+          "c2": {
+            "shortDescription": "Word after the total record count in the pager: '24 items'",
+            "categories": "component:paginator, ui:text"
+          }
+        },
+        {
+          "name": "DH_Pager_Page",
+          "value": "page",
+          "c2": {
+            "shortDescription": "Word before the current page number: 'page 2 of 3'",
+            "categories": "component:paginator, ui:text"
+          }
+        },
+        {
+          "name": "DH_Pager_Of",
+          "value": "of",
+          "c2": {
+            "shortDescription": "Word between page number and page count: 'page 2 of 3'",
+            "categories": "component:paginator, ui:text"
+          }
+        }
+      ],
+      "assemble": "{total} DH_Pager_Items • DH_Pager_Page {page} DH_Pager_Of {pages}",
+      "example": {
+        "total": "24",
+        "page": "2",
+        "pages": "3"
+      },
+      "c3": {
+        "name": "DH_Pager",
+        "value": "{0} items • page {1} of {2}",
+        "shortDescription": "Pager. {0} = total records, {1} = current page, {2} = page count",
+        "categories": "component:paginator, ui:text"
+      },
+      "c3Args": [
+        "total",
+        "page",
+        "pages"
+      ]
+    },
+    {
+      "unit": "scannerInstructions",
+      "gold": "F01 (G002-G004)",
+      "source": "barcodeScanner.html:8",
+      "where": "Instructions above the scan button; the button name is in bold",
+      "pieces": [
+        {
+          "name": "DH_Scanner_Click",
+          "value": "Click",
+          "c2": {
+            "shortDescription": "Start of 'Click <Scan QR Code> to open...', before the bold button name",
+            "categories": "component:barcodeScanner, ui:text"
+          }
+        },
+        {
+          "name": "DH_Scanner_Rest",
+          "value": "to open a QR Code scanner camera view. Position a QR Code in the scanner view to scan it.",
+          "c2": {
+            "shortDescription": "Rest of 'Click <Scan QR Code> to open...', after the bold button name",
+            "categories": "component:barcodeScanner, ui:text"
+          }
+        }
+      ],
+      "assemble": "DH_Scanner_Click **DH_Scanner_Button** DH_Scanner_Rest",
+      "example": {},
+      "c3": {
+        "name": "DH_Scanner_Instructions",
+        "value": "Click {0} to open a QR Code scanner camera view. Position a QR Code in the scanner view to scan it.",
+        "shortDescription": "Instructions. {0} = name of the Scan QR Code button, shown in bold",
+        "categories": "component:barcodeScanner, ui:text"
+      },
+      "c3Args": [
+        "label:DH_Scanner_Button"
+      ]
+    }
+  ],
+  "assembleNote": "assemble: piece names are replaced by their translations, {vars} by the example values, **x** marks bold; pieces are joined with the same spaces/punctuation the code uses. c3Args: what fills {0}, {1}... of the C3 label (an example key, or label:NAME = that label's translation)."
+}

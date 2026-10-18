@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="examples/context-experiment/starterkit/conditions/c3.labels-meta.xml" source-language="en-US" target-language="zh-CN" datatype="xml">
+    <body>
+      <trans-unit id="LMR_Cancel" maxwidth="12" size-unit="char">
+        <source>Cancel</source>
+        <target state="translated">取消</target>
+        <note from="developer" annotates="general">Button: closes the filter panel without applying changes
+component:recordList, ui:button, maxlen:12</note>
+      </trans-unit>
+      <trans-unit id="LMR_Save" maxwidth="12" size-unit="char">
+        <source>Save</source>
+        <target state="translated">保存</target>
+        <note from="developer" annotates="general">Button: saves the edited record
+component:recordEdit, ui:button, maxlen:12</note>
+      </trans-unit>
+      <trans-unit id="LMR_Search" maxwidth="20" size-unit="char">
+        <source>Search</source>
+        <target state="translated">搜索</target>
+        <note from="developer" annotates="general">Placeholder text in the search box above the record list
+component:recordList, ui:placeholder, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="LMR_FilterTitle" maxwidth="20" size-unit="char">
+        <source>Filter</source>
+        <target state="translated">筛选器</target>
+        <note from="developer" annotates="general">Title of the filter panel (a noun, not the verb)
+component:recordList, ui:heading, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="LMR_Apply" maxwidth="12" size-unit="char">
+        <source>Apply</source>
+        <target state="translated">应用</target>
+        <note from="developer" annotates="general">Button: applies the selected filters to the list
+component:recordList, ui:button, maxlen:12</note>
+      </trans-unit>
+      <trans-unit id="LMR_ClearAll" maxwidth="15" size-unit="char">
+        <source>Clear All</source>
+        <target state="translated">全部清除</target>
+        <note from="developer" annotates="general">Button: removes all active filters
+component:recordList, ui:button, maxlen:15</note>
+      </trans-unit>
+      <trans-unit id="LMR_SuccessTitle" maxwidth="20" size-unit="char">
+        <source>Success</source>
+        <target state="translated">成功</target>
+        <note from="developer" annotates="general">Title of the toast shown after a record is saved
+component:recordEdit, ui:toast, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="LMR_RecordIsUpdated">
+        <source>Record Is Updated</source>
+        <target state="translated">记录已更新</target>
+        <note from="developer" annotates="general">Message of the toast shown after a record is saved
+component:recordEdit, ui:toast</note>
+      </trans-unit>
+      <trans-unit id="LMR_ErrorTitle">
+        <source>Something went wrong.</source>
+        <target state="translated">出现问题。</target>
+        <note from="developer" annotates="general">Title of the toast shown when saving a record fails
+component:recordEdit, ui:toast</note>
+      </trans-unit>
+      <trans-unit id="LMR_Select" maxwidth="20" size-unit="char">
+        <source>select</source>
+        <target state="translated">选择</target>
+        <note from="developer" annotates="general">Placeholder in a dropdown before a value is chosen
+component:recordList, ui:placeholder, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="LMR_DefineDateRangeTitle">
+        <source>Define a date range</source>
+        <target state="translated">定义日期范围</target>
+        <note from="developer" annotates="general">Heading of the date range section in the filter panel
+component:recordList, ui:heading</note>
+      </trans-unit>
+      <trans-unit id="LMR_StartDate" maxwidth="20" size-unit="char">
+        <source>Start Date</source>
+        <target state="translated">开始日期</target>
+        <note from="developer" annotates="general">Label of the first date field of the date range filter
+component:recordList, ui:label, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="LMR_EndDate" maxwidth="20" size-unit="char">
+        <source>End Date</source>
+        <target state="translated">结束日期</target>
+        <note from="developer" annotates="general">Label of the second date field of the date range filter
+component:recordList, ui:label, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="LMR_None">
+        <source>None</source>
+        <target state="translated">无</target>
+        <note from="developer" annotates="general">Dropdown option meaning that no value is selected
+component:recordList, ui:label</note>
+      </trans-unit>
+      <trans-unit id="LMR_Enabled" maxwidth="15" size-unit="char">
+        <source>Enabled</source>
+        <target state="translated">已启用</target>
+        <note from="developer" annotates="general">Value shown for a checkbox field that is on
+component:recordList, ui:text, maxlen:15</note>
+      </trans-unit>
+      <trans-unit id="LMR_Disabled" maxwidth="15" size-unit="char">
+        <source>Disabled</source>
+        <target state="translated">已禁用</target>
+        <note from="developer" annotates="general">Value shown for a checkbox field that is off
+component:recordList, ui:text, maxlen:15</note>
+      </trans-unit>
+      <trans-unit id="LMR_ListHeader">
+        <source>{0} items • sorted by {1}</source>
+        <target state="translated">{0} 个项目 • 按 {1} 排序</target>
+        <note from="developer" annotates="general">List header. {0} = number of records, {1} = name of the sort field
+component:recordList, ui:text</note>
+      </trans-unit>
+      <trans-unit id="LMR_FilteredCount">
+        <source>{0} items of {1}</source>
+        <target state="translated">{0} 个项目，共 {1} 个</target>
+        <note from="developer" annotates="general">Shown when filtered. {0} = records shown, {1} = all records
+component:recordList, ui:text</note>
+      </trans-unit>
+      <trans-unit id="LMR_FilterCount_Other">
+        <source>{0} filters</source>
+        <target state="translated">{0} 个筛选器</target>
+        <note from="developer" annotates="general">Number of active filters when it is not 1. {0} = the number
+component:recordList, ui:text</note>
+      </trans-unit>
+      <trans-unit id="LMR_FilterCount_One">
+        <source>{0} filter</source>
+        <target state="translated">{0} 个筛选器</target>
+        <note from="developer" annotates="general">Number of active filters when it is 1. {0} = the number
+component:recordList, ui:text</note>
+      </trans-unit>
+      <trans-unit id="LMR_SelectedCount">
+        <source>{0} selected</source>
+        <target state="translated">已选择 {0} 项</target>
+        <note from="developer" annotates="general">Number of values chosen in a multi-select filter. {0} = the number
+component:recordList, ui:text</note>
+      </trans-unit>
+      <trans-unit id="FSL_LMR_Test">
+        <source>Test Label</source>
+        <target state="translated">测试标签</target>
+        <note from="developer" annotates="general">Test Label</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

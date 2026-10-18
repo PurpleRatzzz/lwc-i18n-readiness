@@ -1,0 +1,9 @@
+{
+  "set": "starterkit",
+  "startedAt": "2026-10-18T19:58:35Z",
+  "projectB": "ca9382c",
+  "projectA": "b26275f",
+  "projectADirty": false,
+  "model": "claude-sonnet-5-5",
+  "command": "python -m l10n_pipeline translate --content-type ui --target-lang zh-CN (default config E)"
+}

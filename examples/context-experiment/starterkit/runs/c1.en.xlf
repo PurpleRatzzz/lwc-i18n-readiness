@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="examples/context-experiment/starterkit/conditions/c1.labels-meta.xml" source-language="en-US" target-language="zh-CN" datatype="xml">
+        <body>
+            <trans-unit id="LMR_Cancel" resname="LMR_Cancel">
+                <source xml:space="preserve">Cancel</source>
+                <note from="developer">Cancel</note>
+            </trans-unit>
+            <trans-unit id="LMR_Save" resname="LMR_Save">
+                <source xml:space="preserve">Save</source>
+                <note from="developer">Save</note>
+            </trans-unit>
+            <trans-unit id="LMR_Search" resname="LMR_Search">
+                <source xml:space="preserve">Search</source>
+                <note from="developer">Search</note>
+            </trans-unit>
+            <trans-unit id="LMR_FilterTitle" resname="LMR_FilterTitle">
+                <source xml:space="preserve">Filter</source>
+                <note from="developer">Filter title with capital F</note>
+            </trans-unit>
+            <trans-unit id="LMR_Apply" resname="LMR_Apply">
+                <source xml:space="preserve">Apply</source>
+                <note from="developer">Apply button</note>
+            </trans-unit>
+            <trans-unit id="LMR_ClearAll" resname="LMR_ClearAll">
+                <source xml:space="preserve">Clear All</source>
+                <note from="developer">Clear All filters button</note>
+            </trans-unit>
+            <trans-unit id="LMR_SuccessTitle" resname="LMR_SuccessTitle">
+                <source xml:space="preserve">Success</source>
+                <note from="developer">Success title on toast</note>
+            </trans-unit>
+            <trans-unit id="LMR_RecordIsUpdated" resname="LMR_RecordIsUpdated">
+                <source xml:space="preserve">Record Is Updated</source>
+                <note from="developer">Record Is Updated - toast body on save</note>
+            </trans-unit>
+            <trans-unit id="LMR_ErrorTitle" resname="LMR_ErrorTitle">
+                <source xml:space="preserve">Something went wrong.</source>
+                <note from="developer">Error title on toast</note>
+            </trans-unit>
+            <trans-unit id="LMR_Select" resname="LMR_Select">
+                <source xml:space="preserve">select</source>
+                <note from="developer">select value from dropdown</note>
+            </trans-unit>
+            <trans-unit id="LMR_DefineDateRangeTitle" resname="LMR_DefineDateRangeTitle">
+                <source xml:space="preserve">Define a date range</source>
+                <note from="developer">Define a date range</note>
+            </trans-unit>
+            <trans-unit id="LMR_StartDate" resname="LMR_StartDate">
+                <source xml:space="preserve">Start Date</source>
+                <note from="developer">Start Date</note>
+            </trans-unit>
+            <trans-unit id="LMR_EndDate" resname="LMR_EndDate">
+                <source xml:space="preserve">End Date</source>
+                <note from="developer">End Date</note>
+            </trans-unit>
+            <trans-unit id="LMR_None" resname="LMR_None">
+                <source xml:space="preserve">None</source>
+                <note from="developer">None option for picklist dropdown</note>
+            </trans-unit>
+            <trans-unit id="LMR_Enabled" resname="LMR_Enabled">
+                <source xml:space="preserve">Enabled</source>
+                <note from="developer">Enabled</note>
+            </trans-unit>
+            <trans-unit id="LMR_Disabled" resname="LMR_Disabled">
+                <source xml:space="preserve">Disabled</source>
+                <note from="developer">Disabled</note>
+            </trans-unit>
+            <trans-unit id="LMR_Items" resname="LMR_Items">
+                <source xml:space="preserve">items</source>
+                <note from="developer">items</note>
+            </trans-unit>
+            <trans-unit id="LMR_SortedBy" resname="LMR_SortedBy">
+                <source xml:space="preserve">sorted by</source>
+                <note from="developer">sorted by</note>
+            </trans-unit>
+            <trans-unit id="LMR_Of" resname="LMR_Of">
+                <source xml:space="preserve">of</source>
+                <note from="developer">when filtering the data - X items of Y</note>
+            </trans-unit>
+            <trans-unit id="LMR_filter" resname="LMR_filter">
+                <source xml:space="preserve">filter</source>
+                <note from="developer">filter</note>
+            </trans-unit>
+            <trans-unit id="LMR_filters" resname="LMR_filters">
+                <source xml:space="preserve">filters</source>
+                <note from="developer">filters</note>
+            </trans-unit>
+            <trans-unit id="LMR_Selected" resname="LMR_Selected">
+                <source xml:space="preserve">selected</source>
+                <note from="developer">X selected</note>
+            </trans-unit>
+            <trans-unit id="FSL_LMR_Test" resname="FSL_LMR_Test">
+                <source xml:space="preserve">Test Label</source>
+                <note from="developer">Test Label</note>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

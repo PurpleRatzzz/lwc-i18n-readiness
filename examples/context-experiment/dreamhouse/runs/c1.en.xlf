@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="examples/context-experiment/dreamhouse/conditions/c1.labels-meta.xml" source-language="en-US" target-language="zh-CN" datatype="xml">
+        <body>
+            <trans-unit id="DH_Filter_Reset" resname="DH_Filter_Reset">
+                <source xml:space="preserve">Reset</source>
+                <note from="developer">Reset</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_SearchKey" resname="DH_Filter_SearchKey">
+                <source xml:space="preserve">Search Key</source>
+                <note from="developer">Search Key</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_MaxPrice" resname="DH_Filter_MaxPrice">
+                <source xml:space="preserve">Max Price</source>
+                <note from="developer">Max Price</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_Bedrooms" resname="DH_Filter_Bedrooms">
+                <source xml:space="preserve">Bedrooms</source>
+                <note from="developer">Bedrooms</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_Title" resname="DH_Filter_Title">
+                <source xml:space="preserve">Filters</source>
+                <note from="developer">Filters</note>
+            </trans-unit>
+            <trans-unit id="DH_Broker_Title" resname="DH_Broker_Title">
+                <source xml:space="preserve">Broker</source>
+                <note from="developer">Broker</note>
+            </trans-unit>
+            <trans-unit id="DH_Summary_PictureAlt" resname="DH_Summary_PictureAlt">
+                <source xml:space="preserve">Property picture</source>
+                <note from="developer">Property picture</note>
+            </trans-unit>
+            <trans-unit id="DH_Carousel_AddPicture" resname="DH_Carousel_AddPicture">
+                <source xml:space="preserve">Add picture</source>
+                <note from="developer">Add picture</note>
+            </trans-unit>
+            <trans-unit id="DH_Scanner_Button" resname="DH_Scanner_Button">
+                <source xml:space="preserve">Scan QR Code</source>
+                <note from="developer">Scan QR Code</note>
+            </trans-unit>
+            <trans-unit id="DH_Scanner_CanceledTitle" resname="DH_Scanner_CanceledTitle">
+                <source xml:space="preserve">Scanning Canceled</source>
+                <note from="developer">Scanning Canceled</note>
+            </trans-unit>
+            <trans-unit id="DH_Import_SuccessTitle" resname="DH_Import_SuccessTitle">
+                <source xml:space="preserve">Success</source>
+                <note from="developer">Success</note>
+            </trans-unit>
+            <trans-unit id="DH_Import_SuccessMessage" resname="DH_Import_SuccessMessage">
+                <source xml:space="preserve">Sample data successfully imported</source>
+                <note from="developer">Sample data successfully imported</note>
+            </trans-unit>
+            <trans-unit id="DH_ErrorRetrievingData" resname="DH_ErrorRetrievingData">
+                <source xml:space="preserve">Error retrieving data</source>
+                <note from="developer">Error retrieving data</note>
+            </trans-unit>
+            <trans-unit id="DH_Carousel_NoPictures" resname="DH_Carousel_NoPictures">
+                <source xml:space="preserve">There are currently no pictures for this property.</source>
+                <note from="developer">There are currently no pictures for this property.</note>
+            </trans-unit>
+            <trans-unit id="DH_Import_Instructions" resname="DH_Import_Instructions">
+                <source xml:space="preserve">Click the button below to initialize the Property and Broker objects with sample data. All existing records in these objects will be deleted.</source>
+                <note from="developer">Click the button below to initialize the Property and Broker objects with sample data. All existing records in these objects will be deleted.</note>
+            </trans-unit>
+            <trans-unit id="DH_Days_Part1" resname="DH_Days_Part1">
+                <source xml:space="preserve">days on</source>
+                <note from="developer">days on</note>
+            </trans-unit>
+            <trans-unit id="DH_Days_Part2" resname="DH_Days_Part2">
+                <source xml:space="preserve">the market</source>
+                <note from="developer">the market</note>
+            </trans-unit>
+            <trans-unit id="DH_Distance_Label" resname="DH_Distance_Label">
+                <source xml:space="preserve">Distance to property:</source>
+                <note from="developer">Distance to property:</note>
+            </trans-unit>
+            <trans-unit id="DH_Distance_Unit" resname="DH_Distance_Unit">
+                <source xml:space="preserve">miles</source>
+                <note from="developer">miles</note>
+            </trans-unit>
+            <trans-unit id="DH_Tile_Beds" resname="DH_Tile_Beds">
+                <source xml:space="preserve">Beds:</source>
+                <note from="developer">Beds:</note>
+            </trans-unit>
+            <trans-unit id="DH_Tile_Baths" resname="DH_Tile_Baths">
+                <source xml:space="preserve">Baths:</source>
+                <note from="developer">Baths:</note>
+            </trans-unit>
+            <trans-unit id="DH_Pager_Items" resname="DH_Pager_Items">
+                <source xml:space="preserve">items</source>
+                <note from="developer">items</note>
+            </trans-unit>
+            <trans-unit id="DH_Pager_Page" resname="DH_Pager_Page">
+                <source xml:space="preserve">page</source>
+                <note from="developer">page</note>
+            </trans-unit>
+            <trans-unit id="DH_Pager_Of" resname="DH_Pager_Of">
+                <source xml:space="preserve">of</source>
+                <note from="developer">of</note>
+            </trans-unit>
+            <trans-unit id="DH_Scanner_Click" resname="DH_Scanner_Click">
+                <source xml:space="preserve">Click</source>
+                <note from="developer">Click</note>
+            </trans-unit>
+            <trans-unit id="DH_Scanner_Rest" resname="DH_Scanner_Rest">
+                <source xml:space="preserve">to open a QR Code scanner camera view. Position a QR Code in the scanner view to scan it.</source>
+                <note from="developer">to open a QR Code scanner camera view. Position a QR Code in the scanner view to scan it.</note>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="examples/context-experiment/dreamhouse/conditions/c3.labels-meta.xml" source-language="en-US" target-language="zh-CN" datatype="xml">
+        <body>
+            <trans-unit id="DH_Filter_Reset" resname="DH_Filter_Reset" maxwidth="12" size-unit="char">
+                <source xml:space="preserve">Reset</source>
+                <note from="developer">Button: clears the search and resets all property filters</note>
+                <note from="context">component:propertyFilter, ui:button, maxlen:12</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_SearchKey" resname="DH_Filter_SearchKey" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Search Key</source>
+                <note from="developer">Label of the text box that filters properties by name, city or tags</note>
+                <note from="context">component:propertyFilter, ui:label, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_MaxPrice" resname="DH_Filter_MaxPrice" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Max Price</source>
+                <note from="developer">Label of the slider that sets the highest property price shown</note>
+                <note from="context">component:propertyFilter, ui:label, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_Bedrooms" resname="DH_Filter_Bedrooms" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Bedrooms</source>
+                <note from="developer">Label of the slider that sets the minimum number of bedrooms</note>
+                <note from="context">component:propertyFilter, ui:label, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Filter_Title" resname="DH_Filter_Title" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Filters</source>
+                <note from="developer">Title of the card holding the property search filters</note>
+                <note from="context">component:propertyFilter, ui:heading, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Broker_Title" resname="DH_Broker_Title" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Broker</source>
+                <note from="developer">Title of the card showing the real estate agent for the house</note>
+                <note from="context">component:brokerCard, ui:heading, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Summary_PictureAlt" resname="DH_Summary_PictureAlt">
+                <source xml:space="preserve">Property picture</source>
+                <note from="developer">Alt text for the photo of the selected house (real estate)</note>
+                <note from="context">component:propertySummary, ui:alt</note>
+            </trans-unit>
+            <trans-unit id="DH_Carousel_AddPicture" resname="DH_Carousel_AddPicture" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Add picture</source>
+                <note from="developer">Label of the file upload control that adds a house photo</note>
+                <note from="context">component:propertyCarousel, ui:label, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Scanner_Button" resname="DH_Scanner_Button" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Scan QR Code</source>
+                <note from="developer">Button: opens the phone camera to scan a property&apos;s QR code</note>
+                <note from="context">component:barcodeScanner, ui:button, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Scanner_CanceledTitle" resname="DH_Scanner_CanceledTitle" maxwidth="25" size-unit="char">
+                <source xml:space="preserve">Scanning Canceled</source>
+                <note from="developer">Title of the toast shown when the user cancels QR code scanning</note>
+                <note from="context">component:barcodeScanner, ui:toast, maxlen:25</note>
+            </trans-unit>
+            <trans-unit id="DH_Import_SuccessTitle" resname="DH_Import_SuccessTitle" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Success</source>
+                <note from="developer">Title of the toast shown after sample data is imported</note>
+                <note from="context">component:sampleDataImporter, ui:toast, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="DH_Import_SuccessMessage" resname="DH_Import_SuccessMessage">
+                <source xml:space="preserve">Sample data successfully imported</source>
+                <note from="developer">Toast message after the sample houses and brokers are imported</note>
+                <note from="context">component:sampleDataImporter, ui:toast</note>
+            </trans-unit>
+            <trans-unit id="DH_ErrorRetrievingData" resname="DH_ErrorRetrievingData">
+                <source xml:space="preserve">Error retrieving data</source>
+                <note from="developer">Shown inside a card when its data could not be loaded</note>
+                <note from="context">component:errorPanel, ui:error</note>
+            </trans-unit>
+            <trans-unit id="DH_Carousel_NoPictures" resname="DH_Carousel_NoPictures">
+                <source xml:space="preserve">There are currently no pictures for this property.</source>
+                <note from="developer">Empty state of the photo carousel when a house has no photos</note>
+                <note from="context">component:propertyCarousel, ui:text</note>
+            </trans-unit>
+            <trans-unit id="DH_Import_Instructions" resname="DH_Import_Instructions">
+                <source xml:space="preserve">Click the button below to initialize the Property and Broker objects with sample data. All existing records in these objects will be deleted.</source>
+                <note from="developer">Instructions above Import Data; Property and Broker are object names</note>
+                <note from="context">component:sampleDataImporter, ui:text</note>
+            </trans-unit>
+            <trans-unit id="DH_DaysOnMarket" resname="DH_DaysOnMarket">
+                <source xml:space="preserve">{0} days on the market</source>
+                <note from="developer">Badge text. {0} = number of days since the house was listed</note>
+                <note from="context">component:daysOnMarket, ui:text</note>
+            </trans-unit>
+            <trans-unit id="DH_Distance" resname="DH_Distance">
+                <source xml:space="preserve">Distance to property: {0} miles</source>
+                <note from="developer">{0} = distance from the user to the house, in miles</note>
+                <note from="context">component:propertyLocation, ui:text</note>
+            </trans-unit>
+            <trans-unit id="DH_Tile_BedsBaths" resname="DH_Tile_BedsBaths">
+                <source xml:space="preserve">Beds: {0} - Baths: {1}</source>
+                <note from="developer">Property tile. {0} = number of bedrooms, {1} = number of bathrooms</note>
+                <note from="context">component:propertyTile, ui:text</note>
+            </trans-unit>
+            <trans-unit id="DH_Pager" resname="DH_Pager">
+                <source xml:space="preserve">{0} items • page {1} of {2}</source>
+                <note from="developer">Pager. {0} = total records, {1} = current page, {2} = page count</note>
+                <note from="context">component:paginator, ui:text</note>
+            </trans-unit>
+            <trans-unit id="DH_Scanner_Instructions" resname="DH_Scanner_Instructions">
+                <source xml:space="preserve">Click {0} to open a QR Code scanner camera view. Position a QR Code in the scanner view to scan it.</source>
+                <note from="developer">Instructions. {0} = name of the Scan QR Code button, shown in bold</note>
+                <note from="context">component:barcodeScanner, ui:text</note>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

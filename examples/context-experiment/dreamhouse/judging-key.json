@@ -1,0 +1,362 @@
+[
+  {
+    "id": "J01",
+    "condition": "c3",
+    "unit": "bedsBaths",
+    "review": []
+  },
+  {
+    "id": "J02",
+    "condition": "c2",
+    "unit": "DH_Scanner_Button",
+    "review": []
+  },
+  {
+    "id": "J03",
+    "condition": "c1",
+    "unit": "DH_Filter_MaxPrice",
+    "review": []
+  },
+  {
+    "id": "J04",
+    "condition": "c3",
+    "unit": "DH_Filter_Title",
+    "review": []
+  },
+  {
+    "id": "J05",
+    "condition": "c3",
+    "unit": "DH_Scanner_Button",
+    "review": []
+  },
+  {
+    "id": "J06",
+    "condition": "c2",
+    "unit": "DH_Import_Instructions",
+    "review": []
+  },
+  {
+    "id": "J07",
+    "condition": "c1",
+    "unit": "DH_ErrorRetrievingData",
+    "review": []
+  },
+  {
+    "id": "J08",
+    "condition": "c3",
+    "unit": "DH_ErrorRetrievingData",
+    "review": []
+  },
+  {
+    "id": "J09",
+    "condition": "c3",
+    "unit": "DH_Filter_Reset",
+    "review": []
+  },
+  {
+    "id": "J10",
+    "condition": "c2",
+    "unit": "DH_Filter_Bedrooms",
+    "review": []
+  },
+  {
+    "id": "J11",
+    "condition": "c3",
+    "unit": "paginator",
+    "review": []
+  },
+  {
+    "id": "J12",
+    "condition": "c3",
+    "unit": "DH_Summary_PictureAlt",
+    "review": []
+  },
+  {
+    "id": "J13",
+    "condition": "c2",
+    "unit": "DH_Carousel_NoPictures",
+    "review": []
+  },
+  {
+    "id": "J14",
+    "condition": "c3",
+    "unit": "DH_Filter_SearchKey",
+    "review": []
+  },
+  {
+    "id": "J15",
+    "condition": "c2",
+    "unit": "distance",
+    "review": []
+  },
+  {
+    "id": "J16",
+    "condition": "c3",
+    "unit": "scannerInstructions",
+    "review": []
+  },
+  {
+    "id": "J17",
+    "condition": "c2",
+    "unit": "DH_Summary_PictureAlt",
+    "review": []
+  },
+  {
+    "id": "J18",
+    "condition": "c2",
+    "unit": "DH_Import_SuccessTitle",
+    "review": []
+  },
+  {
+    "id": "J19",
+    "condition": "c1",
+    "unit": "DH_Scanner_CanceledTitle",
+    "review": []
+  },
+  {
+    "id": "J20",
+    "condition": "c2",
+    "unit": "DH_ErrorRetrievingData",
+    "review": []
+  },
+  {
+    "id": "J21",
+    "condition": "c1",
+    "unit": "bedsBaths",
+    "review": []
+  },
+  {
+    "id": "J22",
+    "condition": "c1",
+    "unit": "DH_Import_Instructions",
+    "review": []
+  },
+  {
+    "id": "J23",
+    "condition": "c1",
+    "unit": "DH_Carousel_AddPicture",
+    "review": []
+  },
+  {
+    "id": "J24",
+    "condition": "c2",
+    "unit": "DH_Filter_Title",
+    "review": []
+  },
+  {
+    "id": "J25",
+    "condition": "c3",
+    "unit": "daysOnMarket",
+    "review": []
+  },
+  {
+    "id": "J26",
+    "condition": "c3",
+    "unit": "DH_Scanner_CanceledTitle",
+    "review": []
+  },
+  {
+    "id": "J27",
+    "condition": "c1",
+    "unit": "DH_Carousel_NoPictures",
+    "review": []
+  },
+  {
+    "id": "J28",
+    "condition": "c3",
+    "unit": "DH_Import_SuccessTitle",
+    "review": []
+  },
+  {
+    "id": "J29",
+    "condition": "c2",
+    "unit": "DH_Scanner_CanceledTitle",
+    "review": []
+  },
+  {
+    "id": "J30",
+    "condition": "c1",
+    "unit": "DH_Import_SuccessMessage",
+    "review": []
+  },
+  {
+    "id": "J31",
+    "condition": "c1",
+    "unit": "DH_Filter_Reset",
+    "review": []
+  },
+  {
+    "id": "J32",
+    "condition": "c3",
+    "unit": "DH_Filter_Bedrooms",
+    "review": []
+  },
+  {
+    "id": "J33",
+    "condition": "c1",
+    "unit": "DH_Filter_Bedrooms",
+    "review": []
+  },
+  {
+    "id": "J34",
+    "condition": "c2",
+    "unit": "DH_Filter_Reset",
+    "review": []
+  },
+  {
+    "id": "J35",
+    "condition": "c1",
+    "unit": "DH_Import_SuccessTitle",
+    "review": []
+  },
+  {
+    "id": "J36",
+    "condition": "c3",
+    "unit": "DH_Import_Instructions",
+    "review": []
+  },
+  {
+    "id": "J37",
+    "condition": "c1",
+    "unit": "DH_Filter_SearchKey",
+    "review": []
+  },
+  {
+    "id": "J38",
+    "condition": "c3",
+    "unit": "DH_Filter_MaxPrice",
+    "review": []
+  },
+  {
+    "id": "J39",
+    "condition": "c3",
+    "unit": "DH_Broker_Title",
+    "review": []
+  },
+  {
+    "id": "J40",
+    "condition": "c1",
+    "unit": "distance",
+    "review": []
+  },
+  {
+    "id": "J41",
+    "condition": "c1",
+    "unit": "DH_Summary_PictureAlt",
+    "review": []
+  },
+  {
+    "id": "J42",
+    "condition": "c2",
+    "unit": "DH_Filter_MaxPrice",
+    "review": []
+  },
+  {
+    "id": "J43",
+    "condition": "c2",
+    "unit": "DH_Filter_SearchKey",
+    "review": []
+  },
+  {
+    "id": "J44",
+    "condition": "c3",
+    "unit": "DH_Carousel_NoPictures",
+    "review": []
+  },
+  {
+    "id": "J45",
+    "condition": "c1",
+    "unit": "DH_Scanner_Button",
+    "review": []
+  },
+  {
+    "id": "J46",
+    "condition": "c1",
+    "unit": "DH_Broker_Title",
+    "review": []
+  },
+  {
+    "id": "J47",
+    "condition": "c2",
+    "unit": "daysOnMarket",
+    "review": []
+  },
+  {
+    "id": "J48",
+    "condition": "c2",
+    "unit": "DH_Import_SuccessMessage",
+    "review": []
+  },
+  {
+    "id": "J49",
+    "condition": "c3",
+    "unit": "DH_Import_SuccessMessage",
+    "review": []
+  },
+  {
+    "id": "J50",
+    "condition": "c2",
+    "unit": "paginator",
+    "review": []
+  },
+  {
+    "id": "J51",
+    "condition": "c1",
+    "unit": "paginator",
+    "review": []
+  },
+  {
+    "id": "J52",
+    "condition": "c2",
+    "unit": "DH_Broker_Title",
+    "review": []
+  },
+  {
+    "id": "J53",
+    "condition": "c1",
+    "unit": "DH_Filter_Title",
+    "review": []
+  },
+  {
+    "id": "J54",
+    "condition": "c1",
+    "unit": "scannerInstructions",
+    "review": []
+  },
+  {
+    "id": "J55",
+    "condition": "c2",
+    "unit": "scannerInstructions",
+    "review": []
+  },
+  {
+    "id": "J56",
+    "condition": "c3",
+    "unit": "distance",
+    "review": []
+  },
+  {
+    "id": "J57",
+    "condition": "c1",
+    "unit": "daysOnMarket",
+    "review": []
+  },
+  {
+    "id": "J58",
+    "condition": "c2",
+    "unit": "DH_Carousel_AddPicture",
+    "review": []
+  },
+  {
+    "id": "J59",
+    "condition": "c3",
+    "unit": "DH_Carousel_AddPicture",
+    "review": []
+  },
+  {
+    "id": "J60",
+    "condition": "c2",
+    "unit": "bedsBaths",
+    "review": []
+  }
+]

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="examples/context-experiment/starterkit/conditions/c1.labels-meta.xml" source-language="en-US" target-language="zh-CN" datatype="xml">
+    <body>
+      <trans-unit id="LMR_Cancel">
+        <source>Cancel</source>
+        <target state="translated">取消</target>
+        <note from="developer" annotates="general">Cancel</note>
+      </trans-unit>
+      <trans-unit id="LMR_Save">
+        <source>Save</source>
+        <target state="translated">保存</target>
+        <note from="developer" annotates="general">Save</note>
+      </trans-unit>
+      <trans-unit id="LMR_Search">
+        <source>Search</source>
+        <target state="translated">搜索</target>
+        <note from="developer" annotates="general">Search</note>
+      </trans-unit>
+      <trans-unit id="LMR_FilterTitle">
+        <source>Filter</source>
+        <target state="translated">筛选器</target>
+        <note from="developer" annotates="general">Filter title with capital F</note>
+      </trans-unit>
+      <trans-unit id="LMR_Apply">
+        <source>Apply</source>
+        <target state="translated">应用</target>
+        <note from="developer" annotates="general">Apply button</note>
+      </trans-unit>
+      <trans-unit id="LMR_ClearAll">
+        <source>Clear All</source>
+        <target state="translated">全部清除</target>
+        <note from="developer" annotates="general">Clear All filters button</note>
+      </trans-unit>
+      <trans-unit id="LMR_SuccessTitle">
+        <source>Success</source>
+        <target state="translated">成功</target>
+        <note from="developer" annotates="general">Success title on toast</note>
+      </trans-unit>
+      <trans-unit id="LMR_RecordIsUpdated">
+        <source>Record Is Updated</source>
+        <target state="translated">记录已更新</target>
+        <note from="developer" annotates="general">Record Is Updated - toast body on save</note>
+      </trans-unit>
+      <trans-unit id="LMR_ErrorTitle">
+        <source>Something went wrong.</source>
+        <target state="translated">出现问题。</target>
+        <note from="developer" annotates="general">Error title on toast</note>
+      </trans-unit>
+      <trans-unit id="LMR_Select">
+        <source>select</source>
+        <target state="translated">选择</target>
+        <note from="developer" annotates="general">select value from dropdown</note>
+      </trans-unit>
+      <trans-unit id="LMR_DefineDateRangeTitle">
+        <source>Define a date range</source>
+        <target state="translated">定义日期范围</target>
+        <note from="developer" annotates="general">Define a date range</note>
+      </trans-unit>
+      <trans-unit id="LMR_StartDate">
+        <source>Start Date</source>
+        <target state="translated">开始日期</target>
+        <note from="developer" annotates="general">Start Date</note>
+      </trans-unit>
+      <trans-unit id="LMR_EndDate">
+        <source>End Date</source>
+        <target state="translated">结束日期</target>
+        <note from="developer" annotates="general">End Date</note>
+      </trans-unit>
+      <trans-unit id="LMR_None">
+        <source>None</source>
+        <target state="translated">无</target>
+        <note from="developer" annotates="general">None option for picklist dropdown</note>
+      </trans-unit>
+      <trans-unit id="LMR_Enabled">
+        <source>Enabled</source>
+        <target state="translated">已启用</target>
+        <note from="developer" annotates="general">Enabled</note>
+      </trans-unit>
+      <trans-unit id="LMR_Disabled">
+        <source>Disabled</source>
+        <target state="translated">已禁用</target>
+        <note from="developer" annotates="general">Disabled</note>
+      </trans-unit>
+      <trans-unit id="LMR_Items">
+        <source>items</source>
+        <target state="translated">项目</target>
+        <note from="developer" annotates="general">items</note>
+      </trans-unit>
+      <trans-unit id="LMR_SortedBy">
+        <source>sorted by</source>
+        <target state="translated">排序标准</target>
+        <note from="developer" annotates="general">sorted by</note>
+      </trans-unit>
+      <trans-unit id="LMR_Of">
+        <source>of</source>
+        <target state="translated">，共</target>
+        <note from="developer" annotates="general">when filtering the data - X items of Y</note>
+      </trans-unit>
+      <trans-unit id="LMR_filter">
+        <source>filter</source>
+        <target state="translated">筛选器</target>
+        <note from="developer" annotates="general">filter</note>
+      </trans-unit>
+      <trans-unit id="LMR_filters">
+        <source>filters</source>
+        <target state="translated">筛选器</target>
+        <note from="developer" annotates="general">filters</note>
+      </trans-unit>
+      <trans-unit id="LMR_Selected">
+        <source>selected</source>
+        <target state="translated">已选择</target>
+        <note from="developer" annotates="general">X selected</note>
+      </trans-unit>
+      <trans-unit id="FSL_LMR_Test">
+        <source>Test Label</source>
+        <target state="translated">测试标签</target>
+        <note from="developer" annotates="general">Test Label</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

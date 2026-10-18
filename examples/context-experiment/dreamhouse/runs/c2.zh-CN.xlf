@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="examples/context-experiment/dreamhouse/conditions/c2.labels-meta.xml" source-language="en-US" target-language="zh-CN" datatype="xml">
+    <body>
+      <trans-unit id="DH_Filter_Reset" maxwidth="12" size-unit="char">
+        <source>Reset</source>
+        <target state="translated">重置</target>
+        <note from="developer" annotates="general">Button: clears the search and resets all property filters
+component:propertyFilter, ui:button, maxlen:12</note>
+      </trans-unit>
+      <trans-unit id="DH_Filter_SearchKey" maxwidth="20" size-unit="char">
+        <source>Search Key</source>
+        <target state="translated">搜索关键字</target>
+        <note from="developer" annotates="general">Label of the text box that filters properties by name, city or tags
+component:propertyFilter, ui:label, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Filter_MaxPrice" maxwidth="20" size-unit="char">
+        <source>Max Price</source>
+        <target state="translated">最高价格</target>
+        <note from="developer" annotates="general">Label of the slider that sets the highest property price shown
+component:propertyFilter, ui:label, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Filter_Bedrooms" maxwidth="20" size-unit="char">
+        <source>Bedrooms</source>
+        <target state="translated">卧室数</target>
+        <note from="developer" annotates="general">Label of the slider that sets the minimum number of bedrooms
+component:propertyFilter, ui:label, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Filter_Title" maxwidth="20" size-unit="char">
+        <source>Filters</source>
+        <target state="translated">筛选器</target>
+        <note from="developer" annotates="general">Title of the card holding the property search filters
+component:propertyFilter, ui:heading, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Broker_Title" maxwidth="20" size-unit="char">
+        <source>Broker</source>
+        <target state="translated">经纪人</target>
+        <note from="developer" annotates="general">Title of the card showing the real estate agent for the house
+component:brokerCard, ui:heading, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Summary_PictureAlt">
+        <source>Property picture</source>
+        <target state="translated">房产图片</target>
+        <note from="developer" annotates="general">Alt text for the photo of the selected house (real estate)
+component:propertySummary, ui:alt</note>
+      </trans-unit>
+      <trans-unit id="DH_Carousel_AddPicture" maxwidth="20" size-unit="char">
+        <source>Add picture</source>
+        <target state="translated">添加图片</target>
+        <note from="developer" annotates="general">Label of the file upload control that adds a house photo
+component:propertyCarousel, ui:label, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Scanner_Button" maxwidth="20" size-unit="char">
+        <source>Scan QR Code</source>
+        <target state="translated">扫描二维码</target>
+        <note from="developer" annotates="general">Button: opens the phone camera to scan a property's QR code
+component:barcodeScanner, ui:button, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Scanner_CanceledTitle" maxwidth="25" size-unit="char">
+        <source>Scanning Canceled</source>
+        <target state="translated">扫描已取消</target>
+        <note from="developer" annotates="general">Title of the toast shown when the user cancels QR code scanning
+component:barcodeScanner, ui:toast, maxlen:25</note>
+      </trans-unit>
+      <trans-unit id="DH_Import_SuccessTitle" maxwidth="20" size-unit="char">
+        <source>Success</source>
+        <target state="translated">成功</target>
+        <note from="developer" annotates="general">Title of the toast shown after sample data is imported
+component:sampleDataImporter, ui:toast, maxlen:20</note>
+      </trans-unit>
+      <trans-unit id="DH_Import_SuccessMessage">
+        <source>Sample data successfully imported</source>
+        <target state="translated">示例数据已成功导入</target>
+        <note from="developer" annotates="general">Toast message after the sample houses and brokers are imported
+component:sampleDataImporter, ui:toast</note>
+      </trans-unit>
+      <trans-unit id="DH_ErrorRetrievingData">
+        <source>Error retrieving data</source>
+        <target state="translated">检索数据时出错</target>
+        <note from="developer" annotates="general">Shown inside a card when its data could not be loaded
+component:errorPanel, ui:error</note>
+      </trans-unit>
+      <trans-unit id="DH_Carousel_NoPictures">
+        <source>There are currently no pictures for this property.</source>
+        <target state="translated">此房产当前没有图片。</target>
+        <note from="developer" annotates="general">Empty state of the photo carousel when a house has no photos
+component:propertyCarousel, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Import_Instructions">
+        <source>Click the button below to initialize the Property and Broker objects with sample data. All existing records in these objects will be deleted.</source>
+        <target state="translated">请单击下面的按钮，以使用示例数据初始化 Property 和 Broker 对象。这些对象中的所有现有记录都将被删除。</target>
+        <note from="developer" annotates="general">Instructions above Import Data; Property and Broker are object names
+component:sampleDataImporter, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Days_Part1">
+        <source>days on</source>
+        <target state="translated">天，已上市</target>
+        <note from="developer" annotates="general">First half of '18 days on the market', shown under the day count
+component:daysOnMarket, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Days_Part2">
+        <source>the market</source>
+        <target state="translated">在售</target>
+        <note from="developer" annotates="general">Second half of '18 days on the market', on the next line
+component:daysOnMarket, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Distance_Label">
+        <source>Distance to property:</source>
+        <target state="translated">与房产的距离：</target>
+        <note from="developer" annotates="general">Label before the distance from the user to the house
+component:propertyLocation, ui:label</note>
+      </trans-unit>
+      <trans-unit id="DH_Distance_Unit">
+        <source>miles</source>
+        <target state="translated">英里</target>
+        <note from="developer" annotates="general">Unit after the distance number: '2.5 miles'
+component:propertyLocation, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Tile_Beds">
+        <source>Beds:</source>
+        <target state="translated">卧室：</target>
+        <note from="developer" annotates="general">Label before the bedroom count on a property tile
+component:propertyTile, ui:label</note>
+      </trans-unit>
+      <trans-unit id="DH_Tile_Baths">
+        <source>Baths:</source>
+        <target state="translated">浴室：</target>
+        <note from="developer" annotates="general">Label before the bathroom count on a property tile
+component:propertyTile, ui:label</note>
+      </trans-unit>
+      <trans-unit id="DH_Pager_Items">
+        <source>items</source>
+        <target state="translated">项目</target>
+        <note from="developer" annotates="general">Word after the total record count in the pager: '24 items'
+component:paginator, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Pager_Page">
+        <source>page</source>
+        <target state="translated">页面</target>
+        <note from="developer" annotates="general">Word before the current page number: 'page 2 of 3'
+component:paginator, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Pager_Of">
+        <source>of</source>
+        <target state="translated">/</target>
+        <note from="developer" annotates="general">Word between page number and page count: 'page 2 of 3'
+component:paginator, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Scanner_Click">
+        <source>Click</source>
+        <target state="translated">请单击</target>
+        <note from="developer" annotates="general">Start of 'Click &lt;Scan QR Code&gt; to open...', before the bold button name
+component:barcodeScanner, ui:text</note>
+      </trans-unit>
+      <trans-unit id="DH_Scanner_Rest">
+        <source>to open a QR Code scanner camera view. Position a QR Code in the scanner view to scan it.</source>
+        <target state="translated">以打开二维码扫描器相机视图。请将二维码置于扫描器视图中进行扫描。</target>
+        <note from="developer" annotates="general">Rest of 'Click &lt;Scan QR Code&gt; to open...', after the bold button name
+component:barcodeScanner, ui:text</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

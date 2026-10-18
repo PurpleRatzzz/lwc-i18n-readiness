@@ -1,0 +1,362 @@
+[
+  {
+    "id": "J01",
+    "condition": "c3",
+    "unit": "filtered",
+    "review": []
+  },
+  {
+    "id": "J02",
+    "condition": "c2",
+    "unit": "LMR_ErrorTitle",
+    "review": []
+  },
+  {
+    "id": "J03",
+    "condition": "c1",
+    "unit": "LMR_Search",
+    "review": []
+  },
+  {
+    "id": "J04",
+    "condition": "c3",
+    "unit": "LMR_Apply",
+    "review": []
+  },
+  {
+    "id": "J05",
+    "condition": "c3",
+    "unit": "LMR_ErrorTitle",
+    "review": []
+  },
+  {
+    "id": "J06",
+    "condition": "c2",
+    "unit": "LMR_Enabled",
+    "review": []
+  },
+  {
+    "id": "J07",
+    "condition": "c1",
+    "unit": "LMR_EndDate",
+    "review": []
+  },
+  {
+    "id": "J08",
+    "condition": "c3",
+    "unit": "LMR_EndDate",
+    "review": []
+  },
+  {
+    "id": "J09",
+    "condition": "c3",
+    "unit": "LMR_Cancel",
+    "review": []
+  },
+  {
+    "id": "J10",
+    "condition": "c2",
+    "unit": "LMR_FilterTitle",
+    "review": []
+  },
+  {
+    "id": "J11",
+    "condition": "c3",
+    "unit": "filterCount",
+    "review": []
+  },
+  {
+    "id": "J12",
+    "condition": "c3",
+    "unit": "LMR_SuccessTitle",
+    "review": []
+  },
+  {
+    "id": "J13",
+    "condition": "c2",
+    "unit": "LMR_None",
+    "review": []
+  },
+  {
+    "id": "J14",
+    "condition": "c3",
+    "unit": "LMR_Save",
+    "review": []
+  },
+  {
+    "id": "J15",
+    "condition": "c2",
+    "unit": "header",
+    "review": []
+  },
+  {
+    "id": "J16",
+    "condition": "c3",
+    "unit": "selected",
+    "review": []
+  },
+  {
+    "id": "J17",
+    "condition": "c2",
+    "unit": "LMR_SuccessTitle",
+    "review": []
+  },
+  {
+    "id": "J18",
+    "condition": "c2",
+    "unit": "LMR_DefineDateRangeTitle",
+    "review": []
+  },
+  {
+    "id": "J19",
+    "condition": "c1",
+    "unit": "LMR_Select",
+    "review": []
+  },
+  {
+    "id": "J20",
+    "condition": "c2",
+    "unit": "LMR_EndDate",
+    "review": []
+  },
+  {
+    "id": "J21",
+    "condition": "c1",
+    "unit": "filtered",
+    "review": []
+  },
+  {
+    "id": "J22",
+    "condition": "c1",
+    "unit": "LMR_Enabled",
+    "review": []
+  },
+  {
+    "id": "J23",
+    "condition": "c1",
+    "unit": "LMR_RecordIsUpdated",
+    "review": []
+  },
+  {
+    "id": "J24",
+    "condition": "c2",
+    "unit": "LMR_Apply",
+    "review": []
+  },
+  {
+    "id": "J25",
+    "condition": "c3",
+    "unit": "LMR_Disabled",
+    "review": []
+  },
+  {
+    "id": "J26",
+    "condition": "c3",
+    "unit": "LMR_Select",
+    "review": []
+  },
+  {
+    "id": "J27",
+    "condition": "c1",
+    "unit": "LMR_None",
+    "review": []
+  },
+  {
+    "id": "J28",
+    "condition": "c3",
+    "unit": "LMR_DefineDateRangeTitle",
+    "review": []
+  },
+  {
+    "id": "J29",
+    "condition": "c2",
+    "unit": "LMR_Select",
+    "review": []
+  },
+  {
+    "id": "J30",
+    "condition": "c1",
+    "unit": "LMR_StartDate",
+    "review": []
+  },
+  {
+    "id": "J31",
+    "condition": "c1",
+    "unit": "LMR_Cancel",
+    "review": []
+  },
+  {
+    "id": "J32",
+    "condition": "c3",
+    "unit": "LMR_FilterTitle",
+    "review": []
+  },
+  {
+    "id": "J33",
+    "condition": "c1",
+    "unit": "LMR_FilterTitle",
+    "review": []
+  },
+  {
+    "id": "J34",
+    "condition": "c2",
+    "unit": "LMR_Cancel",
+    "review": []
+  },
+  {
+    "id": "J35",
+    "condition": "c1",
+    "unit": "LMR_DefineDateRangeTitle",
+    "review": []
+  },
+  {
+    "id": "J36",
+    "condition": "c3",
+    "unit": "LMR_Enabled",
+    "review": []
+  },
+  {
+    "id": "J37",
+    "condition": "c1",
+    "unit": "LMR_Save",
+    "review": []
+  },
+  {
+    "id": "J38",
+    "condition": "c3",
+    "unit": "LMR_Search",
+    "review": []
+  },
+  {
+    "id": "J39",
+    "condition": "c3",
+    "unit": "LMR_ClearAll",
+    "review": []
+  },
+  {
+    "id": "J40",
+    "condition": "c1",
+    "unit": "header",
+    "review": []
+  },
+  {
+    "id": "J41",
+    "condition": "c1",
+    "unit": "LMR_SuccessTitle",
+    "review": []
+  },
+  {
+    "id": "J42",
+    "condition": "c2",
+    "unit": "LMR_Search",
+    "review": []
+  },
+  {
+    "id": "J43",
+    "condition": "c2",
+    "unit": "LMR_Save",
+    "review": []
+  },
+  {
+    "id": "J44",
+    "condition": "c3",
+    "unit": "LMR_None",
+    "review": []
+  },
+  {
+    "id": "J45",
+    "condition": "c1",
+    "unit": "LMR_ErrorTitle",
+    "review": []
+  },
+  {
+    "id": "J46",
+    "condition": "c1",
+    "unit": "LMR_ClearAll",
+    "review": []
+  },
+  {
+    "id": "J47",
+    "condition": "c2",
+    "unit": "LMR_Disabled",
+    "review": []
+  },
+  {
+    "id": "J48",
+    "condition": "c2",
+    "unit": "LMR_StartDate",
+    "review": []
+  },
+  {
+    "id": "J49",
+    "condition": "c3",
+    "unit": "LMR_StartDate",
+    "review": []
+  },
+  {
+    "id": "J50",
+    "condition": "c2",
+    "unit": "filterCount",
+    "review": []
+  },
+  {
+    "id": "J51",
+    "condition": "c1",
+    "unit": "filterCount",
+    "review": []
+  },
+  {
+    "id": "J52",
+    "condition": "c2",
+    "unit": "LMR_ClearAll",
+    "review": []
+  },
+  {
+    "id": "J53",
+    "condition": "c1",
+    "unit": "LMR_Apply",
+    "review": []
+  },
+  {
+    "id": "J54",
+    "condition": "c1",
+    "unit": "selected",
+    "review": []
+  },
+  {
+    "id": "J55",
+    "condition": "c2",
+    "unit": "selected",
+    "review": []
+  },
+  {
+    "id": "J56",
+    "condition": "c3",
+    "unit": "header",
+    "review": []
+  },
+  {
+    "id": "J57",
+    "condition": "c1",
+    "unit": "LMR_Disabled",
+    "review": []
+  },
+  {
+    "id": "J58",
+    "condition": "c2",
+    "unit": "LMR_RecordIsUpdated",
+    "review": []
+  },
+  {
+    "id": "J59",
+    "condition": "c3",
+    "unit": "LMR_RecordIsUpdated",
+    "review": []
+  },
+  {
+    "id": "J60",
+    "condition": "c2",
+    "unit": "filtered",
+    "review": []
+  }
+]

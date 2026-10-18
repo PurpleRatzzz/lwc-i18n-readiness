@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="examples/context-experiment/starterkit/conditions/c2.labels-meta.xml" source-language="en-US" target-language="zh-CN" datatype="xml">
+        <body>
+            <trans-unit id="LMR_Cancel" resname="LMR_Cancel" maxwidth="12" size-unit="char">
+                <source xml:space="preserve">Cancel</source>
+                <note from="developer">Button: closes the filter panel without applying changes</note>
+                <note from="context">component:recordList, ui:button, maxlen:12</note>
+            </trans-unit>
+            <trans-unit id="LMR_Save" resname="LMR_Save" maxwidth="12" size-unit="char">
+                <source xml:space="preserve">Save</source>
+                <note from="developer">Button: saves the edited record</note>
+                <note from="context">component:recordEdit, ui:button, maxlen:12</note>
+            </trans-unit>
+            <trans-unit id="LMR_Search" resname="LMR_Search" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Search</source>
+                <note from="developer">Placeholder text in the search box above the record list</note>
+                <note from="context">component:recordList, ui:placeholder, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="LMR_FilterTitle" resname="LMR_FilterTitle" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Filter</source>
+                <note from="developer">Title of the filter panel (a noun, not the verb)</note>
+                <note from="context">component:recordList, ui:heading, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="LMR_Apply" resname="LMR_Apply" maxwidth="12" size-unit="char">
+                <source xml:space="preserve">Apply</source>
+                <note from="developer">Button: applies the selected filters to the list</note>
+                <note from="context">component:recordList, ui:button, maxlen:12</note>
+            </trans-unit>
+            <trans-unit id="LMR_ClearAll" resname="LMR_ClearAll" maxwidth="15" size-unit="char">
+                <source xml:space="preserve">Clear All</source>
+                <note from="developer">Button: removes all active filters</note>
+                <note from="context">component:recordList, ui:button, maxlen:15</note>
+            </trans-unit>
+            <trans-unit id="LMR_SuccessTitle" resname="LMR_SuccessTitle" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Success</source>
+                <note from="developer">Title of the toast shown after a record is saved</note>
+                <note from="context">component:recordEdit, ui:toast, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="LMR_RecordIsUpdated" resname="LMR_RecordIsUpdated">
+                <source xml:space="preserve">Record Is Updated</source>
+                <note from="developer">Message of the toast shown after a record is saved</note>
+                <note from="context">component:recordEdit, ui:toast</note>
+            </trans-unit>
+            <trans-unit id="LMR_ErrorTitle" resname="LMR_ErrorTitle">
+                <source xml:space="preserve">Something went wrong.</source>
+                <note from="developer">Title of the toast shown when saving a record fails</note>
+                <note from="context">component:recordEdit, ui:toast</note>
+            </trans-unit>
+            <trans-unit id="LMR_Select" resname="LMR_Select" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">select</source>
+                <note from="developer">Placeholder in a dropdown before a value is chosen</note>
+                <note from="context">component:recordList, ui:placeholder, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="LMR_DefineDateRangeTitle" resname="LMR_DefineDateRangeTitle">
+                <source xml:space="preserve">Define a date range</source>
+                <note from="developer">Heading of the date range section in the filter panel</note>
+                <note from="context">component:recordList, ui:heading</note>
+            </trans-unit>
+            <trans-unit id="LMR_StartDate" resname="LMR_StartDate" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">Start Date</source>
+                <note from="developer">Label of the first date field of the date range filter</note>
+                <note from="context">component:recordList, ui:label, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="LMR_EndDate" resname="LMR_EndDate" maxwidth="20" size-unit="char">
+                <source xml:space="preserve">End Date</source>
+                <note from="developer">Label of the second date field of the date range filter</note>
+                <note from="context">component:recordList, ui:label, maxlen:20</note>
+            </trans-unit>
+            <trans-unit id="LMR_None" resname="LMR_None">
+                <source xml:space="preserve">None</source>
+                <note from="developer">Dropdown option meaning that no value is selected</note>
+                <note from="context">component:recordList, ui:label</note>
+            </trans-unit>
+            <trans-unit id="LMR_Enabled" resname="LMR_Enabled" maxwidth="15" size-unit="char">
+                <source xml:space="preserve">Enabled</source>
+                <note from="developer">Value shown for a checkbox field that is on</note>
+                <note from="context">component:recordList, ui:text, maxlen:15</note>
+            </trans-unit>
+            <trans-unit id="LMR_Disabled" resname="LMR_Disabled" maxwidth="15" size-unit="char">
+                <source xml:space="preserve">Disabled</source>
+                <note from="developer">Value shown for a checkbox field that is off</note>
+                <note from="context">component:recordList, ui:text, maxlen:15</note>
+            </trans-unit>
+            <trans-unit id="LMR_Items" resname="LMR_Items">
+                <source xml:space="preserve">items</source>
+                <note from="developer">Word after a record count, e.g. the header &apos;12 items&apos;</note>
+                <note from="context">component:recordList, ui:text</note>
+            </trans-unit>
+            <trans-unit id="LMR_SortedBy" resname="LMR_SortedBy">
+                <source xml:space="preserve">sorted by</source>
+                <note from="developer">Words before the sort field in the list header: &apos;sorted by Name&apos;</note>
+                <note from="context">component:recordList, ui:text</note>
+            </trans-unit>
+            <trans-unit id="LMR_Of" resname="LMR_Of">
+                <source xml:space="preserve">of</source>
+                <note from="developer">Word between two counts when filtered: &apos;10 items of 50&apos;</note>
+                <note from="context">component:recordList, ui:text</note>
+            </trans-unit>
+            <trans-unit id="LMR_filter" resname="LMR_filter">
+                <source xml:space="preserve">filter</source>
+                <note from="developer">Noun after the number of active filters, singular: &apos;1 filter&apos;</note>
+                <note from="context">component:recordList, ui:text</note>
+            </trans-unit>
+            <trans-unit id="LMR_filters" resname="LMR_filters">
+                <source xml:space="preserve">filters</source>
+                <note from="developer">Noun after the number of active filters, plural: &apos;3 filters&apos;</note>
+                <note from="context">component:recordList, ui:text</note>
+            </trans-unit>
+            <trans-unit id="LMR_Selected" resname="LMR_Selected">
+                <source xml:space="preserve">selected</source>
+                <note from="developer">Word after the number of chosen values: &apos;3 selected&apos;</note>
+                <note from="context">component:recordList, ui:text</note>
+            </trans-unit>
+            <trans-unit id="FSL_LMR_Test" resname="FSL_LMR_Test">
+                <source xml:space="preserve">Test Label</source>
+                <note from="developer">Test Label</note>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

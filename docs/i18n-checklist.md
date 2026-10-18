@@ -6,7 +6,7 @@ Run the checker from a clone of this repo with `node src/cli.js scan <path-to-yo
 
 ---
 
-**1. Every string a user can see or hear goes into a Custom Label: in templates, in JS, and in options you pass to native mobile features.** · R1, R2, R4 (mobile options: manual for now)
+**1. Every string a user can see or hear goes into a Custom Label: in templates, in JS, and in options you pass to native mobile features.** · R1, R2, R4
 Don't: `label="Reset"` ([dreamhouse propertyFilter](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/propertyFilter/propertyFilter.html#L5)), `title: 'Scanning Canceled'` in a toast ([barcodeScanner](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/barcodeScanner/barcodeScanner.js#L56)).
 Also: `instructionText: 'Scan a QR Code'` for the mobile barcode scanner ([barcodeScanner](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/barcodeScanner/barcodeScanner.js#L28)). The scanner screen is shown to the same user, so it must speak the same language as the rest of the app.
 Do: `import RESET from '@salesforce/label/c.PropertyFilter_Reset';` and expose it as `label={labels.reset}`. Text that translators never see ships in English in every language.
@@ -19,8 +19,8 @@ Do: one label `{0} beds · {1} baths`, filled in by a getter with a small `forma
 Don't: `{totalItemCount} items • page {currentPageNumber} of {totalPages}` ([paginator](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/paginator/paginator.html#L15)).
 Do: pick the label with `new Intl.PluralRules(LOCALE).select(n)` (`LOCALE` from `@salesforce/i18n/locale`). Create labels for every category your target languages use (`one`, `few`, `many`, `other`), because the set of labels is the same in every language. Chinese uses one form; Russian and Polish need more than two.
 
-**4. Don't glue punctuation or join lists yourself.** · Manual (planned R4 extension)
-Don't: `` message += `: ${reduceErrors(cause).join(', ')}` `` ([ebikes orderStatusPath](https://github.com/trailheadapps/ebikes-lwc/blob/c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee/force-app/main/default/lwc/orderStatusPath/orderStatusPath.js#L197)), or `message: reduceErrors(e).join(', ')` in a toast ([orderBuilder](https://github.com/trailheadapps/ebikes-lwc/blob/c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee/force-app/main/default/lwc/orderBuilder/orderBuilder.js#L134)). French puts a space before the colon (" : "), Chinese uses "：" and lists with "、". These strings contain no letters, so they slip through reviews and are hard to find in source.
+**4. Don't glue punctuation or join lists yourself.** · R4 (`punctuation`, `list-join`)
+Don't: `` message += `: ${reduceErrors(cause).join(', ')}` `` ([ebikes orderStatusPath](https://github.com/trailheadapps/ebikes-lwc/blob/c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee/force-app/main/default/lwc/orderStatusPath/orderStatusPath.js#L197)), or `message: reduceErrors(e).join(', ')` in a toast ([orderBuilder](https://github.com/trailheadapps/ebikes-lwc/blob/c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee/force-app/main/default/lwc/orderBuilder/orderBuilder.js#L134)). French puts a space before the colon (" : "), Chinese uses "：" and lists with "、". These strings contain no letters, so they slip through reviews and are hard to find in source; R4 reports them only where it can see they reach the UI.
 Do: make the whole message one label with placeholders, `Failed to update order status to "{0}": {1}`, and build the list with `new Intl.ListFormat(LOCALE).format(errors)`.
 
 **5. A currency code must come from the same place as the amount.** · R5 (warning)
@@ -28,7 +28,7 @@ Don't: `currency-code="USD"` ([dreamhouse propertyTile](https://github.com/trail
 Hardcoding assumes the org's currency is US dollars. In an org whose currency is euros, the stored number is in euros but is shown with "$".
 Do: take the code from where the amount comes from: the record's `CurrencyIsoCode` in multi-currency orgs, otherwise the org's corporate currency. To show an amount in the user's currency, convert it on the server (e.g. SOQL `convertCurrency()`). Never just switch the code: that turns $1,000 into €1,000. Formatting is already handled: `lightning-formatted-number`, `lightning-formatted-date-time` and `Intl` (built on ICU) follow the user's locale for symbols, separators and digit grouping.
 
-**6. Show picklist labels, not API values.** · Manual
+**6. Show picklist labels, not API values.** · Manual (R4 flags the toast text, but not the value-for-label mix-up)
 Don't: a toast built from the picklist **value** while the path shows the **label** ([ebikes orderStatusPath](https://github.com/trailheadapps/ebikes-lwc/blob/c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee/force-app/main/default/lwc/orderStatusPath/orderStatusPath.js#L139)). Value and label are identical in English, so nobody notices until the picklist is translated or renamed.
 Do: what [ebikes productFilter](https://github.com/trailheadapps/ebikes-lwc/blob/c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee/force-app/main/default/lwc/productFilter/productFilter.html#L28) does: `label={category.label}`. Values are for logic, labels are for people.
 
@@ -47,6 +47,6 @@ Do: fill the text parts from labels (item 2), then build the markup. Better stil
 Don't: delete and save buttons with an icon and no text at all ([ebikes orderItemTile](https://github.com/trailheadapps/ebikes-lwc/blob/c60a6c1cfae41e2f8bf6cf4f961a4f07954abfee/force-app/main/default/lwc/orderItemTile/orderItemTile.html#L58-L72)). A screen reader user hears nothing useful, in any language.
 Do: `alternative-text={labels.deleteItem}`. Accessibility text is UI text and needs translating like any other.
 
-**11. Let the platform format addresses and names.** · Manual
+**11. Let the platform format addresses and names.** · R4 catches the hardcoded separator; field order needs manual review
 Don't: `` `${Address__c}, ${City__c}` `` as a card title ([propertyMap](https://github.com/trailheadapps/dreamhouse-lwc/blob/3f496e4e28c0fc8d00ca059622e2ab92ac2612ea/force-app/main/default/lwc/propertyMap/propertyMap.js#L34)). Field order and separators differ by country; a Japanese address runs from the largest unit to the smallest.
 Do: `lightning-formatted-address` and `lightning-formatted-name`, which follow the user's locale.

@@ -111,8 +111,8 @@ To plug in a real translator, set `LWC_I18N_TRANSLATOR_CMD` to any command that 
 ### In CI
 
 ```yaml
-- uses: actions/checkout@v4
-- uses: PurpleRatzzz/lwc-i18n-readiness@v0.1.0
+- uses: actions/checkout@v7
+- uses: PurpleRatzzz/lwc-i18n-readiness@v0.1.1
   with:
     baseline: .i18n-baseline.json
 ```

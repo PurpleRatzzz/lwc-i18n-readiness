@@ -35,9 +35,14 @@ Every translation and verdict: [dreamhouse/results.md](dreamhouse/results.md), [
 
 2. **The failures were in assembled text.** Six of the nine failures are sentences that code builds from pieces.
    - **Starter kit**: context helped. C2 added the missing measure words (3 个筛选器), and restructuring fixed the rest (10 个项目，共 50 个): 1/4 → 3/4 → 4/4 assembled units acceptable.
-   - **Dreamhouse**: the days-on-market badge failed in C1 ("18 已上市 天") and also in C3 ("上市 18 天"). In the real UI the number sits on its own line above the text, so a translation that moves the number breaks the layout, and 上市 is the wrong sense. The judge's suggestion was 18 天前.
+   - **Dreamhouse**: the days-on-market badge failed in C1 ("18 已上市 天") and in C3 ("上市 18 天"), and passed in C2 ("18 天，已上市 在售"). In the real template the number is its own element, on the line above the text (`daysOnMarket.html:6-9`), so a translation that moves the number does not fit the layout. The judge also found 上市 the wrong sense and suggested 18 天前.
 
-     The C3 description didn't mention the layout. **Restructuring a sentence only helps if the label still tells the translator the layout constraint.** The second expectation was only partly supported.
+     What we know:
+     - The C3 label (`{0} days on the market`) said nothing about the layout.
+     - The C2 pieces were described as "shown under the day count" and "on the next line", and C2 kept the number first.
+     - Nothing in A stops a placeholder from moving: its QA gate compares placeholder counts, not positions.
+
+     **Why C3 failed was not tested.** We suspect the missing layout note let the translator reorder. But no C3 variant with a layout note was run, each condition ran only once, and the reordered phrase also had a meaning error. A merged label also needs a rendering decision that C3 never made: how a template that keeps the number in its own element would show `上市 {0} 天`. The second expectation was only partly supported.
 
 3. **A per-string QA gate cannot see these failures.** A sent 0 units to review in all six runs, including "18 已上市 天". Each piece is fine on its own; only the assembled sentence is wrong.
 

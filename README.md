@@ -110,7 +110,7 @@ A preregistered, blind-judged experiment with project A (an AI translation pipel
 
 - Context made **no difference for single strings**: 31 of 31 were acceptable without it.
 - Every translation failure was in **sentences assembled from pieces**, or in a **hardcoded unit of measure (miles)**. Neither can be fixed by translation or caught by a per-string QA gate, which passed all of them.
-- The upstream fix that matters is structure: whole sentences with placeholders, plus context that states layout constraints. Better descriptions alone are not enough.
+- The upstream fix that matters is structure (whole sentences with placeholders), not better descriptions alone. Restructuring also has to respect the layout. In the one case where it failed, the merged label didn't describe the layout; whether that caused the failure was not tested.
 
 ## Quick start
 

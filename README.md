@@ -33,6 +33,37 @@ In October 2026 I checked four LWC sample apps in [trailheadapps](https://github
 | R5 hardcoded-locale | `currency-code="USD"`, literal locales in `Intl`. A warning: the currency must follow the amount's source | dreamhouse `propertyTile.html:14` |
 | R6 label-context | Labels whose description just repeats the value, with no `ui:` category, unexplained `{0}`, or a sentence-fragment value | `LMR_Of` = "of" |
 
+## See it on a real PR
+
+[PurpleRatzzz/dreamhouse-lwc#2](https://github.com/PurpleRatzzz/dreamhouse-lwc/pull/2) runs this action in a fork of Salesforce's dreamhouse-lwc sample app. It was also the action's first run in a real repository: that run surfaced a Node 20 deprecation warning from `actions/setup-node@v4`, which v0.1.1 fixes.
+
+- **`main`** has the workflow and a baseline that accepts the 78 findings the app has today, so its check is green.
+- **Commit 1** adds `{properties.data.totalItemCount} properties found` to a template. The check fails, with three annotations on that line: hardcoded text (R2), a sentence built around a binding (R3), and an English plural (R3).
+- **Commit 2** moves the text into two Custom Labels, one per plural form. Their descriptions say where the text appears and what `{0}` is, and a getter picks the form with `Intl.PluralRules`. The check passes, and the new labels file gets no R6 warnings.
+
+![Annotations on the changed line in Files changed](docs/img/pr-annotations.png)
+
+![The job summary written by the action](docs/img/pr-summary.png)
+
+![Checks: red on commit 1, green on commit 2](docs/img/pr-checks.png)
+
+The whole setup in the consumer repo:
+
+```yaml
+on:
+    push:
+        branches: [main]
+    pull_request:
+jobs:
+    i18n:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+            - uses: PurpleRatzzz/lwc-i18n-readiness@v0.1.1
+              with:
+                  baseline: .i18n-baseline.json
+```
+
 ## Results
 
 ### Scanner, measured on held-out code
